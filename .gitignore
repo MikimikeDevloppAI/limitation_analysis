@@ -1,0 +1,12 @@
+# Databases
+*.db
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Extracted XML source files (large)
+extracted/
+
+# Misc
+nul

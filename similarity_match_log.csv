@@ -1,0 +1,947 @@
+segment_id,segment_name,matched_code,match_type,matched_to,score
+539,Melanom 20461.03,20461.03,EMBEDDED_IN_NAME,Melanom 20461.03,1.0
+540,Nierenzellkarzinom (RCC) 20461.10,20461.10,EMBEDDED_IN_NAME,Nierenzellkarzinom (RCC) 20461.10,1.0
+541,Kolorektales Karzinom (CRC) mit dMMR/ MSI-H 20461.11,20461.11,EMBEDDED_IN_NAME,Kolorektales Karzinom (CRC) mit dMMR/ MSI-H 20461.11,1.0
+542,Nicht-kleinzelliges Lungenkarzinom (NSCLC) 20461.01,20461.01,EMBEDDED_IN_NAME,Nicht-kleinzelliges Lungenkarzinom (NSCLC) 20461.01,1.0
+543,Melanom 20461.02,20461.02,EMBEDDED_IN_NAME,Melanom 20461.02,1.0
+544,Melanom adjuvant 20461.07,20461.07,EMBEDDED_IN_NAME,Melanom adjuvant 20461.07,1.0
+545,Nierenzellkarzinom (RCC) 20461.04,20461.04,EMBEDDED_IN_NAME,Nierenzellkarzinom (RCC) 20461.04,1.0
+546,Nierenzellkarzinom (RCC) 20461.10,20461.10,EMBEDDED_IN_NAME,Nierenzellkarzinom (RCC) 20461.10,1.0
+547,Plattenepithelkarzinom im Kopf-Hals-Bereich (SCCHN) 20461.05,20461.05,EMBEDDED_IN_NAME,Plattenepithelkarzinom im Kopf-Hals-Bereich (SCCHN) 20461.05,1.0
+548,Klassisches Hodgkin-Lymphom (cHL) 20461.06,20461.06,EMBEDDED_IN_NAME,Klassisches Hodgkin-Lymphom (cHL) 20461.06,1.0
+549,Kolorektales Karzinom (CRC) mit dMMR/ MSI-H 20461.08,20461.08,EMBEDDED_IN_NAME,Kolorektales Karzinom (CRC) mit dMMR/ MSI-H 20461.08,1.0
+550,Kolorektales Karzinom (CRC) mit dMMR/ MSI-H 20461.11,20461.11,EMBEDDED_IN_NAME,Kolorektales Karzinom (CRC) mit dMMR/ MSI-H 20461.11,1.0
+551,Ösophaguskarzinom oder Karzinom des gastroösophagealen Übergangs (OC oder GEJC) adjuvant 20461.09,20461.09,EMBEDDED_IN_NAME,Ösophaguskarzinom oder Karzinom des gastroösophagealen Übergangs (OC oder GEJC) adjuvant 20461.09,1.0
+577,Melanom 20461.03,20461.03,EMBEDDED_IN_NAME,Melanom 20461.03,1.0
+578,Nicht-kleinzelliges Lungenkarzinom (NSCLC) 20461.01,20461.01,EMBEDDED_IN_NAME,Nicht-kleinzelliges Lungenkarzinom (NSCLC) 20461.01,1.0
+579,Melanom 20461.02,20461.02,EMBEDDED_IN_NAME,Melanom 20461.02,1.0
+580,Melanom 20461.03,20461.03,EMBEDDED_IN_NAME,Melanom 20461.03,1.0
+581,Melanom adjuvant 20461.07,20461.07,EMBEDDED_IN_NAME,Melanom adjuvant 20461.07,1.0
+582,Nierenzellkarzinom (RCC) 20461.04,20461.04,EMBEDDED_IN_NAME,Nierenzellkarzinom (RCC) 20461.04,1.0
+583,Plattenepithelkarzinom im Kopf-Hals-Bereich (SCCHN) 20461.05,20461.05,EMBEDDED_IN_NAME,Plattenepithelkarzinom im Kopf-Hals-Bereich (SCCHN) 20461.05,1.0
+584,Klassisches Hodgkin-Lymphom (cHL) 20461.06,20461.06,EMBEDDED_IN_NAME,Klassisches Hodgkin-Lymphom (cHL) 20461.06,1.0
+585,Kolorektales Karzinom (CRC) mit dMMR/ MSI-H 20461.08,20461.08,EMBEDDED_IN_NAME,Kolorektales Karzinom (CRC) mit dMMR/ MSI-H 20461.08,1.0
+586,Ösophaguskarzinom oder Karzinom des gastroösophagealen Übergangs (OC oder GEJC) adjuvant 20461.09,20461.09,EMBEDDED_IN_NAME,Ösophaguskarzinom oder Karzinom des gastroösophagealen Übergangs (OC oder GEJC) adjuvant 20461.09,1.0
+587,MIUC adjuvant 20461.12,20461.12,EMBEDDED_IN_NAME,MIUC adjuvant 20461.12,1.0
+616,Nicht-kleinzelliges Lungenkarzinom (NSCLC) 20461.01,20461.01,EMBEDDED_IN_NAME,Nicht-kleinzelliges Lungenkarzinom (NSCLC) 20461.01,1.0
+617,Melanom 20461.02,20461.02,EMBEDDED_IN_NAME,Melanom 20461.02,1.0
+618,Melanom 20461.03,20461.03,EMBEDDED_IN_NAME,Melanom 20461.03,1.0
+619,Melanom adjuvant 20461.07,20461.07,EMBEDDED_IN_NAME,Melanom adjuvant 20461.07,1.0
+620,Nierenzellkarzinom (RCC) 20461.04 ,20461.04,EMBEDDED_IN_NAME,Nierenzellkarzinom (RCC) 20461.04 ,1.0
+621,Nierenzellkarzinom (RCC) 20461.10,20461.10,EMBEDDED_IN_NAME,Nierenzellkarzinom (RCC) 20461.10,1.0
+622,Plattenepithelkarzinom im Kopf-Hals-Bereich (SCCHN) 20461.05,20461.05,EMBEDDED_IN_NAME,Plattenepithelkarzinom im Kopf-Hals-Bereich (SCCHN) 20461.05,1.0
+623,Klassisches Hodgkin-Lymphom (cHL) 20461.06,20461.06,EMBEDDED_IN_NAME,Klassisches Hodgkin-Lymphom (cHL) 20461.06,1.0
+624,Kolorektales Karzinom (CRC) mit dMMR/ MSI-H 20461.08,20461.08,EMBEDDED_IN_NAME,Kolorektales Karzinom (CRC) mit dMMR/ MSI-H 20461.08,1.0
+625,Kolorektales Karzinom (CRC) mit dMMR/ MSI-H 20461.11,20461.11,EMBEDDED_IN_NAME,Kolorektales Karzinom (CRC) mit dMMR/ MSI-H 20461.11,1.0
+626,Ösophaguskarzinom oder Karzinom des gastroösophagealen Übergangs (OC oder GEJC) adjuvant 20461.09,20461.09,EMBEDDED_IN_NAME,Ösophaguskarzinom oder Karzinom des gastroösophagealen Übergangs (OC oder GEJC) adjuvant 20461.09,1.0
+627,MIUC adjuvant 20461.12,20461.12,EMBEDDED_IN_NAME,MIUC adjuvant 20461.12,1.0
+628,Ösophageales Plattenepithelkarzinom (OSCC) 20461.13,20461.13,EMBEDDED_IN_NAME,Ösophageales Plattenepithelkarzinom (OSCC) 20461.13,1.0
+629,Ösophageales Plattenepithelkarzinom (OSCC) 20461.14,20461.14,EMBEDDED_IN_NAME,Ösophageales Plattenepithelkarzinom (OSCC) 20461.14,1.0
+1376,Melanom 20461.02,20461.02,EMBEDDED_IN_NAME,Melanom 20461.02,1.0
+1377,Melanom 20461.03,20461.03,EMBEDDED_IN_NAME,Melanom 20461.03,1.0
+1378,Melanom adjuvant 20461.07,20461.07,EMBEDDED_IN_NAME,Melanom adjuvant 20461.07,1.0
+1906,Nicht-kleinzelliges Lungenkarzinom (NSCLC) 20461.01,20461.01,EMBEDDED_IN_NAME,Nicht-kleinzelliges Lungenkarzinom (NSCLC) 20461.01,1.0
+1985,Nicht-kleinzelliges Lungenkarzinom (NSCLC) 20461.01,20461.01,EMBEDDED_IN_NAME,Nicht-kleinzelliges Lungenkarzinom (NSCLC) 20461.01,1.0
+1986,Melanom 20461.02,20461.02,EMBEDDED_IN_NAME,Melanom 20461.02,1.0
+1987,Melanom 20461.03,20461.03,EMBEDDED_IN_NAME,Melanom 20461.03,1.0
+1988,Melanom adjuvant 20461.07,20461.07,EMBEDDED_IN_NAME,Melanom adjuvant 20461.07,1.0
+1989,Nierenzellkarzinom (RCC) 20461.04 ,20461.04,EMBEDDED_IN_NAME,Nierenzellkarzinom (RCC) 20461.04 ,1.0
+1990,Nierenzellkarzinom (RCC) 20461.10,20461.10,EMBEDDED_IN_NAME,Nierenzellkarzinom (RCC) 20461.10,1.0
+1991,Plattenepithelkarzinom im Kopf-Hals-Bereich (SCCHN) 20461.05,20461.05,EMBEDDED_IN_NAME,Plattenepithelkarzinom im Kopf-Hals-Bereich (SCCHN) 20461.05,1.0
+1992,Klassisches Hodgkin-Lymphom (cHL) 20461.06,20461.06,EMBEDDED_IN_NAME,Klassisches Hodgkin-Lymphom (cHL) 20461.06,1.0
+1993,Kolorektales Karzinom (CRC) mit dMMR/MSI-H 20461.08,20461.08,EMBEDDED_IN_NAME,Kolorektales Karzinom (CRC) mit dMMR/MSI-H 20461.08,1.0
+1994,Kolorektales Karzinom (CRC) mit dMMR/MSI-H 20461.11,20461.11,EMBEDDED_IN_NAME,Kolorektales Karzinom (CRC) mit dMMR/MSI-H 20461.11,1.0
+1995,Ösophaguskarzinom oder Karzinom des gastroösophagealen Übergangs (OC oder GEJC) adjuvant 20461.09,20461.09,EMBEDDED_IN_NAME,Ösophaguskarzinom oder Karzinom des gastroösophagealen Übergangs (OC oder GEJC) adjuvant 20461.09,1.0
+1996,Muskel-invasives Urothelkarzinom (MIUC) adjuvant 20461.12,20461.12,EMBEDDED_IN_NAME,Muskel-invasives Urothelkarzinom (MIUC) adjuvant 20461.12,1.0
+1997,Ösophageales Plattenepithelkarzinom (OSCC) 20461.13,20461.13,EMBEDDED_IN_NAME,Ösophageales Plattenepithelkarzinom (OSCC) 20461.13,1.0
+1998,Ösophageales Plattenepithelkarzinom (OSCC) 20461.14,20461.14,EMBEDDED_IN_NAME,Ösophageales Plattenepithelkarzinom (OSCC) 20461.14,1.0
+1999,Malignes pleurales Mesotheliom (MPM) 20461.15,20461.15,EMBEDDED_IN_NAME,Malignes pleurales Mesotheliom (MPM) 20461.15,1.0
+2000,"Adenokarzinom des Magens, des gastroösophagealen Übergangs oder des distalen Ösophagus (GC/GEJC/OC) 20461.16",20461.16,EMBEDDED_IN_NAME,"Adenokarzinom des Magens, des gastroösophagealen Übergangs oder des distalen Ösophagus (GC/GEJC/OC) 20461.16",1.0
+2150,Nicht-kleinzelliges Lungenkarzinom (NSCLC) 20461.17,20461.17,EMBEDDED_IN_NAME,Nicht-kleinzelliges Lungenkarzinom (NSCLC) 20461.17,1.0
+2223,Renale Anämie bei Niereninsuffizienz: 17807.01,17807.01,EMBEDDED_IN_NAME,Renale Anämie bei Niereninsuffizienz: 17807.01,1.0
+2263,Nicht-kleinzelliges Lungenkarzinom (NSCLC) 20461.01,20461.01,EMBEDDED_IN_NAME,Nicht-kleinzelliges Lungenkarzinom (NSCLC) 20461.01,1.0
+2264,Melanom 20461.02,20461.02,EMBEDDED_IN_NAME,Melanom 20461.02,1.0
+2265,Melanom 20461.03,20461.03,EMBEDDED_IN_NAME,Melanom 20461.03,1.0
+2266,Melanom adjuvant 20461.07,20461.07,EMBEDDED_IN_NAME,Melanom adjuvant 20461.07,1.0
+2267,Nierenzellkarzinom (RCC) 20461.04 ,20461.04,EMBEDDED_IN_NAME,Nierenzellkarzinom (RCC) 20461.04 ,1.0
+2268,Nierenzellkarzinom (RCC) 20461.10,20461.10,EMBEDDED_IN_NAME,Nierenzellkarzinom (RCC) 20461.10,1.0
+2269,Plattenepithelkarzinom im Kopf-Hals-Bereich (SCCHN) 20461.05,20461.05,EMBEDDED_IN_NAME,Plattenepithelkarzinom im Kopf-Hals-Bereich (SCCHN) 20461.05,1.0
+2270,Klassisches Hodgkin-Lymphom (cHL) 20461.06,20461.06,EMBEDDED_IN_NAME,Klassisches Hodgkin-Lymphom (cHL) 20461.06,1.0
+2271,Kolorektales Karzinom (CRC) mit dMMR/MSI-H 20461.08,20461.08,EMBEDDED_IN_NAME,Kolorektales Karzinom (CRC) mit dMMR/MSI-H 20461.08,1.0
+2272,Kolorektales Karzinom (CRC) mit dMMR/MSI-H 20461.11,20461.11,EMBEDDED_IN_NAME,Kolorektales Karzinom (CRC) mit dMMR/MSI-H 20461.11,1.0
+2273,Ösophaguskarzinom oder Karzinom des gastroösophagealen Übergangs (OC oder GEJC) adjuvant 20461.09,20461.09,EMBEDDED_IN_NAME,Ösophaguskarzinom oder Karzinom des gastroösophagealen Übergangs (OC oder GEJC) adjuvant 20461.09,1.0
+2274,Muskel-invasives Urothelkarzinom (MIUC) adjuvant 20461.12,20461.12,EMBEDDED_IN_NAME,Muskel-invasives Urothelkarzinom (MIUC) adjuvant 20461.12,1.0
+2275,Ösophageales Plattenepithelkarzinom (OSCC) 20461.13,20461.13,EMBEDDED_IN_NAME,Ösophageales Plattenepithelkarzinom (OSCC) 20461.13,1.0
+2276,Ösophageales Plattenepithelkarzinom (OSCC) 20461.14,20461.14,EMBEDDED_IN_NAME,Ösophageales Plattenepithelkarzinom (OSCC) 20461.14,1.0
+2277,Malignes pleurales Mesotheliom (MPM) 20461.15,20461.15,EMBEDDED_IN_NAME,Malignes pleurales Mesotheliom (MPM) 20461.15,1.0
+2278,"Adenokarzinom des Magens, des gastroösophagealen Übergangs oder des distalen Ösophagus (GC/GEJC/OC) 20461.16",20461.16,EMBEDDED_IN_NAME,"Adenokarzinom des Magens, des gastroösophagealen Übergangs oder des distalen Ösophagus (GC/GEJC/OC) 20461.16",1.0
+14,Tumornekrosefaktor-Rezeptor-assoziiertes periodisches Syndrom (TRAPS):,19119.03,NORMALIZED_MATCH,same dossier 19119,1.0
+15,Hyperimmunglobulin-D-Syndrom (HIDS)/Mevalonatkinasedefizienz (MKD):,19119.04,NORMALIZED_MATCH,same dossier 19119,1.0
+16,Familiäres Mittelmeerfieber (FMF):,19119.05,NORMALIZED_MATCH,same dossier 19119,1.0
+19,Tumornekrosefaktor-Rezeptor-assoziiertes periodisches Syndrom (TRAPS):,19119.03,NORMALIZED_MATCH,same dossier 19119,1.0
+20,Hyperimmunglobulin-D-Syndrom (HIDS)/Mevalonatkinasedefizienz (MKD):,19119.04,NORMALIZED_MATCH,same dossier 19119,1.0
+21,Familiäres Mittelmeerfieber (FMF):,19119.05,NORMALIZED_MATCH,same dossier 19119,1.0
+23,1L NSCLC,20416.01,NORMALIZED_CROSS,ind_part .01 from 20791.01,0.95
+26,1L NSCLC,20416.01,NORMALIZED_CROSS,ind_part .01 from 20791.01,0.95
+33,1L NSCLC,20416.01,NORMALIZED_CROSS,ind_part .01 from 20791.01,0.95
+52,1L NSCLC,20416.01,NORMALIZED_CROSS,ind_part .01 from 20791.01,0.95
+70,1L NSCLC,20416.01,NORMALIZED_CROSS,ind_part .01 from 20791.01,0.95
+76,Melanom adjuvant,20461.02,NORMALIZED_CROSS,ind_part .02 from 20484.02,0.95
+77,Melanom adjuvant,20416.02,NORMALIZED_CROSS,ind_part .02 from 20484.02,0.95
+90,Kyprolis in Kombination mit Lenalidomid und Dexamethason (KRd),20481.06,NORMALIZED_MATCH,same dossier 20481,1.0
+94,Colitis ulcerosa:,20037.04,NORMALIZED_CROSS,ind_part .04 from 20752.04,0.95
+95,Psoriasis Arthritis:,20037.02,NORMALIZED_CROSS,ind_part .02 from 21476.02,0.95
+98,Ovarialkarzinom nach Erstlinienchemotherapie,20852.02,NORMALIZED_CROSS,ind_part .02 from 21597.02,0.95
+106,Hämatologie:,20815.01,NORMALIZED_CROSS,ind_part .01 from 17079.01,0.95
+107,Autoimmunerkrankungen:,20815.02,NORMALIZED_CROSS,ind_part .02 from 17079.02,0.95
+122,Plaque-Psoriasis,19301.01,NORMALIZED_CROSS,ind_part .01 from 21652.01,0.95
+123,Psoriasis-Arthritis,19301.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+124,Morbus Crohn,19301.03,NORMALIZED_CROSS,ind_part .03 from 20752.03,0.95
+125,Colitis ulcerosa,19301.04,NORMALIZED_CROSS,ind_part .04 from 20752.04,0.95
+126,Plaque-Psoriasis,20638.01,NORMALIZED_CROSS,ind_part .01 from 21652.01,0.95
+127,Psoriasis-Arthritis,20638.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+128,Morbus Crohn,20638.03,NORMALIZED_CROSS,ind_part .03 from 20752.03,0.95
+129,Colitis ulcerosa,20638.04,NORMALIZED_CROSS,ind_part .04 from 20752.04,0.95
+130,Plaque-Psoriasis,20717.01,NORMALIZED_CROSS,ind_part .01 from 21652.01,0.95
+131,Psoriasis-Arthritis,20717.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+132,Morbus Crohn,20717.03,NORMALIZED_CROSS,ind_part .03 from 20752.03,0.95
+133,Colitis ulcerosa,20717.04,NORMALIZED_CROSS,ind_part .04 from 20752.04,0.95
+182,Tumornekrosefaktor-Rezeptor-assoziiertes periodisches Syndrom (TRAPS):,19119.03,NORMALIZED_MATCH,same dossier 19119,1.0
+183,Hyperimmunglobulin-D-Syndrom (HIDS)/Mevalonatkinasedefizienz (MKD):,19119.04,NORMALIZED_MATCH,same dossier 19119,1.0
+184,Familiäres Mittelmeerfieber (FMF):,19119.05,NORMALIZED_MATCH,same dossier 19119,1.0
+190,Psoriasis-Arthritis:,19300.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+194,Psoriasis-Arthritis:,19313.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+207,3L Primäres mediastinales grosszelliges B-Zell-Lymphom (rrPMBCL) (Monotherapie) KN170 ,20416.12,NORMALIZED_MATCH,same dossier 20416,1.0
+227,Plaque-Psoriasis,20752.01,NORMALIZED_CROSS,ind_part .01 from 21652.01,0.95
+229,Plaque-Psoriasis,21007.01,NORMALIZED_CROSS,ind_part .01 from 21652.01,0.95
+263,Plaque-Psoriasis,19301.01,NORMALIZED_CROSS,ind_part .01 from 21652.01,0.95
+264,Plaque-Psoriasis,20638.01,NORMALIZED_CROSS,ind_part .01 from 21652.01,0.95
+265,Plaque-Psoriasis,20717.01,NORMALIZED_CROSS,ind_part .01 from 21652.01,0.95
+313,Plaque-Psoriasis:,20900.01,NORMALIZED_CROSS,ind_part .01 from 21652.01,0.95
+315,Morbus Crohn,20458.03,NORMALIZED_CROSS,ind_part .03 from 20752.03,0.95
+318,Schwere Plaque-Psoriasis,20458.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+319,Psoriasis Arthritis,20458.02,NORMALIZED_CROSS,ind_part .02 from 21476.02,0.95
+345,Morbus Crohn,17463.03,NORMALIZED_CROSS,ind_part .03 from 20752.03,0.95
+348,Schwere Plaque-Psoriasis,17463.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+349,Psoriasis Arthritis,17463.02,NORMALIZED_CROSS,ind_part .02 from 21476.02,0.95
+351,Morbus Crohn,20402.03,NORMALIZED_CROSS,ind_part .03 from 20752.03,0.95
+354,Schwere Plaque-Psoriasis,20402.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+355,Psoriasis Arthritis,20402.02,NORMALIZED_CROSS,ind_part .02 from 21476.02,0.95
+356,Schwere Plaque-Psoriasis:,20922.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+359,Plaque-Psoriasis,19301.01,NORMALIZED_CROSS,ind_part .01 from 21652.01,0.95
+371,Atopische Dermatitis – Erwachsene,21258.01,NORMALIZED_CROSS,ind_part .01 from 20819.01,0.95
+372,Atopische Dermatitis - Jugendliche Patienten,21258.02,NORMALIZED_CROSS,ind_part .02 from 20819.02,0.95
+380,Melanom adjuvant,20461.02,NORMALIZED_CROSS,ind_part .02 from 20484.02,0.95
+387,Psoriasis-Arthritis,21028.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+389,AL-Amyloidose,21150.04,NORMALIZED_MATCH,same dossier 21150,1.0
+399,Melanom adjuvant,20461.02,NORMALIZED_CROSS,ind_part .02 from 20484.02,0.95
+406,Ovarialkarzinom nach Erstlinienchemotherapie,20852.02,NORMALIZED_CROSS,ind_part .02 from 21597.02,0.95
+407,Monotherapie,20852.01,NORMALIZED_CROSS,ind_part .01 from 20589.01,0.95
+408,Ovarialkarzinom nach Erstlinienchemotherapie,20852.02,NORMALIZED_CROSS,ind_part .02 from 21597.02,0.95
+414,Melanom adjuvant,20461.02,NORMALIZED_CROSS,ind_part .02 from 20484.02,0.95
+420,Ovarialkarzinom nach Erstlinienchemotherapie,21090.02,NORMALIZED_CROSS,ind_part .02 from 21597.02,0.95
+423,Weitere Indikationen,17354.02,NORMALIZED_MATCH,same dossier 17354,1.0
+425,Weitere Indikationen,21304.02,NORMALIZED_MATCH,same dossier 21304,1.0
+427,Weitere Indikationen,21087.02,NORMALIZED_MATCH,same dossier 21087,1.0
+429,Weitere Indikationen,21109.02,NORMALIZED_CROSS,ind_part .02 from 17354.02,0.95
+435,Weitere Indikationen,20966.02,NORMALIZED_MATCH,same dossier 20966,1.0
+457,Weitere Indikationen,21018.02,NORMALIZED_MATCH,same dossier 21018,1.0
+494,HCC ,20641.03,NORMALIZED_MATCH,same dossier 20641,1.0
+502,Ovarialkarzinom nach Erstlinienchemotherapie,21090.02,NORMALIZED_CROSS,ind_part .02 from 21597.02,0.95
+555,Behandlung von Erwachsenen mit paroxysmaler nächtlicher Hämoglobinurie (PNH),21024.01,NORMALIZED_CROSS,ind_part .01 from 21557.01,0.95
+589,"Morbus Waldenström (MW, Monotherapie)",21365.05,NORMALIZED_CROSS,ind_part .05 from 21011.05,0.95
+597,Colitis ulcerosa,19301.04,NORMALIZED_CROSS,ind_part .04 from 20752.04,0.95
+598,Plaque-Psoriasis,20638.01,NORMALIZED_CROSS,ind_part .01 from 21652.01,0.95
+599,Colitis ulcerosa,20638.04,NORMALIZED_CROSS,ind_part .04 from 20752.04,0.95
+600,Plaque-Psoriasis,20717.01,NORMALIZED_CROSS,ind_part .01 from 21652.01,0.95
+601,Colitis ulcerosa,20717.04,NORMALIZED_CROSS,ind_part .04 from 20752.04,0.95
+636,Morbus Crohn,21322.03,NORMALIZED_CROSS,ind_part .03 from 20752.03,0.95
+644,Psoriasis-Arthritis,21203.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+648,Schwere Plaque-Psoriasis,21203.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+652,Psoriasis-Arthritis,21266.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+656,Schwere Plaque-Psoriasis,21266.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+662,Psoriasis-Arthritis,20992.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+666,Schwere Plaque-Psoriasis,20992.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+670,Psoriasis-Arthritis,21009.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+674,Schwere Plaque-Psoriasis,21009.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+682,Psoriasis-Arthritis,21453.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+686,Schwere Plaque-Psoriasis,21453.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+690,Psoriasis-Arthritis,21452.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+694,Schwere Plaque-Psoriasis,21452.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+698,Psoriasis-Arthritis ,21095.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+702,Schwere Plaque-Psoriasis ,21095.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+706,Psoriasis-Arthritis ,21095.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+710,Schwere Plaque-Psoriasis ,21095.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+714,Psoriasis-Arthritis ,21095.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+718,Schwere Plaque-Psoriasis ,21095.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+724,Psoriasis-Arthritis ,18538.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+728,Schwere Plaque-Psoriasis ,18538.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+732,Psoriasis-Arthritis ,17903.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+736,Schwere Plaque-Psoriasis ,17903.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+742,Psoriasis-Arthritis,20968.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+746,Schwere Plaque-Psoriasis,20968.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+750,Psoriasis-Arthritis,20969.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+754,Schwere Plaque-Psoriasis,20969.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+758,Psoriasis-Arthritis ,21086.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+762,Schwere Plaque-Psoriasis ,21086.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+766,Psoriasis-Arthritis ,21086.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+770,Schwere Plaque-Psoriasis ,21086.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+774,Psoriasis-Arthritis ,21086.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+778,Schwere Plaque-Psoriasis ,21086.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+782,Psoriasis-Arthritis,21076.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+786,Schwere Plaque-Psoriasis,21076.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+790,Psoriasis-Arthritis,21079.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+794,Schwere Plaque-Psoriasis,21079.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+800,Psoriasis-Arthritis,20992.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+804,Schwere Plaque-Psoriasis,20992.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+808,Psoriasis-Arthritis,21009.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+812,Schwere Plaque-Psoriasis,21009.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+815,Medulläres Schilddrüsenkarzinom mit RET-Mutation:,21321.02,NORMALIZED_MATCH,same dossier 21321,1.0
+821,Schwere Plaque-Psoriasis:,20922.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+822,Psoriasis-Arthritis:,20922.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+827,Psoriasis-Arthritis,20992.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+831,Schwere Plaque-Psoriasis,20992.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+835,Psoriasis-Arthritis,21009.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+839,Schwere Plaque-Psoriasis,21009.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+845,Tumornekrosefaktor-Rezeptor-assoziiertes periodisches Syndrom (TRAPS):,19119.03,NORMALIZED_MATCH,same dossier 19119,1.0
+846,Hyperimmunglobulin-D-Syndrom (HIDS)/Mevalonatkinasedefizienz (MKD):,19119.04,NORMALIZED_MATCH,same dossier 19119,1.0
+847,Familiäres Mittelmeerfieber (FMF):,19119.05,NORMALIZED_MATCH,same dossier 19119,1.0
+878,Plaque-Psoriasis,21476.01,NORMALIZED_CROSS,ind_part .01 from 21652.01,0.95
+879,Plaque-Psoriasis,21477.01,NORMALIZED_CROSS,ind_part .01 from 21652.01,0.95
+880,"Morbus Waldenström (MW, Monotherapie)",21365.05,NORMALIZED_CROSS,ind_part .05 from 21011.05,0.95
+921,Colitis ulcerosa:,20037.04,NORMALIZED_CROSS,ind_part .04 from 20752.04,0.95
+922,Psoriasis Arthritis:,20037.02,NORMALIZED_CROSS,ind_part .02 from 21476.02,0.95
+930,Psoriasis-Arthritis,21203.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+934,Schwere Plaque-Psoriasis,21203.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+938,Psoriasis-Arthritis,21266.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+942,Schwere Plaque-Psoriasis,21266.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+946,Psoriasis-Arthritis,20992.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+950,Schwere Plaque-Psoriasis,20992.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+954,Psoriasis-Arthritis,21009.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+958,Schwere Plaque-Psoriasis,21009.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+964,Psoriasis-Arthritis,21453.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+968,Schwere Plaque-Psoriasis,21453.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+972,Psoriasis-Arthritis,21452.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+976,Schwere Plaque-Psoriasis,21452.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+980,Psoriasis-Arthritis ,21095.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+984,Schwere Plaque-Psoriasis ,21095.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+988,Psoriasis-Arthritis ,21095.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+992,Schwere Plaque-Psoriasis ,21095.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+996,Psoriasis-Arthritis ,21095.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+1000,Schwere Plaque-Psoriasis ,21095.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1004,Psoriasis-Arthritis ,18538.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+1008,Schwere Plaque-Psoriasis ,18538.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1012,Psoriasis-Arthritis ,17903.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+1016,Schwere Plaque-Psoriasis ,17903.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1020,Psoriasis-Arthritis,20968.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+1024,Schwere Plaque-Psoriasis,20968.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1028,Psoriasis-Arthritis,20969.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+1032,Schwere Plaque-Psoriasis,20969.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1036,Psoriasis-Arthritis ,21086.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+1040,Schwere Plaque-Psoriasis ,21086.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1044,Psoriasis-Arthritis ,21086.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+1048,Schwere Plaque-Psoriasis ,21086.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1052,Psoriasis-Arthritis ,21086.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+1056,Schwere Plaque-Psoriasis ,21086.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1060,Psoriasis-Arthritis,21076.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+1064,Schwere Plaque-Psoriasis,21076.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1068,Psoriasis-Arthritis,21079.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+1072,Schwere Plaque-Psoriasis,21079.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1093,Ovarialkarzinom nach Erstlinienchemotherapie,20852.02,NORMALIZED_CROSS,ind_part .02 from 21597.02,0.95
+1094,Monotherapie,20852.01,NORMALIZED_CROSS,ind_part .01 from 20589.01,0.95
+1095,Ovarialkarzinom nach Erstlinienchemotherapie,20852.02,NORMALIZED_CROSS,ind_part .02 from 21597.02,0.95
+1115,Psoriasis-Arthritis ,21479.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+1119,Schwere Plaque-Psoriasis ,21479.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1123,Psoriasis-Arthritis ,21480.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+1127,Schwere Plaque-Psoriasis ,21480.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1165,Morbus Crohn,21536.03,NORMALIZED_CROSS,ind_part .03 from 20752.03,0.95
+1168,Schwere Plaque-Psoriasis,21536.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1169,Psoriasis Arthritis,21536.02,NORMALIZED_CROSS,ind_part .02 from 21476.02,0.95
+1182,Ovarialkarzinom nach Erstlinienchemotherapie,21090.02,NORMALIZED_CROSS,ind_part .02 from 21597.02,0.95
+1205,Morbus Crohn,21606.03,NORMALIZED_CROSS,ind_part .03 from 20752.03,0.95
+1208,Schwere Plaque-Psoriasis,21606.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1209,Psoriasis Arthritis,21606.02,NORMALIZED_CROSS,ind_part .02 from 21476.02,0.95
+1210,Hämatologie:,20820.01,NORMALIZED_CROSS,ind_part .01 from 17079.01,0.95
+1211,Autoimmunerkrankungen:,20820.02,NORMALIZED_CROSS,ind_part .02 from 17079.02,0.95
+1213,Hämatologie:,20815.01,NORMALIZED_CROSS,ind_part .01 from 17079.01,0.95
+1214,Autoimmunerkrankungen:,20815.02,NORMALIZED_CROSS,ind_part .02 from 17079.02,0.95
+1285,Behandlung von Erwachsenen mit paroxysmaler nächtlicher Hämoglobinurie (PNH),21024.01,NORMALIZED_CROSS,ind_part .01 from 21557.01,0.95
+1294,"Morbus Waldenström (MW, Monotherapie)",21365.05,NORMALIZED_CROSS,ind_part .05 from 21011.05,0.95
+1304,Schwere Plaque-Psoriasis:,20900.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1305,Schwere Plaque-Psoriasis:,20900.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1312,Psoriasis-Arthritis,21028.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+1333,Tumornekrosefaktor-Rezeptor-assoziiertes periodisches Syndrom (TRAPS):,19119.03,NORMALIZED_MATCH,same dossier 19119,1.0
+1334,Hyperimmunglobulin-D-Syndrom (HIDS)/Mevalonatkinasedefizienz (MKD):,19119.04,NORMALIZED_MATCH,same dossier 19119,1.0
+1335,Familiäres Mittelmeerfieber (FMF):,19119.05,NORMALIZED_MATCH,same dossier 19119,1.0
+1345,Morbus Crohn (nur 360 mg und 600 mg),20922.03,NORMALIZED_MATCH,same dossier 21718,1.0
+1346,Morbus Crohn (nur 360 mg und 600 mg),21719.03,NORMALIZED_CROSS,ind_part .03 from 20922.03,0.95
+1387,Patienten mit Hämophilie A mit Hemmkörpern,21692.01,NORMALIZED_CROSS,ind_part .01 from 20818.01,0.95
+1390,Autoimmunerkrankungen:,20820.02,NORMALIZED_CROSS,ind_part .02 from 17079.02,0.95
+1395,Autoimmunerkrankungen:,20815.02,NORMALIZED_CROSS,ind_part .02 from 17079.02,0.95
+1409,Psoriasis-Arthritis,21203.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+1413,Schwere Plaque-Psoriasis,21203.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1418,Psoriasis-Arthritis,21266.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+1422,Schwere Plaque-Psoriasis,21266.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1430,Psoriasis-Arthritis,20992.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+1434,Schwere Plaque-Psoriasis,20992.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1439,Psoriasis-Arthritis,21009.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+1443,Schwere Plaque-Psoriasis,21009.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1445,Ovarialkarzinom nach Erstlinienchemotherapie,18082.02,NORMALIZED_CROSS,ind_part .02 from 21597.02,0.95
+1456,Ovarialkarzinom nach Erstlinienchemotherapie,21264.02,NORMALIZED_CROSS,ind_part .02 from 21597.02,0.95
+1481,Psoriasis-Arthritis,21453.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+1485,Schwere Plaque-Psoriasis,21453.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1490,Psoriasis-Arthritis,21452.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+1494,Schwere Plaque-Psoriasis,21452.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1499,Psoriasis-Arthritis ,21095.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+1503,Schwere Plaque-Psoriasis ,21095.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1508,Psoriasis-Arthritis ,21095.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+1512,Schwere Plaque-Psoriasis ,21095.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1517,Psoriasis-Arthritis ,21095.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+1521,Schwere Plaque-Psoriasis ,21095.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1529,Psoriasis-Arthritis,20968.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+1533,Schwere Plaque-Psoriasis,20968.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1538,Psoriasis-Arthritis,20969.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+1542,Schwere Plaque-Psoriasis,20969.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1547,Psoriasis-Arthritis ,21086.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+1551,Schwere Plaque-Psoriasis ,21086.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1556,Psoriasis-Arthritis ,21086.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+1560,Schwere Plaque-Psoriasis ,21086.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1565,Psoriasis-Arthritis ,21086.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+1569,Schwere Plaque-Psoriasis ,21086.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1577,Psoriasis-Arthritis,21076.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+1581,Schwere Plaque-Psoriasis,21076.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1586,Psoriasis-Arthritis,21079.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+1590,Schwere Plaque-Psoriasis,21079.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1594,Morbus Crohn,20458.03,NORMALIZED_CROSS,ind_part .03 from 20752.03,0.95
+1597,Schwere Plaque-Psoriasis,20458.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1598,Psoriasis Arthritis,20458.02,NORMALIZED_CROSS,ind_part .02 from 21476.02,0.95
+1601,Ovarialkarzinom nach Erstlinienchemotherapie,21084.02,NORMALIZED_CROSS,ind_part .02 from 21597.02,0.95
+1611,Morbus Crohn,20402.03,NORMALIZED_CROSS,ind_part .03 from 20752.03,0.95
+1614,Schwere Plaque-Psoriasis,20402.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1615,Psoriasis Arthritis,20402.02,NORMALIZED_CROSS,ind_part .02 from 21476.02,0.95
+1618,Morbus Crohn,21606.03,NORMALIZED_CROSS,ind_part .03 from 20752.03,0.95
+1621,Schwere Plaque-Psoriasis,21606.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1622,Psoriasis Arthritis,21606.02,NORMALIZED_CROSS,ind_part .02 from 21476.02,0.95
+1632,Psoriasis-Arthritis ,21479.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+1636,Schwere Plaque-Psoriasis ,21479.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1641,Psoriasis-Arthritis ,21480.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+1645,Schwere Plaque-Psoriasis ,21480.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1651,Psoriasis-Arthritis,21203.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+1655,Schwere Plaque-Psoriasis,21203.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1660,Psoriasis-Arthritis,21266.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+1664,Schwere Plaque-Psoriasis,21266.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1672,Psoriasis-Arthritis,20992.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+1676,Schwere Plaque-Psoriasis,20992.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1681,Psoriasis-Arthritis,21009.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+1685,Schwere Plaque-Psoriasis,21009.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1688,Schwere Plaque-Psoriasis,20311.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1694,Schwere Plaque-Psoriasis,20311.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1699,Schwere Plaque-Psoriasis,20316.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1703,Schwere Plaque-Psoriasis,21385.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1720,Schwere Plaque-Psoriasis:,21753.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1725,Psoriasis-Arthritis,21076.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+1729,Schwere Plaque-Psoriasis,21076.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1734,Psoriasis-Arthritis,21079.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+1738,Schwere Plaque-Psoriasis,21079.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1742,Morbus Crohn,20458.03,NORMALIZED_CROSS,ind_part .03 from 20752.03,0.95
+1745,Schwere Plaque-Psoriasis,20458.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1746,Psoriasis Arthritis,20458.02,NORMALIZED_CROSS,ind_part .02 from 21476.02,0.95
+1774,Ovarialkarzinom nach Erstlinienchemotherapie,21272.02,NORMALIZED_CROSS,ind_part .02 from 21597.02,0.95
+1778,Plaque-Psoriasis,19301.01,NORMALIZED_CROSS,ind_part .01 from 21652.01,0.95
+1779,Plaque-Psoriasis,20638.01,NORMALIZED_CROSS,ind_part .01 from 21652.01,0.95
+1780,Plaque-Psoriasis,20717.01,NORMALIZED_CROSS,ind_part .01 from 21652.01,0.95
+1781,Plaque-Psoriasis,21754.01,NORMALIZED_CROSS,ind_part .01 from 21652.01,0.95
+1782,Psoriasis-Arthritis,21754.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+1783,Morbus Crohn,21754.03,NORMALIZED_CROSS,ind_part .03 from 20752.03,0.95
+1784,Colitis ulcerosa,21754.04,NORMALIZED_CROSS,ind_part .04 from 20752.04,0.95
+1786,Ovarialkarzinom nach Erstlinienchemotherapie,21617.02,NORMALIZED_CROSS,ind_part .02 from 21597.02,0.95
+1795,Psoriasis-Arthritis ,21086.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+1799,Schwere Plaque-Psoriasis ,21086.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1804,Psoriasis-Arthritis ,21086.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+1808,Schwere Plaque-Psoriasis ,21086.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1833,Austausch Originalpräparat/Generikum,21157.01,NORMALIZED_CROSS,ind_part .01 from 21423.01,0.95
+1834,Austausch Originalpräparat/Generikum,21387.01,NORMALIZED_CROSS,ind_part .01 from 21423.01,0.95
+1835,Austausch Originalpräparat/Generikum,21032.01,NORMALIZED_CROSS,ind_part .01 from 21423.01,0.95
+1836,Austausch Originalpräparat/Generikum,21035.01,NORMALIZED_CROSS,ind_part .01 from 21423.01,0.95
+1837,Austausch Originalpräparat/Generikum,21309.01,NORMALIZED_CROSS,ind_part .01 from 21423.01,0.95
+1840,Austausch Originalpräparat/Generikum,21398.01,NORMALIZED_CROSS,ind_part .01 from 21423.01,0.95
+1842,Austausch Originalpräparat/Generikum,21377.01,NORMALIZED_CROSS,ind_part .01 from 21423.01,0.95
+1843,Austausch Originalpräparat/Generikum,21420.01,NORMALIZED_CROSS,ind_part .01 from 21423.01,0.95
+1844,Austausch Originalpräparat/Generikum,21312.01,NORMALIZED_CROSS,ind_part .01 from 21423.01,0.95
+1845,Austausch Originalpräparat/Generikum,21384.01,NORMALIZED_CROSS,ind_part .01 from 21423.01,0.95
+1846,Austausch Originalpräparat/Generikum,21626.01,NORMALIZED_CROSS,ind_part .01 from 21423.01,0.95
+1848,Austausch Originalpräparat/Generikum,21381.01,NORMALIZED_CROSS,ind_part .01 from 21423.01,0.95
+1849,Austausch Originalpräparat/Generikum,21379.01,NORMALIZED_CROSS,ind_part .01 from 21423.01,0.95
+1850,Austausch Originalpräparat/Generikum,19852.01,NORMALIZED_CROSS,ind_part .01 from 21423.01,0.95
+1851,Austausch Originalpräparat/Generikum,20351.01,NORMALIZED_CROSS,ind_part .01 from 21423.01,0.95
+1852,Austausch Originalpräparat/Generikum,20051.01,NORMALIZED_CROSS,ind_part .01 from 21423.01,0.95
+1855,Austausch Originalpräparat/Generikum,21262.01,NORMALIZED_CROSS,ind_part .01 from 21423.01,0.95
+1856,Austausch Originalpräparat/Generikum,21263.01,NORMALIZED_CROSS,ind_part .01 from 21423.01,0.95
+1857,Austausch Originalpräparat/Generikum,21251.01,NORMALIZED_CROSS,ind_part .01 from 21423.01,0.95
+1858,Austausch Originalpräparat/Generikum,21256.01,NORMALIZED_CROSS,ind_part .01 from 21423.01,0.95
+1859,Austausch Originalpräparat/Generikum,21263.01,NORMALIZED_CROSS,ind_part .01 from 21423.01,0.95
+1860,Austausch Originalpräparat/Generikum,21352.01,NORMALIZED_CROSS,ind_part .01 from 21423.01,0.95
+1861,Austausch Originalpräparat/Generikum,21243.01,NORMALIZED_CROSS,ind_part .01 from 21423.01,0.95
+1862,Austausch Originalpräparat/Generikum,21773.01,NORMALIZED_CROSS,ind_part .01 from 21423.01,0.95
+1864,Austausch Originalpräparat/Generikum,21805.01,NORMALIZED_CROSS,ind_part .01 from 21423.01,0.95
+1865,Austausch Originalpräparat/Generikum,21806.01,NORMALIZED_CROSS,ind_part .01 from 21423.01,0.95
+1907,Austausch Originalpräparat/Generikum,21263.01,NORMALIZED_CROSS,ind_part .01 from 21423.01,0.95
+1908,Austausch Originalpräparat/Generikum,21251.01,NORMALIZED_CROSS,ind_part .01 from 21423.01,0.95
+1909,Austausch Originalpräparat/Generikum,21256.01,NORMALIZED_CROSS,ind_part .01 from 21423.01,0.95
+1910,Austausch Originalpräparat/Generikum,21263.01,NORMALIZED_CROSS,ind_part .01 from 21423.01,0.95
+1911,Austausch Originalpräparat/Generikum,21352.01,NORMALIZED_CROSS,ind_part .01 from 21423.01,0.95
+1912,Austausch Originalpräparat/Generikum,21243.01,NORMALIZED_CROSS,ind_part .01 from 21423.01,0.95
+1944,Austausch Originalpräparat/Generikum,21262.01,NORMALIZED_CROSS,ind_part .01 from 21423.01,0.95
+1945,Austausch Originalpräparat/Generikum,21251.01,NORMALIZED_CROSS,ind_part .01 from 21423.01,0.95
+1947,Hämatologie:,21862.01,NORMALIZED_CROSS,ind_part .01 from 17079.01,0.95
+1948,Autoimmunerkrankungen:,21862.02,NORMALIZED_CROSS,ind_part .02 from 17079.02,0.95
+1967,Psoriasis-Arthritis,20992.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+1971,Schwere Plaque-Psoriasis,20992.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+1976,Psoriasis-Arthritis,21009.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+1980,Schwere Plaque-Psoriasis,21009.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+2001,Austausch Originalpräparat/Generikum,21880.01,NORMALIZED_CROSS,ind_part .01 from 21423.01,0.95
+2075,Psoriasis-Arthritis ,21095.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+2079,Schwere Plaque-Psoriasis ,21095.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+2084,Psoriasis-Arthritis ,21095.02,NORMALIZED_CROSS,ind_part .02 from 21327.02,0.95
+2088,Schwere Plaque-Psoriasis ,21095.01,NORMALIZED_CROSS,ind_part .01 from 21327.01,0.95
+2157,Behandlung von Erwachsenen mit paroxysmaler nächtlicher Hämoglobinurie (PNH),21024.01,NORMALIZED_CROSS,ind_part .01 from 21557.01,0.95
+2162,"Morbus Waldenström (MW, Monotherapie)",21365.05,NORMALIZED_CROSS,ind_part .05 from 21011.05,0.95
+2208,Austausch Originalpräparat/Generikum,22005.01,NORMALIZED_CROSS,ind_part .01 from 21423.01,0.95
+2333,Ovarialkarzinom nach Erstlinienchemotherapie,21090.02,NORMALIZED_CROSS,ind_part .02 from 21597.02,0.95
+28,Nicht-kleinzelliges Lungenkarzinom (NSCLC),20461.07,PIPE_PART_CROSS,ind_part .07 from 19520.07,0.9
+30,Nierenzellkarzinom (RCC),20461.03,PIPE_PART_CROSS,ind_part .03 from 19520.03,0.9
+42,Nicht-kleinzelliges Lungenkarzinom (NSCLC),20461.07,PIPE_PART_CROSS,ind_part .07 from 19520.07,0.9
+45,Nierenzellkarzinom (RCC),20461.03,PIPE_PART_CROSS,ind_part .03 from 19520.03,0.9
+58,"Indikationsübergreifende Limitatio (CRC, GIST und HCC)",20050.01,PIPE_PART_MATCH,same dossier 20050,0.95
+59,Kolorektalkarzinom (CRC),20050.01,PIPE_PART_MATCH,same dossier 20050,0.95
+60,Gastrointestinale Stromatumoren (GIST),20050.01,PIPE_PART_MATCH,same dossier 20050,0.95
+61,Leberzellkarzinom (HCC),20050.01,PIPE_PART_MATCH,same dossier 20050,0.95
+62,"Indikationsübergreifende Limitatio (CRC, GIST und HCC)",20050.01,PIPE_PART_MATCH,same dossier 20050,0.95
+63,Kolorektalkarzinom (CRC),20050.01,PIPE_PART_MATCH,same dossier 20050,0.95
+64,Gastrointestinale Stromatumoren (GIST),20050.01,PIPE_PART_MATCH,same dossier 20050,0.95
+65,Leberzellkarzinom (HCC),20050.01,PIPE_PART_MATCH,same dossier 20050,0.95
+67,"Behandlung von Erwachsenen, Kindern und Jugendlichen mit atypischem Hämolytisch-Urämischen Syndrom (aHUS)",19016.02,PIPE_PART_MATCH,same dossier 19016,0.95
+71,Nicht-kleinzelliges Lungenkarzinom (NSCLC) ,20461.07,PIPE_PART_CROSS,ind_part .07 from 19520.07,0.9
+73,Nierenzellkarzinom (RCC),20461.03,PIPE_PART_CROSS,ind_part .03 from 19520.03,0.9
+110,"Behandlung von Erwachsenen, Kindern und Jugendlichen mit atypischem Hämolytisch-Urämischen Syndrom (aHUS)",19016.02,PIPE_PART_MATCH,same dossier 19016,0.95
+118,"Behandlung von Erwachsenen, Kindern und Jugendlichen mit atypischem Hämolytisch-Urämischen Syndrom (aHUS)",19016.02,PIPE_PART_MATCH,same dossier 19016,0.95
+149,"Behandlung von Erwachsenen, Kindern und Jugendlichen mit atypischem Hämolytisch-Urämischen Syndrom (aHUS)",19016.02,PIPE_PART_MATCH,same dossier 19016,0.95
+223,"Kombination REVLIMID, Elotuzumab und Dexamethason",18541.08,KOMBI_NORMALIZED,same dossier 18541,0.9
+226,"Behandlung von Erwachsenen, Kindern und Jugendlichen mit atypischem Hämolytisch-Urämischen Syndrom (aHUS)",19016.02,PIPE_PART_MATCH,same dossier 19016,0.95
+358,"Behandlung von Erwachsenen, Kindern und Jugendlichen mit atypischem Hämolytisch-Urämischen Syndrom (aHUS)",19016.02,PIPE_PART_MATCH,same dossier 19016,0.95
+378,Nicht-kleinzelliges Lungenkarzinom (NSCLC),20461.07,PIPE_PART_CROSS,ind_part .07 from 19520.07,0.9
+381,Nierenzellkarzinom (RCC),20461.03,PIPE_PART_CROSS,ind_part .03 from 19520.03,0.9
+400,Nierenzellkarzinom (RCC),20461.03,PIPE_PART_CROSS,ind_part .03 from 19520.03,0.9
+409,Kombinationstherapie mit Bevacizumab,20852.02,PIPE_PART_MATCH,same dossier 20852,0.95
+411,Nicht-kleinzelliges Lungenkarzinom (NSCLC),20461.07,PIPE_PART_CROSS,ind_part .07 from 19520.07,0.9
+415,Nierenzellkarzinom (RCC),20461.03,PIPE_PART_CROSS,ind_part .03 from 19520.03,0.9
+421,Kombinationstherapie mit Lynparza (Olaparib),21090.08,PIPE_PART_MATCH,same dossier 21090,0.95
+422,HERCEPTIN in Kombination mit Pertuzumab (PERJETA) als adjuvante Therapie des Mammakarzinoms,17354.01,PIPE_PART_MATCH,same dossier 17354,0.95
+424,HERZUMA in Kombination mit Pertuzumab (PERJETA) als adjuvante Therapie des Mammakarzinoms,21304.01,PIPE_PART_MATCH,same dossier 21304,0.95
+426,OGIVRI in Kombination mit Pertuzumab (PERJETA) als adjuvante Therapie des Mammakarzinoms,21087.01,PIPE_PART_MATCH,same dossier 21087,0.95
+428,OGIVRI in Kombination mit Pertuzumab (PERJETA) als adjuvante Therapie des Mammakarzinoms,21109.01,PIPE_PART_CROSS,ind_part .01 from 21087.01,0.9
+434,TRAZIMERA in Kombination mit Pertuzumab (PERJETA) als adjuvante Therapie des Mammakarzinoms,20966.01,PIPE_PART_MATCH,same dossier 20966,0.95
+443,AVASTIN in Kombination mit Atezolizumab (TECENTRIQ) zur Behandlung des inoperablen oder metastasierten hepatozellulären Karzinoms (HCC),18082.08,PIPE_PART_MATCH,same dossier 18082,0.95
+447,Daratumumab in Kombination mit Lenalidomid und Dexamethason ,20589.02,KOMBI_NORMALIZED,same dossier 20589,0.9
+451,Daratumumab in Kombination mit Lenalidomid und Dexamethason ,21150.02,KOMBI_NORMALIZED,same dossier 21150,0.9
+456,KANJINTI in Kombination mit Pertuzumab (PERJETA) als adjuvante Therapie des Mammakarzinoms,21018.01,PIPE_PART_MATCH,same dossier 21018,0.95
+481,"Kombination LENALIDOMID-TEVA, Elotuzumab und Dexamethason",21379.08,KOMBI_CROSS,ind_part .08 from 18541.08,0.85
+491,OYAVAS in Kombination mit Atezolizumab (TECENTRIQ) zur Behandlung des inoperablen oder metastasierten hepatozellulären Karzinoms (HCC),21272.08,PIPE_PART_MATCH,same dossier 21272,0.95
+503,Kombinationstherapie mit Lynparza (Olaparib),21090.08,PIPE_PART_MATCH,same dossier 21090,0.95
+504,ZIRABEV in Kombination mit Atezolizumab (TECENTRIQ) zur Behandlung des inoperablen oder metastasierten hepatozellulären Karzinoms (HCC),21090.09,PIPE_PART_MATCH,same dossier 21090,0.95
+526,"Kombination LENALIDOMID-TEVA, Elotuzumab und Dexamethason",21379.08,KOMBI_CROSS,ind_part .08 from 18541.08,0.85
+553,"Kombination REVLIMID, Elotuzumab und Dexamethason",18541.08,KOMBI_NORMALIZED,same dossier 18541,0.9
+556,"Behandlung von Erwachsenen, Kindern und Jugendlichen mit atypischem Hämolytisch-Urämischen Syndrom (aHUS)",21024.02,PIPE_PART_CROSS,ind_part .02 from 19016.02,0.9
+588,"Behandlung von Erwachsenen, Kindern und Jugendlichen mit atypischem Hämolytisch-Urämischen Syndrom (aHUS)",21024.02,PIPE_PART_CROSS,ind_part .02 from 19016.02,0.9
+607,KYPROLIS in Kombination mit Daratumumab und Dexamethason (KDd),20481.02,PIPE_PART_MATCH,same dossier 20481,0.95
+614,"Kombination LENALIDOMID-TEVA, Ixazomib und Dexamethason",21379.09,KOMBI_CROSS,ind_part .09 from 18541.09,0.85
+633,"Kombination REVLIMID, Ixazomib und Dexamethason",18541.09,KOMBI_NORMALIZED,same dossier 18541,0.9
+853,"Kombination REVLIMID, Elotuzumab und Dexamethason",18541.08,KOMBI_NORMALIZED,same dossier 18541,0.9
+854,"Kombination REVLIMID, Ixazomib und Dexamethason",18541.09,KOMBI_NORMALIZED,same dossier 18541,0.9
+882,HERCEPTIN in Kombination mit Pertuzumab (PERJETA) als adjuvante Therapie des Mammakarzinoms,17354.01,PIPE_PART_MATCH,same dossier 17354,0.95
+884,HERZUMA in Kombination mit Pertuzumab (PERJETA) als adjuvante Therapie des Mammakarzinoms,21304.01,PIPE_PART_MATCH,same dossier 21304,0.95
+893,Kombination LENALIDOMID-TEVA und Tafasitamab,21379.11,KOMBI_CROSS,ind_part .11 from 18541.11,0.85
+901,OGIVRI in Kombination mit Pertuzumab (PERJETA) als adjuvante Therapie des Mammakarzinoms,21087.01,PIPE_PART_MATCH,same dossier 21087,0.95
+903,OGIVRI in Kombination mit Pertuzumab (PERJETA) als adjuvante Therapie des Mammakarzinoms,21109.01,PIPE_PART_CROSS,ind_part .01 from 21087.01,0.9
+918,TRAZIMERA in Kombination mit Pertuzumab (PERJETA) als adjuvante Therapie des Mammakarzinoms,20966.01,PIPE_PART_MATCH,same dossier 20966,0.95
+1074,KANJINTI in Kombination mit Pertuzumab (PERJETA) als adjuvante Therapie des Mammakarzinoms,21018.01,PIPE_PART_MATCH,same dossier 21018,0.95
+1096,Kombinationstherapie mit Bevacizumab,20852.02,PIPE_PART_MATCH,same dossier 20852,0.95
+1136,AVASTIN in Kombination mit Atezolizumab (TECENTRIQ) zur Behandlung des inoperablen oder metastasierten hepatozellulären Karzinoms (HCC),18082.08,PIPE_PART_MATCH,same dossier 18082,0.95
+1163,OYAVAS in Kombination mit Atezolizumab (TECENTRIQ) zur Behandlung des inoperablen oder metastasierten hepatozellulären Karzinoms (HCC),21272.08,PIPE_PART_MATCH,same dossier 21272,0.95
+1183,Kombinationstherapie mit Lynparza (Olaparib),21090.08,PIPE_PART_MATCH,same dossier 21090,0.95
+1184,ZIRABEV in Kombination mit Atezolizumab (TECENTRIQ) zur Behandlung des inoperablen oder metastasierten hepatozellulären Karzinoms (HCC),21090.09,PIPE_PART_MATCH,same dossier 21090,0.95
+1258,HERCEPTIN in Kombination mit Pertuzumab (PERJETA) als adjuvante Therapie des Mammakarzinoms,17354.01,PIPE_PART_MATCH,same dossier 17354,0.95
+1259,HERZUMA in Kombination mit Pertuzumab (PERJETA) als adjuvante Therapie des Mammakarzinoms,21304.01,PIPE_PART_MATCH,same dossier 21304,0.95
+1262,KANJINTI in Kombination mit Pertuzumab (PERJETA) als adjuvante Therapie des Mammakarzinoms,21018.01,PIPE_PART_MATCH,same dossier 21018,0.95
+1265,OGIVRI in Kombination mit Pertuzumab (PERJETA) als adjuvante Therapie des Mammakarzinoms,21087.01,PIPE_PART_MATCH,same dossier 21087,0.95
+1266,OGIVRI in Kombination mit Pertuzumab (PERJETA) als adjuvante Therapie des Mammakarzinoms,21109.01,PIPE_PART_CROSS,ind_part .01 from 21087.01,0.9
+1269,TRAZIMERA in Kombination mit Pertuzumab (PERJETA) als adjuvante Therapie des Mammakarzinoms,20966.01,PIPE_PART_MATCH,same dossier 20966,0.95
+1278,ZERCEPAC in Kombination mit Pertuzumab (PERJETA) als adjuvante Therapie des Mammakarzinoms,21605.01,PIPE_PART_MATCH,same dossier 21605,0.95
+1286,"Behandlung von Erwachsenen, Kindern und Jugendlichen mit atypischem Hämolytisch-Urämischen Syndrom (aHUS)",21024.02,PIPE_PART_CROSS,ind_part .02 from 19016.02,0.9
+1317,Hodgkin-Lymphom (HL),19989.01,PIPE_PART_MATCH,same dossier 19989,0.95
+1318,"HL (Stadium IV), Kombinationstherapie (mit Preismodell)",19989.01,PIPE_PART_MATCH,same dossier 19989,0.95
+1319,Hodgkin-Lymphom (HL),19989.01,PIPE_PART_MATCH,same dossier 19989,0.95
+1320,"Rezidiviertes oder refraktäres HL, Monotherapie (mit Preismodell)",19989.02,PIPE_PART_MATCH,same dossier 19989,0.95
+1321,Periphere T-Zell-Lymphome (PTCL),19989.03,PIPE_PART_MATCH,same dossier 19989,0.95
+1322,"PTCL, Kombinationstherapie (mit Preismodell)",19989.03,PIPE_PART_MATCH,same dossier 19989,0.95
+1323,Periphere T-Zell-Lymphome (PTCL),19989.03,PIPE_PART_MATCH,same dossier 19989,0.95
+1324,"Rezidiviertes oder refraktäres sALCL, Monotherapie (mit Preismodell)",19989.04,PIPE_PART_MATCH,same dossier 19989,0.95
+1357,LENALIDOMID ACCORD in Kombination mit DARZALEX / DARZALEX SC und Dexamethason,21398.12,KOMBI_CROSS,ind_part .12 from 18541.12,0.85
+1359,LENALIDOMID BMS in Kombination mit DARZALEX / DARZALEX SC und Dexamethason,21377.12,KOMBI_CROSS,ind_part .12 from 18541.12,0.85
+1361,LENALIDOMID DEVATIS in Kombination mit DARZALEX / DARZALEX SC und Dexamethason,21420.12,KOMBI_CROSS,ind_part .12 from 18541.12,0.85
+1363,LENALIDOMID SANDOZ in Kombination mit DARZALEX / DARZALEX SC und Dexamethason,21312.12,KOMBI_CROSS,ind_part .12 from 18541.12,0.85
+1365,LENALIDOMID SPIRIG HC in Kombination mit DARZALEX / DARZALEX SC und Dexamethason,21384.12,KOMBI_CROSS,ind_part .12 from 18541.12,0.85
+1367,LENALIDOMID VIATRIS in Kombination mit DARZALEX / DARZALEX SC und Dexamethason,21626.12,KOMBI_CROSS,ind_part .12 from 18541.12,0.85
+1369,LENALIDOMID ZENTIVA in Kombination mit DARZALEX / DARZALEX SC und Dexamethason,21381.12,KOMBI_CROSS,ind_part .12 from 18541.12,0.85
+1370,Kombination LENALIDOMID-TEVA und Tafasitamab,21379.11,KOMBI_CROSS,ind_part .11 from 18541.11,0.85
+1371,LENALIDOMID-TEVA in Kombination mit DARZALEX / DARZALEX SC und Dexamethason,21379.12,KOMBI_CROSS,ind_part .12 from 18541.12,0.85
+1446,Kombinationstherapie mit Lynparza (Olaparib),18082.09,PIPE_PART_MATCH,same dossier 18082,0.95
+1457,Kombinationstherapie mit Lynparza (Olaparib),21264.09,PIPE_PART_MATCH,same dossier 21264,0.95
+1602,Kombinationstherapie mit Lynparza (Olaparib),21084.09,PIPE_PART_MATCH,same dossier 21084,0.95
+1748,LENALIDOMID ACCORD in Kombination mit DARZALEX / DARZALEX SC und Dexamethason (2L+),21398.12,KOMBI_CROSS,ind_part .12 from 18541.12,0.85
+1749,LENALIDOMID ACCORD in Kombination mit DARZALEX / DARZALEX SC und Dexamethason (1L),21398.13,KOMBI_CROSS,ind_part .13 from 18541.13,0.85
+1751,LENALIDOMID BMS in Kombination mit DARZALEX / DARZALEX SC und Dexamethason (2L+),21377.12,KOMBI_CROSS,ind_part .12 from 18541.12,0.85
+1752,LENALIDOMID BMS in Kombination mit DARZALEX / DARZALEX SC und Dexamethason (1L),21377.13,KOMBI_CROSS,ind_part .13 from 18541.13,0.85
+1753,LENALIDOMID ACCORD in Kombination mit DARZALEX / DARZALEX SC und Dexamethason (1L),21377.13,KOMBI_CROSS,ind_part .13 from 18541.13,0.85
+1755,LENALIDOMID DEVATIS in Kombination mit DARZALEX / DARZALEX SC und Dexamethason (2L+),21420.12,KOMBI_CROSS,ind_part .12 from 18541.12,0.85
+1756,LENALIDOMID DEVATIS in Kombination mit DARZALEX / DARZALEX SC und Dexamethason (1L),21420.13,KOMBI_CROSS,ind_part .13 from 18541.13,0.85
+1758,LENALIDOMID SANDOZ in Kombination mit DARZALEX / DARZALEX SC und Dexamethason (2L+),21312.12,KOMBI_CROSS,ind_part .12 from 18541.12,0.85
+1759,LENALIDOMID SANDOZ in Kombination mit DARZALEX / DARZALEX SC und Dexamethason (1L),21312.13,KOMBI_CROSS,ind_part .13 from 18541.13,0.85
+1761,LENALIDOMID SPIRIG HC in Kombination mit DARZALEX / DARZALEX SC und Dexamethason (2L+),21384.12,KOMBI_CROSS,ind_part .12 from 18541.12,0.85
+1762,LENALIDOMID SPIRIG HC in Kombination mit DARZALEX / DARZALEX SC und Dexamethason (1L),21384.13,KOMBI_CROSS,ind_part .13 from 18541.13,0.85
+1763,LENALIDOMID VIATRIS in Kombination mit DARZALEX / DARZALEX SC und Dexamethason (2L+),21626.12,KOMBI_CROSS,ind_part .12 from 18541.12,0.85
+1764,LENALIDOMID VIATRIS in Kombination mit DARZALEX / DARZALEX SC und Dexamethason (1L),21626.13,KOMBI_CROSS,ind_part .13 from 18541.13,0.85
+1765,LENALIDOMID ACCORD in Kombination mit DARZALEX / DARZALEX SC und Dexamethason (2L+),21626.12,KOMBI_CROSS,ind_part .12 from 18541.12,0.85
+1767,LENALIDOMID ZENTIVA in Kombination mit DARZALEX / DARZALEX SC und Dexamethason (2L+),21381.12,KOMBI_CROSS,ind_part .12 from 18541.12,0.85
+1768,LENALIDOMID ZENTIVA in Kombination mit DARZALEX / DARZALEX SC und Dexamethason (1L),21381.13,KOMBI_CROSS,ind_part .13 from 18541.13,0.85
+1769,Kombination LENALIDOMID-TEVA und Tafasitamab,21379.11,KOMBI_CROSS,ind_part .11 from 18541.11,0.85
+1770,LENALIDOMID-TEVA in Kombination mit DARZALEX / DARZALEX SC und Dexamethason (2L+),21379.12,KOMBI_CROSS,ind_part .12 from 18541.12,0.85
+1771,LENALIDOMID-TEVA in Kombination mit DARZALEX / DARZALEX SC und Dexamethason (1L),21379.13,KOMBI_CROSS,ind_part .13 from 18541.13,0.85
+1773,Oyavas in Kombination mit Atezolizumab (TECENTRIQ) zur Behandlung des inoperablen oder metastasierten hepatozellulären Karzinoms (HCC),21272.08,PIPE_PART_MATCH,same dossier 21272,0.95
+1775,Kombinationstherapie mit Lynparza (Olaparib),21272.09,PIPE_PART_MATCH,same dossier 21272,0.95
+1787,Kombinationstherapie mit Lynparza (Olaparib),21617.09,PIPE_PART_MATCH,same dossier 21617,0.95
+1790,POMALIDOMID SANDOZ in Kombination mit Daratumumab und Dexamethason (2L+),21773.03,KOMBI_CROSS,ind_part .03 from 20221.03,0.85
+1791,POMALIDOMID SANDOZ in Kombination mit Isatuximab und Dexamethason,21773.04,KOMBI_CROSS,ind_part .04 from 20221.04,0.85
+1811,POMALIDOMID ZENTIVA in Kombination mit Daratumumab und Dexamethason (2L+),21806.03,KOMBI_CROSS,ind_part .03 from 20221.03,0.85
+1812,POMALIDOMID ZENTIVA in Kombination mit Isatuximab und Dexamethason,21806.04,KOMBI_CROSS,ind_part .04 from 20221.04,0.85
+1813,"Behandlung von Erwachsenen, Kindern und Jugendlichen mit atypischem Hämolytisch-Urämischen Syndrom (aHUS)",19016.02,PIPE_PART_MATCH,same dossier 19016,0.95
+1817,POMALIDOMID SPIRIG HC in Kombination mit Daratumumab und Dexamethason (2L+),21805.03,KOMBI_CROSS,ind_part .03 from 20221.03,0.85
+1818,POMALIDOMID SPIRIG HC in Kombination mit Isatuximab und Dexamethason,21805.04,KOMBI_CROSS,ind_part .04 from 20221.04,0.85
+1841,LENALIDOMID VIATRIS in Kombination mit DARZALEX / DARZALEX SC und Dexamethason (2L+),21398.12,KOMBI_CROSS,ind_part .12 from 18541.12,0.85
+1847,LENALIDOMID VIATRIS in Kombination mit DARZALEX / DARZALEX SC und Dexamethason (2L+),21626.12,KOMBI_CROSS,ind_part .12 from 18541.12,0.85
+1863,POMALIDOMID SANDOZ in Kombination mit Daratumumab und Dexamethason (2L+),21773.03,KOMBI_CROSS,ind_part .03 from 20221.03,0.85
+1904,Kombination LENALIDOMID-TEVA und Tafasitamab,21379.11,KOMBI_CROSS,ind_part .11 from 18541.11,0.85
+1929,4-24 Monate:,20145.01,PIPE_PART_MATCH,same dossier 20145,0.95
+1930,2-11 Jahre:,20145.01,PIPE_PART_MATCH,same dossier 20145,0.95
+1931,Ab 12 Jahren:,20145.01,PIPE_PART_MATCH,same dossier 20145,0.95
+1932,4-24 Monate:,21563.01,PIPE_PART_MATCH,same dossier 21563,0.95
+1933,2-11 Jahre:,21563.01,PIPE_PART_MATCH,same dossier 21563,0.95
+1934,Ab 12 Jahren:,21563.01,PIPE_PART_MATCH,same dossier 21563,0.95
+1935,4-24 Monate:,20543.01,PIPE_PART_MATCH,same dossier 20543,0.95
+1936,2-11 Jahre:,20543.01,PIPE_PART_MATCH,same dossier 20543,0.95
+1937,Ab 12 Jahren:,20543.01,PIPE_PART_MATCH,same dossier 20543,0.95
+1938,4-24 Monate:,20543.01,PIPE_PART_MATCH,same dossier 20543,0.95
+1939,2-11 Jahre:,20543.01,PIPE_PART_MATCH,same dossier 20543,0.95
+1940,Ab 12 Jahren:,20543.01,PIPE_PART_MATCH,same dossier 20543,0.95
+1941,4-24 Monate:,21561.01,PIPE_PART_MATCH,same dossier 21561,0.95
+1942,2-11 Jahre:,21561.01,PIPE_PART_MATCH,same dossier 21561,0.95
+1943,Ab 12 Jahren:,21561.01,PIPE_PART_MATCH,same dossier 21561,0.95
+1951,4-24 Monate:,20914.01,PIPE_PART_MATCH,same dossier 20914,0.95
+1952,2-11 Jahre:,20914.01,PIPE_PART_MATCH,same dossier 20914,0.95
+1953,Ab 12 Jahren:,20914.01,PIPE_PART_MATCH,same dossier 20914,0.95
+1955,4-24 Monate:,21144.01,PIPE_PART_MATCH,same dossier 21144,0.95
+1956,2-11 Jahre:,21144.01,PIPE_PART_MATCH,same dossier 21144,0.95
+1957,Ab 12 Jahren:,21144.01,PIPE_PART_MATCH,same dossier 21144,0.95
+1958,4-24 Monate:,21144.01,PIPE_PART_MATCH,same dossier 21144,0.95
+1959,2-11 Jahre:,21144.01,PIPE_PART_MATCH,same dossier 21144,0.95
+1960,Ab 12 Jahren:,21144.01,PIPE_PART_MATCH,same dossier 21144,0.95
+1961,4-24 Monate:,21777.01,PIPE_PART_MATCH,same dossier 21777,0.95
+1962,2-11 Jahre:,21777.01,PIPE_PART_MATCH,same dossier 21777,0.95
+1963,Ab 12 Jahren:,21777.01,PIPE_PART_MATCH,same dossier 21777,0.95
+2002,"Kombination POMALIDOMID-TEVA, Elotuzumab und Dexamethason",21880.01,KOMBI_CROSS,ind_part .01 from 20221.01,0.85
+2003,POMALIDOMID-TEVA in Kombination mit Daratumumab und Dexamethason (2L+),21880.03,KOMBI_CROSS,ind_part .03 from 20221.03,0.85
+2004,POMALIDOMID-TEVA in Kombination mit Isatuximab und Dexamethason,21880.04,KOMBI_CROSS,ind_part .04 from 20221.04,0.85
+2005,POMALIDOMID SANDOZ in Kombination mit Isatuximab und Dexamethason,21880.04,KOMBI_CROSS,ind_part .04 from 20221.04,0.85
+2027,LENALIDOMID ACCORD in Kombination mit Elotuzumab und Dexamethason,21398.08,KOMBI_CROSS,ind_part .08 from 18541.08,0.85
+2028,LENALIDOMID BMS in Kombination mit Elotuzumab und Dexamethason,21377.08,KOMBI_CROSS,ind_part .08 from 18541.08,0.85
+2029,LENALIDOMID DEVATIS in Kombination mit Elotuzumab und Dexamethason,21420.08,KOMBI_CROSS,ind_part .08 from 18541.08,0.85
+2030,LENALIDOMID SANDOZ in Kombination mit Elotuzumab und Dexamethason,21312.08,KOMBI_CROSS,ind_part .08 from 18541.08,0.85
+2031,LENALIDOMID SPIRIG HC in Kombination mit Elotuzumab und Dexamethason,21384.08,KOMBI_CROSS,ind_part .08 from 18541.08,0.85
+2032,LENALIDOMID VIATRIS in Kombination mit Elotuzumab und Dexamethason,21626.08,KOMBI_CROSS,ind_part .08 from 18541.08,0.85
+2033,LENALIDOMID ZENTIVA in Kombination mit Elotuzumab und Dexamethason,21381.08,KOMBI_CROSS,ind_part .08 from 18541.08,0.85
+2034,LENALIDOMID-TEVA in Kombination mit Elotuzumab und Dexamethason,21379.08,KOMBI_CROSS,ind_part .08 from 18541.08,0.85
+2041,Melanom Kombinationstherapie,19520.02,PIPE_PART_MATCH,same dossier 19520,0.95
+2042,Nierenzellkarzinom (RCC),19520.03,PIPE_PART_MATCH,same dossier 19520,0.95
+2043,Kolorektales Karzinom (CRC) mit dMMR/MSI-H,19520.04,PIPE_PART_MATCH,same dossier 19520,0.95
+2044,Ösophageales Plattenepithelkarzinom (OSCC),19520.05,PIPE_PART_MATCH,same dossier 19520,0.95
+2045,Malignes pleurales Mesotheliom (MPM),19520.06,PIPE_PART_MATCH,same dossier 19520,0.95
+2068,Vitiligo Erwachsene und Jugendliche ab 12 Jahren,21819.01,PIPE_PART_MATCH,same dossier 21819,0.95
+2103,LENALIDOMID ACCORD in Kombination mit Ixazomib und Dexamethason,21398.09,KOMBI_CROSS,ind_part .09 from 18541.09,0.85
+2104,LENALIDOMID BMS in Kombination mit DARZALEX / DARZALEX SC und Dexamethason (2L+),21377.12,KOMBI_CROSS,ind_part .12 from 18541.12,0.85
+2105,LENALIDOMID BMS in Kombination mit Ixazomib und Dexamethason,21377.09,KOMBI_CROSS,ind_part .09 from 18541.09,0.85
+2106,LENALIDOMID DEVATIS in Kombination mit Ixazomib und Dexamethason,21420.09,KOMBI_CROSS,ind_part .09 from 18541.09,0.85
+2107,LENALIDOMID SANDOZ in Kombination mit Ixazomib und Dexamethason,21312.09,KOMBI_CROSS,ind_part .09 from 18541.09,0.85
+2108,LENALIDOMID SPIRIG HC in Kombination mit Ixazomib und Dexamethason,21384.09,KOMBI_CROSS,ind_part .09 from 18541.09,0.85
+2109,LENALIDOMID VIATRIS in Kombination mit Ixazomib und Dexamethason,21626.09,KOMBI_CROSS,ind_part .09 from 18541.09,0.85
+2111,LENALIDOMID ZENTIVA in Kombination mit Ixazomib und Dexamethason,21381.09,KOMBI_CROSS,ind_part .09 from 18541.09,0.85
+2112,LENALIDOMID-TEVA in Kombination mit Ixazomib und Dexamethason,21379.09,KOMBI_CROSS,ind_part .09 from 18541.09,0.85
+2158,"Behandlung von Erwachsenen, Kindern und Jugendlichen mit atypischem Hämolytisch-Urämischen Syndrom (aHUS)",21024.02,PIPE_PART_CROSS,ind_part .02 from 19016.02,0.9
+2160,Nicht-kleinzelliges Lungenkarzinom (NSCLC),19520.07,PIPE_PART_MATCH,same dossier 19520,0.95
+2172,KYPROLIS in Kombination mit Dexamethason (Kd),20481.04,PIPE_PART_MATCH,same dossier 20481,0.95
+2173,KYPROLIS in Kombination mit Daratumumab und Dexamethason (KDd),20481.02,PIPE_PART_MATCH,same dossier 20481,0.95
+2178,Vitiligo Erwachsene und Jugendliche ab 12 Jahren,21819.01,PIPE_PART_MATCH,same dossier 21819,0.95
+2199,"Behandlung von Erwachsenen, Kindern und Jugendlichen mit atypischem Hämolytisch-Urämischen Syndrom (aHUS)",21024.02,PIPE_PART_CROSS,ind_part .02 from 19016.02,0.9
+2210,POMALIDOMID ACCORD in Kombination mit Daratumumab und Dexamethason (2L+),22005.03,KOMBI_CROSS,ind_part .03 from 20221.03,0.85
+2211,POMALIDOMID ACCORD in Kombination mit Isatuximab und Dexamethason,22005.04,KOMBI_CROSS,ind_part .04 from 20221.04,0.85
+2226,HERCEPTIN in Kombination mit Pertuzumab (PERJETA) als adjuvante Therapie des Mammakarzinoms,17354.01,PIPE_PART_MATCH,same dossier 17354,0.95
+2227,HERZUMA in Kombination mit Pertuzumab (PERJETA) als adjuvante Therapie des Mammakarzinoms,21304.01,PIPE_PART_MATCH,same dossier 21304,0.95
+2230,KANJINTI in Kombination mit Pertuzumab (PERJETA) als adjuvante Therapie des Mammakarzinoms,21018.01,PIPE_PART_MATCH,same dossier 21018,0.95
+2244,LENALIDOMID SANDOZ in Kombination mit DARZALEX / DARZALEX SC und Dexamethason (2L+),21312.12,KOMBI_CROSS,ind_part .12 from 18541.12,0.85
+2247,LENALIDOMID SPIRIG HC in Kombination mit DARZALEX / DARZALEX SC und Dexamethason (2L+),21384.12,KOMBI_CROSS,ind_part .12 from 18541.12,0.85
+2252,Kombination LENALIDOMID-TEVA und Tafasitamab,21379.11,KOMBI_CROSS,ind_part .11 from 18541.11,0.85
+2261,OGIVRI in Kombination mit Pertuzumab (PERJETA) als adjuvante Therapie des Mammakarzinoms,21087.01,PIPE_PART_MATCH,same dossier 21087,0.95
+2262,OGIVRI in Kombination mit Pertuzumab (PERJETA) als adjuvante Therapie des Mammakarzinoms,21109.01,PIPE_PART_CROSS,ind_part .01 from 21087.01,0.9
+2309,TRAZIMERA in Kombination mit Pertuzumab (PERJETA) als adjuvante Therapie des Mammakarzinoms,20966.01,PIPE_PART_MATCH,same dossier 20966,0.95
+2326,Melanom Kombinationstherapie,19520.02,PIPE_PART_MATCH,same dossier 19520,0.95
+2327,Nierenzellkarzinom (RCC),19520.03,PIPE_PART_MATCH,same dossier 19520,0.95
+2328,Kolorektales Karzinom (CRC) mit dMMR/MSI-H,19520.04,PIPE_PART_MATCH,same dossier 19520,0.95
+2329,Ösophageales Plattenepithelkarzinom (OSCC),19520.05,PIPE_PART_MATCH,same dossier 19520,0.95
+2330,Malignes pleurales Mesotheliom (MPM),19520.06,PIPE_PART_MATCH,same dossier 19520,0.95
+2334,Kombinationstherapie mit Lynparza (Olaparib),21090.08,PIPE_PART_MATCH,same dossier 21090,0.95
+2338,ZIRABEV in Kombination mit Atezolizumab (TECENTRIQ) zur Behandlung des inoperablen oder metastasierten hepatozellulären Karzinoms (HCC),21090.09,PIPE_PART_MATCH,same dossier 21090,0.95
+2348,Gewichtsregulierung Erwachsene:,21593.02,PIPE_PART_MATCH,same dossier 21593,0.95
+2350,Gewichtsregulierung Erwachsene:,21977.02,PIPE_PART_MATCH,same dossier 21977,0.95
+887,Kombination LENALIDOMID ACCORD und Tafasitamab,21398.11,BRAND_CROSS,ind_part .11 from 18541.11,0.85
+888,Kombination LENALIDOMID BMS und Tafasitamab,21377.11,BRAND_CROSS,ind_part .11 from 18541.11,0.85
+889,Kombination LENALIDOMID DEVATIS und Tafasitamab,21420.11,BRAND_CROSS,ind_part .11 from 18541.11,0.85
+890,Kombination LENALIDOMID SANDOZ und Tafasitamab,21312.11,BRAND_CROSS,ind_part .11 from 18541.11,0.85
+891,Kombination LENALIDOMID SPIRIG HC und Tafasitamab,21384.11,BRAND_CROSS,ind_part .11 from 18541.11,0.85
+892,Kombination LENALIDOMID ZENTIVA und Tafasitamab,21381.11,BRAND_CROSS,ind_part .11 from 18541.11,0.85
+960,Kombination DECITABIN ACCORD und Venetoclax,21554.01,BRAND_CROSS,ind_part .01 from 21512.01,0.85
+1284,Kombination LENALIDOMID Viatris und Tafasitamab,21626.11,BRAND_CROSS,ind_part .11 from 18541.11,0.85
+1356,Kombination LENALIDOMID ACCORD und Tafasitamab,21398.11,BRAND_CROSS,ind_part .11 from 18541.11,0.85
+1358,Kombination LENALIDOMID BMS und Tafasitamab,21377.11,BRAND_CROSS,ind_part .11 from 18541.11,0.85
+1360,Kombination LENALIDOMID DEVATIS und Tafasitamab,21420.11,BRAND_CROSS,ind_part .11 from 18541.11,0.85
+1362,Kombination LENALIDOMID SANDOZ und Tafasitamab,21312.11,BRAND_CROSS,ind_part .11 from 18541.11,0.85
+1364,Kombination LENALIDOMID SPIRIG HC und Tafasitamab,21384.11,BRAND_CROSS,ind_part .11 from 18541.11,0.85
+1366,Kombination LENALIDOMID VIATRIS und Tafasitamab,21626.11,BRAND_CROSS,ind_part .11 from 18541.11,0.85
+1368,Kombination LENALIDOMID ZENTIVA und Tafasitamab,21381.11,BRAND_CROSS,ind_part .11 from 18541.11,0.85
+1747,Kombination LENALIDOMID ACCORD und Tafasitamab,21398.11,BRAND_CROSS,ind_part .11 from 18541.11,0.85
+1750,Kombination LENALIDOMID BMS und Tafasitamab,21377.11,BRAND_CROSS,ind_part .11 from 18541.11,0.85
+1754,Kombination LENALIDOMID DEVATIS und Tafasitamab,21420.11,BRAND_CROSS,ind_part .11 from 18541.11,0.85
+1757,Kombination LENALIDOMID SANDOZ und Tafasitamab,21312.11,BRAND_CROSS,ind_part .11 from 18541.11,0.85
+1760,Kombination LENALIDOMID SPIRIG HC und Tafasitamab,21384.11,BRAND_CROSS,ind_part .11 from 18541.11,0.85
+1766,Kombination LENALIDOMID ZENTIVA und Tafasitamab,21381.11,BRAND_CROSS,ind_part .11 from 18541.11,0.85
+1789,"Kombination POMALIDOMID SANDOZ, Elotuzumab und Dexamethason",21773.01,BRAND_CROSS,ind_part .01 from 20221.01,0.85
+1810,"Kombination POMALIDOMID ZENTIVA, Elotuzumab und Dexamethason",21806.01,BRAND_CROSS,ind_part .01 from 20221.01,0.85
+1816,"Kombination POMALIDOMID SPIRIG HC, Elotuzumab und Dexamethason",21805.01,BRAND_CROSS,ind_part .01 from 20221.01,0.85
+1838,Kombination DECITABIN ACCORD und Venetoclax,21554.01,BRAND_CROSS,ind_part .01 from 21512.01,0.85
+1874,Kombination DECITABIN IDEOGEN und Venetoclax,21846.01,BRAND_CROSS,ind_part .01 from 21512.01,0.85
+1897,Kombination LENALIDOMID ACCORD und Tafasitamab,21398.11,BRAND_CROSS,ind_part .11 from 18541.11,0.85
+1898,Kombination LENALIDOMID BMS und Tafasitamab,21377.11,BRAND_CROSS,ind_part .11 from 18541.11,0.85
+1899,Kombination LENALIDOMID DEVATIS und Tafasitamab,21420.11,BRAND_CROSS,ind_part .11 from 18541.11,0.85
+1900,Kombination LENALIDOMID SANDOZ und Tafasitamab,21312.11,BRAND_CROSS,ind_part .11 from 18541.11,0.85
+1901,Kombination LENALIDOMID SPIRIG HC und Tafasitamab,21384.11,BRAND_CROSS,ind_part .11 from 18541.11,0.85
+1902,Kombination LENALIDOMID VIATRIS und Tafasitamab,21626.11,BRAND_CROSS,ind_part .11 from 18541.11,0.85
+1903,Kombination LENALIDOMID ZENTIVA und Tafasitamab,21381.11,BRAND_CROSS,ind_part .11 from 18541.11,0.85
+2110,Kombination LENALIDOMID ZENTIVA und Tafasitamab,21381.11,BRAND_CROSS,ind_part .11 from 18541.11,0.85
+2209,"Kombination POMALIDOMID ACCORD, Elotuzumab und Dexamethason",22005.01,BRAND_CROSS,ind_part .01 from 20221.01,0.85
+2237,Kombination LENALIDOMID ACCORD und Tafasitamab,21398.11,BRAND_CROSS,ind_part .11 from 18541.11,0.85
+2239,Kombination LENALIDOMID BMS und Tafasitamab,21377.11,BRAND_CROSS,ind_part .11 from 18541.11,0.85
+2241,Kombination LENALIDOMID DEVATIS und Tafasitamab,21420.11,BRAND_CROSS,ind_part .11 from 18541.11,0.85
+2243,Kombination LENALIDOMID SANDOZ und Tafasitamab,21312.11,BRAND_CROSS,ind_part .11 from 18541.11,0.85
+2246,Kombination LENALIDOMID SPIRIG HC und Tafasitamab,21384.11,BRAND_CROSS,ind_part .11 from 18541.11,0.85
+2249,Kombination LENALIDOMID VIATRIS und Tafasitamab,21626.11,BRAND_CROSS,ind_part .11 from 18541.11,0.85
+86,Renale Anämie bei Niereninsuffizienz.,17807.01,FUZZY_MATCHED,Renale Anämie bei Niereninsuffizienz: 17807.1,0.9024390243902439
+87,Myelodysplastisches Syndrom der Risikogruppen low oder intermediate-1:,17807.02,FUZZY_MATCHED,Myelodysplastisches Syndrom der Risikogruppen low oder intermediate-1: 17807.3,0.9387755102040817
+253,Myelodysplastisches Syndrom der Risikogruppen low oder intermediate-1:,17807.02,FUZZY_MATCHED,Myelodysplastisches Syndrom der Risikogruppen low oder intermediate-1: 17807.3,0.9387755102040817
+395,"Morbus Waldenström (MW, Mono- und Kombinationstherapie)",21011.06,FUZZY_MATCHED,"Morbus Waldenström (MW, Kombinationstherapie)",0.9
+454,DARZALEX SC in Kombination mit Pomalidomid und Dexamethason,21150.06,FUZZY_MATCHED,DARZALEX SC in Kombination mit Pomalidomid und Dexamethason (2L+),0.9516129032258065
+603,Darzalex in Kombination mit Carfilzomib und Dexamethason (KDd),20589.07,FUZZY_MATCHED,DARZALEX in Kombination mit Carfilzomib und Dexamethason (2L+),0.9516129032258065
+604,Darzalex in Kombination mit Carfilzomib und Dexamethason (KDd),21150.07,FUZZY_MATCHED,DARZALEX SC in Kombination mit Carfilzomib und Dexamethason (2L+),0.9291338582677166
+886,IMNOVID in Kombination mit Daratumumab und Dexamethason,20221.03,FUZZY_MATCHED,IMNOVID in Kombination mit Daratumumab und Dexamethason (2L+),0.9482758620689655
+11,Follikuläres Lymphom (FL),20248.xx,SINGLE_SEGMENT_CODE,only code for lim 372,1.0
+22,Melanom,20416.xx,SINGLE_SEGMENT_CODE,only code for lim 476,1.0
+24,2L NSCLC,20416.xx,SINGLE_SEGMENT_CODE,only code for lim 478,1.0
+25,Melanom,20416.xx,SINGLE_SEGMENT_CODE,only code for lim 479,1.0
+27,2L NSCLC,20416.xx,SINGLE_SEGMENT_CODE,only code for lim 481,1.0
+31,Follikuläres Lymphom (FL),20248.xx,SINGLE_SEGMENT_CODE,only code for lim 1023,1.0
+32,Melanom,20416.xx,SINGLE_SEGMENT_CODE,only code for lim 1025,1.0
+34,2L NSCLC,20416.xx,SINGLE_SEGMENT_CODE,only code for lim 1027,1.0
+43,Melanom,20461.xx,SINGLE_SEGMENT_CODE,only code for lim 1046,1.0
+44,Melanom,20461.xx,SINGLE_SEGMENT_CODE,only code for lim 1047,1.0
+46,Plattenepithelkarzinom im Kopf-Hals-Bereich (SCCHN),20461.xx,SINGLE_SEGMENT_CODE,only code for lim 1049,1.0
+47,Klassisches Hodgkin-Lymphom (cHL),20461.xx,SINGLE_SEGMENT_CODE,only code for lim 1050,1.0
+48,Metastasierter Brustkrebs (mBC),19972.xx,SINGLE_SEGMENT_CODE,only code for lim 1059,1.0
+50,Melanom,20461.xx,SINGLE_SEGMENT_CODE,only code for lim 1075,1.0
+51,Melanom,20416.xx,SINGLE_SEGMENT_CODE,only code for lim 1085,1.0
+53,2L NSCLC,20416.xx,SINGLE_SEGMENT_CODE,only code for lim 1087,1.0
+54,Klassisches Hodgkin Lymphom,20416.xx,SINGLE_SEGMENT_CODE,only code for lim 1088,1.0
+55,Urothelkarzinom,20416.xx,SINGLE_SEGMENT_CODE,only code for lim 1089,1.0
+56,Erstlinienbehandlung,20594.xx,SINGLE_SEGMENT_CODE,only code for lim 1095,1.0
+57,Zweit- oder Drittlinienbehandlung,20594.xx,SINGLE_SEGMENT_CODE,only code for lim 1096,1.0
+72,Melanom,20461.xx,SINGLE_SEGMENT_CODE,only code for lim 1152,1.0
+74,Plattenepithelkarzinom im Kopf-Hals-Bereich (SCCHN),20461.xx,SINGLE_SEGMENT_CODE,only code for lim 1154,1.0
+75,Klassisches Hodgkin-Lymphom (cHL),20461.xx,SINGLE_SEGMENT_CODE,only code for lim 1155,1.0
+88,Renale Anämie bei Niereninsuffizienz.,19007.xx,SINGLE_SEGMENT_CODE,only code for lim 1216,1.0
+89,Renale Anämie bei Niereninsuffizienz.,15497.xx,SINGLE_SEGMENT_CODE,only code for lim 1220,1.0
+92,Renale Anämie bei Niereninsuffizienz.,17227.xx,SINGLE_SEGMENT_CODE,only code for lim 1227,1.0
+93,Rheumatoide Arthritis:,20037.xx,SINGLE_SEGMENT_CODE,only code for lim 1268,1.0
+100,Kolorektales Karzinom (CRC) mit dMMR/ MSI-H,20461.xx,SINGLE_SEGMENT_CODE,only code for lim 1407,1.0
+104,"Kombination REVLIMID, Bortezomib und Dexamethason (Induktion vor Stammzelltransplantation)",18541.xx,SINGLE_SEGMENT_CODE,only code for lim 1421,1.0
+105,"Kombination REVLIMID, Bortezomib und Dexamethason (ohne Stammzelltransplantation)",18541.xx,SINGLE_SEGMENT_CODE,only code for lim 1422,1.0
+111,Rheumatoide Arthritis (RA),20240.xx,SINGLE_SEGMENT_CODE,only code for lim 1489,1.0
+112,Polyartikuläre juvenile idiopathische Arthritis (pJIA),20240.xx,SINGLE_SEGMENT_CODE,only code for lim 1490,1.0
+113,Systemische juvenile idiopathische Arthritis (sJIA),20240.xx,SINGLE_SEGMENT_CODE,only code for lim 1491,1.0
+114,Rheumatoide Arthritis (RA),20893.xx,SINGLE_SEGMENT_CODE,only code for lim 1492,1.0
+115,Polyartikuläre juvenile idiopathische Arthritis (pJIA),20893.xx,SINGLE_SEGMENT_CODE,only code for lim 1493,1.0
+116,Systemische juvenile idiopathische Arthritis (sJIA),20893.xx,SINGLE_SEGMENT_CODE,only code for lim 1494,1.0
+117,Klassisches Hodgkin Lymphom,20416.xx,SINGLE_SEGMENT_CODE,only code for lim 1514,1.0
+178,Typ 2 Diabetes,20270.xx,SINGLE_SEGMENT_CODE,only code for lim 1721,1.0
+179,Herzinsuffizienz,20270.xx,SINGLE_SEGMENT_CODE,only code for lim 1722,1.0
+185,Rheumatoide Arthritis:,19845.xx,SINGLE_SEGMENT_CODE,only code for lim 1758,1.0
+188,Rheumatoide Arthritis:,20724.xx,SINGLE_SEGMENT_CODE,only code for lim 1760,1.0
+201,Klassisches Hodgkin-Lymphom (Monotherapie) KN087,20416.xx,SINGLE_SEGMENT_CODE,only code for lim 1803,1.0
+203,1L plattenepitheliales NSCLC (in Kombination mit Carboplatin und Paclitaxel) bei Patienten mit TPS < 50% KN407,20416.xx,SINGLE_SEGMENT_CODE,only code for lim 1805,1.0
+204,1L nicht-plattenepitheliales NSCLC (in Kombination mit Pemetrexed und Platin-Chemotherapie) bei Patienten mit TPS < 50% KN189,20416.xx,SINGLE_SEGMENT_CODE,only code for lim 1806,1.0
+217,Rheumatoide Arthritis:,20037.xx,SINGLE_SEGMENT_CODE,only code for lim 1828,1.0
+218,1L nicht-plattenepitheliales NSCLC (in Kombination mit Pemetrexed und Platin-Chemotherapie) bei Patienten mit TPS < 50% KN189,20416.xx,SINGLE_SEGMENT_CODE,only code for lim 1864,1.0
+219,Erhaltungstherapie nach autologer Stammzelltransplantation,18541.04,SINGLE_SEGMENT_CODE,only code for lim 1874,1.0
+220,"Kombination REVLIMID, Bortezomib und Dexamethason (Induktion vor Stammzelltransplantation)",18541.05,SINGLE_SEGMENT_CODE,only code for lim 1875,1.0
+221,"Kombination REVLIMID, Bortezomib und Dexamethason (ohne Stammzelltransplantation)",18541.06,SINGLE_SEGMENT_CODE,only code for lim 1876,1.0
+222,"Kombination REVLIMID, Carfilzomib und Dexamethason",18541.07,SINGLE_SEGMENT_CODE,only code for lim 1877,1.0
+224,"Kombination REVLIMID, lxazomib und Dexamethason",18541.09,SINGLE_SEGMENT_CODE,only code for lim 1879,1.0
+225,"Kombination REVLIMID, Daratumumab und Dexamethason",18541.10,SINGLE_SEGMENT_CODE,only code for lim 1880,1.0
+247,Rheumatoide Arthritis,20636.xx,SINGLE_SEGMENT_CODE,only code for lim 1915,1.0
+248,Atopische Dermatitis,20636.xx,SINGLE_SEGMENT_CODE,only code for lim 1916,1.0
+297,Asthma,20819.xx,SINGLE_SEGMENT_CODE,only code for lim 2014,1.0
+323,1L nicht-plattenepitheliales NSCLC (in Kombination mit Pemetrexed und Platin-Chemotherapie) bei Patienten mit TPS < 50% KN189,20416.xx,SINGLE_SEGMENT_CODE,only code for lim 2027,1.0
+373,Asthma,21258.xx,SINGLE_SEGMENT_CODE,only code for lim 2062,1.0
+377,Melanom,20461.03,SINGLE_SEGMENT_CODE,only code for lim 2076,1.0
+382,Plattenepithelkarzinom im Kopf-Hals-Bereich (SCCHN),20461.05,SINGLE_SEGMENT_CODE,only code for lim 2083,1.0
+383,Klassisches Hodgkin-Lymphom (cHL),20461.06,SINGLE_SEGMENT_CODE,only code for lim 2084,1.0
+384,Kolorektales Karzinom (CRC) mit dMMR/ MSI-H,20461.08,SINGLE_SEGMENT_CODE,only code for lim 2085,1.0
+385,Morbus Behçet,20374.xx,SINGLE_SEGMENT_CODE,only code for lim 2086,1.0
+386,Rheumatoide Arthritis,21028.xx,SINGLE_SEGMENT_CODE,only code for lim 2092,1.0
+388,Ankylosierende Spondylitis (Morbus Bechterew),21028.xx,SINGLE_SEGMENT_CODE,only code for lim 2094,1.0
+391,Erstlinienbehandlung,20594.01,SINGLE_SEGMENT_CODE,only code for lim 2111,1.0
+392,Zweit- oder Drittlinienbehandlung,20594.02,SINGLE_SEGMENT_CODE,only code for lim 2112,1.0
+397,Melanom,20461.03,SINGLE_SEGMENT_CODE,only code for lim 2124,1.0
+401,Klassisches Hodgkin-Lymphom (cHL),20461.06,SINGLE_SEGMENT_CODE,only code for lim 2128,1.0
+402,Kolorektales Karzinom (CRC) mit dMMR/ MSI-H,20461.08,SINGLE_SEGMENT_CODE,only code for lim 2129,1.0
+403,Ösophaguskarzinom oder Karzinom des gastroösophagealen Übergangs (OC oder GEJC) adjuvant,20461.09,SINGLE_SEGMENT_CODE,only code for lim 2130,1.0
+410,Melanom,20461.03,SINGLE_SEGMENT_CODE,only code for lim 2160,1.0
+416,Plattenepithelkarzinom im Kopf-Hals-Bereich (SCCHN),20461.05,SINGLE_SEGMENT_CODE,only code for lim 2165,1.0
+417,Klassisches Hodgkin-Lymphom (cHL),20461.06,SINGLE_SEGMENT_CODE,only code for lim 2166,1.0
+418,Kolorektales Karzinom (CRC) mit dMMR/ MSI-H,20461.08,SINGLE_SEGMENT_CODE,only code for lim 2167,1.0
+419,Ösophaguskarzinom oder Karzinom des gastroösophagealen Übergangs (OC oder GEJC) adjuvant,20461.09,SINGLE_SEGMENT_CODE,only code for lim 2168,1.0
+433,Atopische Dermatitis,21028.xx,SINGLE_SEGMENT_CODE,only code for lim 2202,1.0
+449,Daratumumab in Kombination mit Bortezomib und Dexamethason,20589.05,SINGLE_SEGMENT_CODE,only code for lim 2216,1.0
+453,Daratumumab in Kombination mit Bortezomib und Dexamethason,20589.05,SINGLE_SEGMENT_CODE,only code for lim 2220,1.0
+455,IMNOVID in Kombination mit Daratumuab und Dexamethason,20221.03,SINGLE_SEGMENT_CODE,only code for lim 2225,1.0
+458,"Kombination LENALIDOMID BMS, Bortezomib und Dexamethason (Induktion vor Stammzelltransplantation)",21377.05,SINGLE_SEGMENT_CODE,only code for lim 2229,1.0
+459,"Kombination LENALIDOMID BMS, Bortezomib und Dexamethason (ohne Stammzelltransplantation)",21377.06,SINGLE_SEGMENT_CODE,only code for lim 2230,1.0
+460,Erhaltungstherapie nach autologer Stammzelltransplantation,21377.04,SINGLE_SEGMENT_CODE,only code for lim 2231,1.0
+461,"Kombination LENALIDOMID BMS, Carfilzomib und Dexamethason",21377.07,SINGLE_SEGMENT_CODE,only code for lim 2232,1.0
+462,"Kombination LENALIDOMID BMS, Elotuzumab und Dexamethason",21377.08,SINGLE_SEGMENT_CODE,only code for lim 2233,1.0
+463,"Kombination LENALIDOMID BMS, lxazomib und Dexamethason",21377.09,SINGLE_SEGMENT_CODE,only code for lim 2234,1.0
+464,"Kombination LENALIDOMID BMS, Daratumumab und Dexamethason",21377.10,SINGLE_SEGMENT_CODE,only code for lim 2235,1.0
+465,"Kombination LENALIDOMID SANDOZ, Bortezomib und Dexamethason (Induktion vor Stammzelltransplantation)",21312.05,SINGLE_SEGMENT_CODE,only code for lim 2237,1.0
+466,"Kombination LENALIDOMID SANDOZ, Bortezomib und Dexamethason (ohne Stammzelltransplantation)",21312.06,SINGLE_SEGMENT_CODE,only code for lim 2238,1.0
+467,Erhaltungstherapie nach autologer Stammzelltransplantation,21312.04,SINGLE_SEGMENT_CODE,only code for lim 2239,1.0
+468,"Kombination LENALIDOMID SANDOZ, Carfilzomib und Dexamethason",21312.07,SINGLE_SEGMENT_CODE,only code for lim 2240,1.0
+469,"Kombination LENALIDOMID SANDOZ, Elotuzumab und Dexamethason",21312.08,SINGLE_SEGMENT_CODE,only code for lim 2241,1.0
+470,"Kombination LENALIDOMID SANDOZ, lxazomib und Dexamethason",21312.09,SINGLE_SEGMENT_CODE,only code for lim 2242,1.0
+471,"Kombination LENALIDOMID SANDOZ, Daratumumab und Dexamethason",21312.10,SINGLE_SEGMENT_CODE,only code for lim 2243,1.0
+472,Erhaltungstherapie nach autologer Stammzelltransplantation,21384.04,SINGLE_SEGMENT_CODE,only code for lim 2245,1.0
+473,"Kombination LENALIDOMID Spirig, Carfilzomib und Dexamethason",21384.07,SINGLE_SEGMENT_CODE,only code for lim 2246,1.0
+474,"Kombination LENALIDOMID Spirig, Elotuzumab und Dexamethason",21384.08,SINGLE_SEGMENT_CODE,only code for lim 2247,1.0
+475,"Kombination LENALIDOMID Spirig, lxazomib und Dexamethason",21384.09,SINGLE_SEGMENT_CODE,only code for lim 2248,1.0
+476,"Kombination LENALIDOMID Spirig, Daratumumab und Dexamethason",21384.10,SINGLE_SEGMENT_CODE,only code for lim 2249,1.0
+477,"Kombination LENALIDOMID-TEVA, Bortezomib und Dexamethason (Induktion vor Stammzelltransplantation)",21379.05,SINGLE_SEGMENT_CODE,only code for lim 2251,1.0
+478,"Kombination LENALIDOMID-TEVA, Bortezomib und Dexamethason (ohne Stammzelltransplantation)",21379.06,SINGLE_SEGMENT_CODE,only code for lim 2252,1.0
+479,Erhaltungstherapie nach autologer Stammzelltransplantation,21379.04,SINGLE_SEGMENT_CODE,only code for lim 2253,1.0
+480,"Kombination LENALIDOMID-TEVA, Carfilzomib und Dexamethason",21379.07,SINGLE_SEGMENT_CODE,only code for lim 2254,1.0
+482,"Kombination LENALIDOMID-TEVA, lxazomib und Dexamethason",21379.09,SINGLE_SEGMENT_CODE,only code for lim 2256,1.0
+483,"Kombination LENALIDOMID-TEVA, Daratumumab und Dexamethason",21379.10,SINGLE_SEGMENT_CODE,only code for lim 2257,1.0
+516,"Kombination LENALIDOMID ACCORD, Bortezomib und Dexamethason (Induktion vor Stammzelltransplantation)",21398.05,SINGLE_SEGMENT_CODE,only code for lim 2296,1.0
+517,"Kombination LENALIDOMID ACCORD, Bortezomib und Dexamethason (ohne Stammzelltransplantation)",21398.06,SINGLE_SEGMENT_CODE,only code for lim 2297,1.0
+518,Erhaltungstherapie nach autologer Stammzelltransplantation,21398.04,SINGLE_SEGMENT_CODE,only code for lim 2298,1.0
+519,"Kombination LENALIDOMID ACCORD, Carfilzomib und Dexamethason",21398.07,SINGLE_SEGMENT_CODE,only code for lim 2299,1.0
+520,"Kombination LENALIDOMID ACCORD, Elotuzumab und Dexamethason",21398.08,SINGLE_SEGMENT_CODE,only code for lim 2300,1.0
+521,"Kombination LENALIDOMID ACCORD, lxazomib und Dexamethason",21398.09,SINGLE_SEGMENT_CODE,only code for lim 2301,1.0
+522,"Kombination LENALIDOMID ACCORD, Daratumumab und Dexamethason",21398.10,SINGLE_SEGMENT_CODE,only code for lim 2302,1.0
+523,"Kombination LENALIDOMID BMS, Elotuzumab und Dexamethason",21377.08,SINGLE_SEGMENT_CODE,only code for lim 2303,1.0
+524,"Kombination LENALIDOMID SANDOZ, Elotuzumab und Dexamethason",21312.08,SINGLE_SEGMENT_CODE,only code for lim 2304,1.0
+525,"Kombination LENALIDOMID Spirig, Elotuzumab und Dexamethason",21384.08,SINGLE_SEGMENT_CODE,only code for lim 2305,1.0
+527,"Kombination LENALIDOMID ZENTIVA, Carfilzomib und Dexamethason",21381.07,SINGLE_SEGMENT_CODE,only code for lim 2308,1.0
+528,"Kombination LENALIDOMID ZENTIVA, Elotuzumab und Dexamethason",21381.08,SINGLE_SEGMENT_CODE,only code for lim 2309,1.0
+529,"Kombination LENALIDOMID ZENTIVA, lxazomib und Dexamethason",21381.09,SINGLE_SEGMENT_CODE,only code for lim 2310,1.0
+530,"Kombination LENALIDOMID ZENTIVA, Daratumumab und Dexamethason",21381.10,SINGLE_SEGMENT_CODE,only code for lim 2311,1.0
+569,Herzinsuffizienz,20244.xx,SINGLE_SEGMENT_CODE,only code for lim 2379,1.0
+570,"Kombination LENALIDOMID DEVATIS, Bortezomib und Dexamethason (Induktion vor Stammzelltransplantation)",21420.05,SINGLE_SEGMENT_CODE,only code for lim 2384,1.0
+571,"Kombination LENALIDOMID DEVATIS, Bortezomib und Dexamethason (ohne Stammzelltransplantation)",21420.06,SINGLE_SEGMENT_CODE,only code for lim 2385,1.0
+572,Erhaltungstherapie nach autologer Stammzelltransplantation,21420.04,SINGLE_SEGMENT_CODE,only code for lim 2386,1.0
+573,"Kombination LENALIDOMID DEVATIS, Carfilzomib und Dexamethason",21420.07,SINGLE_SEGMENT_CODE,only code for lim 2387,1.0
+574,"Kombination LENALIDOMID DEVATIS, Elotuzumab und Dexamethason",21420.08,SINGLE_SEGMENT_CODE,only code for lim 2388,1.0
+575,"Kombination LENALIDOMID DEVATIS, lxazomib und Dexamethason",21420.09,SINGLE_SEGMENT_CODE,only code for lim 2389,1.0
+576,"Kombination LENALIDOMID DEVATIS, Daratumumab und Dexamethason",21420.10,SINGLE_SEGMENT_CODE,only code for lim 2390,1.0
+596,Atopische Dermatitis,21343.xx,SINGLE_SEGMENT_CODE,only code for lim 2445,1.0
+608,"Kombination LENALIDOMID ACCORD, Ixazomib und Dexamethason",21398.09,SINGLE_SEGMENT_CODE,only code for lim 2478,1.0
+609,"Kombination LENALIDOMID BMS, Ixazomib und Dexamethason",21377.09,SINGLE_SEGMENT_CODE,only code for lim 2479,1.0
+610,"Kombination LENALIDOMID DEVATIS, Ixazomib und Dexamethason",21420.09,SINGLE_SEGMENT_CODE,only code for lim 2480,1.0
+611,"Kombination LENALIDOMID SANDOZ, Ixazomib und Dexamethason",21312.09,SINGLE_SEGMENT_CODE,only code for lim 2481,1.0
+612,"Kombination LENALIDOMID Spirig, Ixazomib und Dexamethason",21384.09,SINGLE_SEGMENT_CODE,only code for lim 2482,1.0
+613,"Kombination LENALIDOMID ZENTIVA, Ixazomib und Dexamethason",21381.09,SINGLE_SEGMENT_CODE,only code for lim 2483,1.0
+641,Kombination VIDAZA und Venetoclax,18384.01,SINGLE_SEGMENT_CODE,only code for lim 2516,1.0
+796,"Kombination LENALIDOMID Spirig, Bortezomib und Dexamethason (Induktion vor Stammzelltransplantation)",21384.05,SINGLE_SEGMENT_CODE,only code for lim 2594,1.0
+797,"Kombination LENALIDOMID Spirig, Bortezomib und Dexamethason (ohne Stammzelltransplantation)",21384.06,SINGLE_SEGMENT_CODE,only code for lim 2595,1.0
+817,"Kombination LENALIDOMID ZENTIVA, Bortezomib und Dexamethason (Induktion vor Stammzelltransplantation)",21381.05,SINGLE_SEGMENT_CODE,only code for lim 2640,1.0
+818,"Kombination LENALIDOMID ZENTIVA, Bortezomib und Dexamethason (ohne Stammzelltransplantation)",21381.06,SINGLE_SEGMENT_CODE,only code for lim 2641,1.0
+819,Erhaltungstherapie nach autologer Stammzelltransplantation,21381.04,SINGLE_SEGMENT_CODE,only code for lim 2642,1.0
+820,"Kombination LENALIDOMID ZENTIVA, Carfilzomib und Dexamethason",21381.07,SINGLE_SEGMENT_CODE,only code for lim 2643,1.0
+841,Herzinsuffizienz,20270.xx,SINGLE_SEGMENT_CODE,only code for lim 2667,1.0
+842,Chronische Nierenerkrankung,20270.xx,SINGLE_SEGMENT_CODE,only code for lim 2668,1.0
+849,IMNOVID in Kombination mit Daratumuab und Dexamethason,20221.03,SINGLE_SEGMENT_CODE,only code for lim 2671,1.0
+850,"Kombination REVLIMID, Bortezomib und Dexamethason (ohne Stammzelltransplantation)",18541.06,SINGLE_SEGMENT_CODE,only code for lim 2677,1.0
+851,Erhaltungstherapie nach autologer Stammzelltransplantation,18541.04,SINGLE_SEGMENT_CODE,only code for lim 2678,1.0
+852,"Kombination REVLIMID, Carfilzomib und Dexamethason",18541.07,SINGLE_SEGMENT_CODE,only code for lim 2679,1.0
+855,"Kombination REVLIMID, Daratumumab und Dexamethason",18541.10,SINGLE_SEGMENT_CODE,only code for lim 2682,1.0
+856,Kombination VIDAZA und Venetoclax,18384.01,SINGLE_SEGMENT_CODE,only code for lim 2687,1.0
+857,Nicht-kleinzelliges Bronchialkarzinom,21100.01,SINGLE_SEGMENT_CODE,only code for lim 2716,1.0
+858,Kutanes Plattenepithelkarzinom,21100.02,SINGLE_SEGMENT_CODE,only code for lim 2717,1.0
+859,CTEPH:,20163.xx,SINGLE_SEGMENT_CODE,only code for lim 2734,1.0
+860,PAH:,20163.xx,SINGLE_SEGMENT_CODE,only code for lim 2735,1.0
+867,Kombination AZACITIDIN ACCORD und Venetoclax,20876.01,SINGLE_SEGMENT_CODE,only code for lim 2744,1.0
+868,Kombination AZACITIDIN IDEOGEN und Venetoclax,21414.01,SINGLE_SEGMENT_CODE,only code for lim 2745,1.0
+869,Kombination AZACITIDIN MYLAN und Venetoclax,21235.01,SINGLE_SEGMENT_CODE,only code for lim 2746,1.0
+870,Kombination AZACITIDIN SANDOZ und Venetoclax,21123.01,SINGLE_SEGMENT_CODE,only code for lim 2747,1.0
+871,Kombination AZACITIDIN SPIRIG HC und Venetoclax,21234.01,SINGLE_SEGMENT_CODE,only code for lim 2748,1.0
+1111,Chronisch obstruktive Lungenerkrankung (COPD),21023.xx,SINGLE_SEGMENT_CODE,only code for lim 2951,1.0
+1112,Asthma,21023.xx,SINGLE_SEGMENT_CODE,only code for lim 2952,1.0
+1188,Typ 2 Diabetes,20244.xx,SINGLE_SEGMENT_CODE,only code for lim 3033,1.0
+1189,Herzinsuffizienz (HFrEF),20244.xx,SINGLE_SEGMENT_CODE,only code for lim 3034,1.0
+1212,Kombination RIXATHON mit POLIVY und Bendamustin bei rezidiviertem oder refraktärem diffusem grosszelligem B-Zell-Lymphom (DLBCL),20820.03,SINGLE_SEGMENT_CODE,only code for lim 3080,1.0
+1215,Kombination TRUXIMA mit POLIVY und Bendamustin bei rezidiviertem oder refraktärem diffusem grosszelligem B-Zell-Lymphom (DLBCL),20815.03,SINGLE_SEGMENT_CODE,only code for lim 3090,1.0
+1260,Herzinsuffizienz mit reduzierter Ejektionsfraktion (HFrEF),20244.xx,SINGLE_SEGMENT_CODE,only code for lim 3188,1.0
+1261,Herzinsuffizienz  mit erhaltener oder mittlerer Ejektionsfraktion (HFpEF / HFmEF),20244.xx,SINGLE_SEGMENT_CODE,only code for lim 3189,1.0
+1287,"ALK-positives fortgeschrittenes, nicht-kleinzelliges Lungenkarzinom (NSCLC)",19861.xx,SINGLE_SEGMENT_CODE,only code for lim 3250,1.0
+1288,"ROS1-positives fortgeschrittenes, nicht-kleinzelliges Lungenkarzinom (NSCLC)",19861.xx,SINGLE_SEGMENT_CODE,only code for lim 3251,1.0
+1289,Rheumatoide Arthritis (nur 5 mg Dosierung):,20037.01,SINGLE_SEGMENT_CODE,only code for lim 3253,1.0
+1290,Colitis ulcerosa (Dosierungen 5 mg und 10 mg):,20037.02,SINGLE_SEGMENT_CODE,only code for lim 3254,1.0
+1291,Psoriasis Arthritis (nur 5 mg Dosierung):,20037.03,SINGLE_SEGMENT_CODE,only code for lim 3255,1.0
+1292,Ankylosierende Spondylitis (nur 5 mg Dosierung):,20037.04,SINGLE_SEGMENT_CODE,only code for lim 3256,1.0
+1293,"2L+ chronisch lymphatische Leukämie (CLL, Monotherapie)",21365.01,SINGLE_SEGMENT_CODE,only code for lim 3267,1.0
+1295,Herzinsuffizienz mit reduzierter Ejektionsfraktion (HFrEF),20270.xx,SINGLE_SEGMENT_CODE,only code for lim 3269,1.0
+1296,Herzinsuffizienz mit erhaltener oder mittlerer Ejektionsfraktion (HFpEF / HFmEF),20270.xx,SINGLE_SEGMENT_CODE,only code for lim 3270,1.0
+1299,Kombination AZACITIDIN VIATRIS und Venetoclax,21235.01,SINGLE_SEGMENT_CODE,only code for lim 3276,1.0
+1310,Für alle Indikationen gilt:,21028.xx,SINGLE_SEGMENT_CODE,only code for lim 3300,1.0
+1311,Rheumatoide Arthritis,21028.01,SINGLE_SEGMENT_CODE,only code for lim 3301,1.0
+1313,Ankylosierende Spondylitis (Morbus Bechterew),21028.03,SINGLE_SEGMENT_CODE,only code for lim 3303,1.0
+1314,Atopische Dermatitis,21028.04,SINGLE_SEGMENT_CODE,only code for lim 3304,1.0
+1326,Systemischer Lupus erythematodes (SLE),19903.xx,SINGLE_SEGMENT_CODE,only code for lim 3317,1.0
+1327,Lupusnephritis (LN),19903.xx,SINGLE_SEGMENT_CODE,only code for lim 3318,1.0
+1328,Systemischer Lupus erythematodes (SLE),20822.xx,SINGLE_SEGMENT_CODE,only code for lim 3320,1.0
+1329,Lupusnephritis (LN),20822.xx,SINGLE_SEGMENT_CODE,only code for lim 3321,1.0
+1331,Cryopyrin-assoziiertes periodisches Syndrom (CAPS):,19119.01,SINGLE_SEGMENT_CODE,only code for lim 3331,1.0
+1332,Aktive systemische juvenile idiopathische Arthritis (sJIA):,19119.02,SINGLE_SEGMENT_CODE,only code for lim 3332,1.0
+1373,IPF,20362.xx,SINGLE_SEGMENT_CODE,only code for lim 3419,1.0
+1374,PF-ILD,20362.xx,SINGLE_SEGMENT_CODE,only code for lim 3420,1.0
+1375,SSc-ILD,20362.xx,SINGLE_SEGMENT_CODE,only code for lim 3421,1.0
+1388,Patienten mit Hämophilie B mit Hemmkörpern,21692.02,SINGLE_SEGMENT_CODE,only code for lim 3446,1.0
+1405,Herzinsuffizienz mit reduzierter Ejektionsfraktion (HFrEF),20415.xx,SINGLE_SEGMENT_CODE,only code for lim 3488,1.0
+1455,Austausch Referenzpräparat/Biosimilar,21264.xx,SINGLE_SEGMENT_CODE,only code for lim 3518,1.0
+1600,Austausch Referenzpräparat/Biosimilar,21084.xx,SINGLE_SEGMENT_CODE,only code for lim 3557,1.0
+1603,Für alle Indikationen gilt:,20636.xx,SINGLE_SEGMENT_CODE,only code for lim 3561,1.0
+1604,Rheumatoide Arthritis,20636.01,SINGLE_SEGMENT_CODE,only code for lim 3562,1.0
+1605,Atopische Dermatitis,20636.02,SINGLE_SEGMENT_CODE,only code for lim 3563,1.0
+1606,Austausch Referenzpräparat/Biosimilar,19296.xx,SINGLE_SEGMENT_CODE,only code for lim 3564,1.0
+1607,Austausch Referenzpräparat/Biosimilar,20850.xx,SINGLE_SEGMENT_CODE,only code for lim 3565,1.0
+1608,Austausch Referenzpräparat/Biosimilar,21272.xx,SINGLE_SEGMENT_CODE,only code for lim 3566,1.0
+1624,Austausch Referenzpräparat/Biosimilar,20820.xx,SINGLE_SEGMENT_CODE,only code for lim 3572,1.0
+1627,Austausch Referenzpräparat/Biosimilar,20815.xx,SINGLE_SEGMENT_CODE,only code for lim 3580,1.0
+1628,Austausch Referenzpräparat/Biosimilar,21617.xx,SINGLE_SEGMENT_CODE,only code for lim 3582,1.0
+1647,Austausch Referenzpräparat/Biosimilar,21090.xx,SINGLE_SEGMENT_CODE,only code for lim 3586,1.0
+1687,Kombination AZACITIDIN STADA und Venetoclax,21759.01,SINGLE_SEGMENT_CODE,only code for lim 3593,1.0
+1689,Aktive Psoriasis-Arthritis,20311.xx,SINGLE_SEGMENT_CODE,only code for lim 3598,1.0
+1690,Juvenile idiopathische Arthritis (JIA) (nur 75 mg und 150 mg),20311.xx,SINGLE_SEGMENT_CODE,only code for lim 3599,1.0
+1691,Aktive mittelschwere bis schwere Hidradenitis suppurativa (HS) / Acne inversa,20311.xx,SINGLE_SEGMENT_CODE,only code for lim 3600,1.0
+1692,Aktive ankylosierende Spondylitis / Morbus Bechterew (nur 150 mg),20311.xx,SINGLE_SEGMENT_CODE,only code for lim 3601,1.0
+1693,Aktive mittelschwere bis schwere Hidradenitis suppurativa (HS) / Acne inversa,20311.xx,SINGLE_SEGMENT_CODE,only code for lim 3602,1.0
+1695,Aktive Psoriasis-Arthritis,20311.xx,SINGLE_SEGMENT_CODE,only code for lim 3604,1.0
+1696,Aktive ankylosierende Spondylitis / Morbus Bechterew (nur 150 mg),20311.xx,SINGLE_SEGMENT_CODE,only code for lim 3605,1.0
+1697,Juvenile idiopathische Arthritis (JIA) (nur 75 mg und 150 mg),20311.xx,SINGLE_SEGMENT_CODE,only code for lim 3606,1.0
+1698,Aktive mittelschwere bis schwere Hidradenitis suppurativa (HS) / Acne inversa,20316.xx,SINGLE_SEGMENT_CODE,only code for lim 3607,1.0
+1700,Aktive Psoriasis-Arthritis,20316.xx,SINGLE_SEGMENT_CODE,only code for lim 3609,1.0
+1701,Aktive ankylosierende Spondylitis / Morbus Bechterew (nur 150 mg),20316.xx,SINGLE_SEGMENT_CODE,only code for lim 3610,1.0
+1702,Juvenile idiopathische Arthritis (JIA) (nur 75 mg und 150 mg),20316.xx,SINGLE_SEGMENT_CODE,only code for lim 3611,1.0
+1704,Aktive Psoriasis-Arthritis,21385.xx,SINGLE_SEGMENT_CODE,only code for lim 3613,1.0
+1705,Aktive mittelschwere bis schwere Hidradenitis suppurativa (HS) / Acne inversa,21385.xx,SINGLE_SEGMENT_CODE,only code for lim 3614,1.0
+1772,Austausch Referenzpräparat/Biosimilar,21272.xx,SINGLE_SEGMENT_CODE,only code for lim 3666,1.0
+1785,Atopische Dermatitis - Erwachsene,21367.xx,SINGLE_SEGMENT_CODE,only code for lim 3682,1.0
+1827,Kombination AZACITIDIN ACCORD und Venetoclax,20876.01,SINGLE_SEGMENT_CODE,only code for lim 3807,1.0
+1828,Kombination AZACITIDIN MYLAN und Venetoclax,21235.01,SINGLE_SEGMENT_CODE,only code for lim 3809,1.0
+1829,Kombination AZACITIDIN SANDOZ und Venetoclax,21123.01,SINGLE_SEGMENT_CODE,only code for lim 3810,1.0
+1830,Kombination AZACITIDIN SPIRIG HC und Venetoclax,21234.01,SINGLE_SEGMENT_CODE,only code for lim 3811,1.0
+1831,Kombination AZACITIDIN STADA und Venetoclax,21759.01,SINGLE_SEGMENT_CODE,only code for lim 3812,1.0
+1832,Kombination AZACITIDIN VIATRIS und Venetoclax,21235.01,SINGLE_SEGMENT_CODE,only code for lim 3813,1.0
+1866,Für alle Indikationen gilt:,21028.xx,SINGLE_SEGMENT_CODE,only code for lim 3887,1.0
+1867,Rheumatoide Arthritis (nur 15 mg Dosisstärke),21028.01,SINGLE_SEGMENT_CODE,only code for lim 3888,1.0
+1868,Psoriasis-Arthritis (nur 15 mg Dosisstärke),21028.02,SINGLE_SEGMENT_CODE,only code for lim 3889,1.0
+1869,Ankylosierende Spondylitis (Morbus Bechterew) ) (nur 15 mg Dosisstärke),21028.03,SINGLE_SEGMENT_CODE,only code for lim 3890,1.0
+1870,Atopische Dermatitis (nur 15 mg Dosisstärke),21028.04,SINGLE_SEGMENT_CODE,only code for lim 3891,1.0
+1871,"Morbus Crohn (15 mg, 30 mg, 45 mg Dosisstärke)",21028.05,SINGLE_SEGMENT_CODE,only code for lim 3892,1.0
+1872,"Colitis Ulcerosa (15 mg, 30 mg, 45 mg Dosisstärke)",21028.06,SINGLE_SEGMENT_CODE,only code for lim 3893,1.0
+1873,Behandlung von lokal fortgeschrittenem oder metastasiertem NSCLC,20594.xx,SINGLE_SEGMENT_CODE,only code for lim 3921,1.0
+1875,Nicht-kleinzelliges Bronchialkarzinom,21100.01,SINGLE_SEGMENT_CODE,only code for lim 3935,1.0
+1876,Kutanes Plattenepithelkarzinom,21100.02,SINGLE_SEGMENT_CODE,only code for lim 3936,1.0
+1894,Atopische Dermatitis – Erwachsene und Jugendliche ab 12 Jahren,21813.xx,SINGLE_SEGMENT_CODE,only code for lim 3971,1.0
+1895,Atopische Dermatitis – Erwachsene und Jugendliche ab 12 Jahren,21849.xx,SINGLE_SEGMENT_CODE,only code for lim 3972,1.0
+1913,Renale Anämie bei Niereninsuffizienz.,17227.xx,SINGLE_SEGMENT_CODE,only code for lim 3999,1.0
+1946,Austausch Referenzpräparat/Biosimilar,21862.xx,SINGLE_SEGMENT_CODE,only code for lim 4089,1.0
+1982,Herzinsuffizienz  mit erhaltener oder mittlerer Ejektionsfraktion (HFpEF / HFmEF),20244.xx,SINGLE_SEGMENT_CODE,only code for lim 4125,1.0
+1983,Chronische Nierenerkrankung,20244.xx,SINGLE_SEGMENT_CODE,only code for lim 4126,1.0
+2065,Jugendliche:,21548.xx,SINGLE_SEGMENT_CODE,only code for lim 4297,1.0
+2116,Atopische Dermatitis – Erwachsene und Jugendliche ab 12 Jahren,21912.xx,SINGLE_SEGMENT_CODE,only code for lim 4360,1.0
+2122,Patienten mit Hämophilie B mit Hemmkörpern,21692.02,SINGLE_SEGMENT_CODE,only code for lim 4376,1.0
+2142,Induktionstherapie,20844.xx,SINGLE_SEGMENT_CODE,only code for lim 4410,1.0
+2143,Erhaltungstherapie,20844.xx,SINGLE_SEGMENT_CODE,only code for lim 4411,1.0
+2144,Folgende Bedingungen gelten für beide Indikationen,20844.xx,SINGLE_SEGMENT_CODE,only code for lim 4412,1.0
+2153,Morbus Behçet,20374.xx,SINGLE_SEGMENT_CODE,only code for lim 4426,1.0
+2159,Jugendliche:,21548.xx,SINGLE_SEGMENT_CODE,only code for lim 4443,1.0
+2161,"2L+ chronisch lymphatische Leukämie (CLL, Monotherapie)",21365.01,SINGLE_SEGMENT_CODE,only code for lim 4453,1.0
+2168,Pädiatrische Patienten (12 bis 17 Jahre),19992.xx,SINGLE_SEGMENT_CODE,only code for lim 4466,1.0
+2170,Typ 2 Diabetes,20244.xx,SINGLE_SEGMENT_CODE,only code for lim 4472,1.0
+2202,Maternale Impfung zum passiven Schutz von Säuglingen,21821.xx,SINGLE_SEGMENT_CODE,only code for lim 4531,1.0
+2206,mHSPC,21068.xx,SINGLE_SEGMENT_CODE,only code for lim 4542,1.0
+2207,mHSPC in Kombination mit Docetaxel,21068.xx,SINGLE_SEGMENT_CODE,only code for lim 4543,1.0
+2222,Chronisch obstruktive Lungenerkrankung (COPD),21925.xx,SINGLE_SEGMENT_CODE,only code for lim 4561,1.0
+2238,LENALIDOMID ACCORD in Kombination mit Isatuximab und Bortezomib und Dexamethason,21398.14,SINGLE_SEGMENT_CODE,only code for lim 4594,1.0
+2240,"LENALIDOMID BMS in Kombination mit Isatuximab, Bortezomib und Dexamethason (Isa-VRd)",21377.14,SINGLE_SEGMENT_CODE,only code for lim 4596,1.0
+2242,LENALIDOMID DEVATIS in Kombination mit Isatuximab und Bortezomib und Dexamethason,21420.14,SINGLE_SEGMENT_CODE,only code for lim 4598,1.0
+2245,LENALIDOMID SANDOZ in Kombination mit Isatuximab und Bortezomib und Dexamethason),21312.14,SINGLE_SEGMENT_CODE,only code for lim 4601,1.0
+2248,LENALIDOMID SPIRIG HC in Kombination mit Isatuximab und Bortezomib und Dexamethason,21384.14,SINGLE_SEGMENT_CODE,only code for lim 4604,1.0
+2250,LENALIDOMID VIATRIS in Kombination mit Isatuximab und Bortezomib und Dexamethason,21626.14,SINGLE_SEGMENT_CODE,only code for lim 4606,1.0
+2251,LENALIDOMID ZENTIVA in Kombination mit Isatuximab und Bortezomib und Dexamethason,21381.14,SINGLE_SEGMENT_CODE,only code for lim 4607,1.0
+2253,LENALIDOMID-TEVA in Kombination mit Isatuximab und Bortezomib und Dexamethason,21379.14,SINGLE_SEGMENT_CODE,only code for lim 4609,1.0
+2294,Jugendliche:,20574.xx,SINGLE_SEGMENT_CODE,only code for lim 4673,1.0
+2306,Rheumatoide Arthritis (nur 5 mg Dosierung):,22021.01,SINGLE_SEGMENT_CODE,only code for lim 4692,1.0
+2307,Colitis ulcerosa (Dosierungen 5 mg und 10 mg):,22021.02,SINGLE_SEGMENT_CODE,only code for lim 4693,1.0
+2308,Psoriasis Arthritis (nur 5 mg Dosierung):,22021.03,SINGLE_SEGMENT_CODE,only code for lim 4694,1.0
+2345,Typ 2 Diabetes,20270.xx,SINGLE_SEGMENT_CODE,only code for lim 4752,1.0
+2346,Typ 2 Diabetes,20270.xx,SINGLE_SEGMENT_CODE,only code for lim 4753,1.0
+2351,IPF,22033.xx,SINGLE_SEGMENT_CODE,only code for lim 4761,1.0
+2352,PF-ILD,22033.xx,SINGLE_SEGMENT_CODE,only code for lim 4762,1.0
+2353,SSc-ILD,22033.xx,SINGLE_SEGMENT_CODE,only code for lim 4763,1.0
+2354,IPF,22044.xx,SINGLE_SEGMENT_CODE,only code for lim 4764,1.0
+2355,PF-ILD,22044.xx,SINGLE_SEGMENT_CODE,only code for lim 4765,1.0
+2356,SSc-ILD,22044.xx,SINGLE_SEGMENT_CODE,only code for lim 4766,1.0
+2357,IPF,22031.xx,SINGLE_SEGMENT_CODE,only code for lim 4767,1.0
+2358,PF-ILD,22031.xx,SINGLE_SEGMENT_CODE,only code for lim 4768,1.0
+2359,SSc-ILD,22031.xx,SINGLE_SEGMENT_CODE,only code for lim 4769,1.0
+2360,IPF,22035.xx,SINGLE_SEGMENT_CODE,only code for lim 4770,1.0
+2361,PF-ILD,22035.xx,SINGLE_SEGMENT_CODE,only code for lim 4771,1.0
+2362,SSc-ILD,22035.xx,SINGLE_SEGMENT_CODE,only code for lim 4772,1.0
+2365,Colitis ulcerosa (Dosierungen 5 mg und 10 mg):,22021.02,SINGLE_SEGMENT_CODE,only code for lim 4780,1.0
+412,Melanom,20461.02,ORDINAL_POSITION,position 0 of 2 in lim 2162,0.8
+413,Melanom,20461.03,ORDINAL_POSITION,position 1 of 2 in lim 2162,0.8

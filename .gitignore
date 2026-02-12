@@ -11,5 +11,9 @@ extracted/
 # Secrets
 .env
 
+# Generated exports
+*.xlsx
+*.csv
+
 # Misc
 nul

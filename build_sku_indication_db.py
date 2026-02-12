@@ -232,6 +232,7 @@ CREATE TABLE sku_indication (
     text_id             INTEGER NOT NULL REFERENCES limitation_text(text_id),
     code_source         TEXT NOT NULL,
     limitation_level    TEXT NOT NULL,
+    is_fallback         INTEGER NOT NULL DEFAULT 0,
     valid_from          TEXT,
     valid_to            TEXT,
     UNIQUE(gtin, indication_code, text_id)
@@ -261,6 +262,53 @@ CREATE TABLE text_segment (
 
 CREATE INDEX idx_ts_text ON text_segment(text_id);
 
+CREATE TABLE indication_code_name (
+    map_id              INTEGER PRIMARY KEY AUTOINCREMENT,
+    indication_code     TEXT NOT NULL,
+    indication_name_de  TEXT,
+    indication_name_fr  TEXT,
+    indication_name_it  TEXT,
+    bag_dossier_no      TEXT,
+    match_source        TEXT NOT NULL,
+    match_confidence    REAL,
+    source_text_id      INTEGER,
+    source_segment_id   INTEGER,
+    UNIQUE(indication_code, indication_name_de)
+);
+
+CREATE INDEX idx_icn_code ON indication_code_name(indication_code);
+CREATE INDEX idx_icn_name_de ON indication_code_name(indication_name_de);
+CREATE INDEX idx_icn_dossier ON indication_code_name(bag_dossier_no);
+
+CREATE VIEW v_codes_without_names AS
+SELECT si.indication_code, si.code_source, si.is_fallback,
+       CASE WHEN si.is_fallback = 1 THEN 'FALLBACK'
+            WHEN si.indication_code LIKE '%.XX' THEN 'CROSS_INDICATION'
+            ELSE 'REAL_CODE' END AS code_type,
+       COUNT(*) as n_skus
+FROM sku_indication si
+WHERE si.indication_code NOT IN (SELECT indication_code FROM indication_code_name)
+GROUP BY si.indication_code, si.code_source, si.is_fallback;
+
+CREATE VIEW v_codes_summary AS
+SELECT
+    CASE WHEN si.is_fallback = 1 THEN 'FALLBACK'
+         WHEN si.indication_code LIKE '%.XX' THEN 'CROSS_INDICATION'
+         ELSE 'REAL_CODE' END AS code_type,
+    COUNT(*) as n_links,
+    COUNT(DISTINCT si.indication_code) as n_distinct_codes,
+    COUNT(DISTINCT si.gtin) as n_skus
+FROM sku_indication si
+GROUP BY code_type;
+
+CREATE VIEW v_names_without_codes AS
+SELECT ts.segment_id, ts.text_id, ts.indication_name_de, ts.indication_name_fr
+FROM text_segment ts
+WHERE ts.indication_name_de IS NOT NULL
+AND ts.indication_name_de NOT IN (
+    SELECT COALESCE(indication_name_de, '') FROM indication_code_name
+);
+
 -- Temporary table for preparation-level links (dropped after fan-out)
 CREATE TABLE _prep_code_link (
     prep_link_id        INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -269,6 +317,7 @@ CREATE TABLE _prep_code_link (
     indication_code     TEXT NOT NULL,
     code_source         TEXT NOT NULL,
     limitation_level    TEXT NOT NULL,
+    is_fallback         INTEGER NOT NULL DEFAULT 0,
     first_seen_extract  INTEGER NOT NULL,
     last_seen_extract   INTEGER NOT NULL,
     UNIQUE(preparation_id, text_id, indication_code)
@@ -494,7 +543,7 @@ def upsert_limitation_text(conn, extract_id, content_hash,
 
 
 def upsert_prep_code_link(conn, extract_id, preparation_id, text_id,
-                          indication_code, code_source, level):
+                          indication_code, code_source, level, is_fallback=0):
     """Insert or update a preparation-level code link."""
     row = conn.execute(
         "SELECT prep_link_id FROM _prep_code_link "
@@ -511,10 +560,10 @@ def upsert_prep_code_link(conn, extract_id, preparation_id, text_id,
         conn.execute(
             "INSERT INTO _prep_code_link "
             "(preparation_id, text_id, indication_code, code_source, "
-            " limitation_level, first_seen_extract, last_seen_extract) "
-            "VALUES (?, ?, ?, ?, ?, ?, ?)",
+            " limitation_level, is_fallback, first_seen_extract, last_seen_extract) "
+            "VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
             (preparation_id, text_id, indication_code, code_source,
-             level, extract_id, extract_id),
+             level, is_fallback, extract_id, extract_id),
         )
 
 
@@ -551,13 +600,14 @@ def process_limitation(conn, extract_id, preparation_id, lim_elem,
         codes = [f"{bag_dossier_no}.XX"]
         source = "FALLBACK_XX"
 
+    is_fallback = 1 if source == "FALLBACK_XX" else 0
     for code_value in codes:
         link_code = code_value
         if source == "FALLBACK_XX":
             link_code = f"{bag_dossier_no}.XX"
         upsert_prep_code_link(
             conn, extract_id, preparation_id, text_id,
-            link_code, source, level,
+            link_code, source, level, is_fallback=is_fallback,
         )
 
 
@@ -687,14 +737,14 @@ def fanout_to_sku(conn, extract_map):
     # Process all prep-level links
     links = conn.execute(
         "SELECT preparation_id, text_id, indication_code, code_source, "
-        "       limitation_level, first_seen_extract, last_seen_extract "
+        "       limitation_level, is_fallback, first_seen_extract, last_seen_extract "
         "FROM _prep_code_link"
     ).fetchall()
 
     inserted = 0
     skipped = 0
 
-    for prep_id, text_id, code, source, level, link_first, link_last in links:
+    for prep_id, text_id, code, source, level, is_fb, link_first, link_last in links:
         matching_skus = skus_by_prep.get(prep_id, [])
 
         for sku in matching_skus:
@@ -718,9 +768,9 @@ def fanout_to_sku(conn, extract_map):
                 conn.execute(
                     "INSERT OR IGNORE INTO sku_indication "
                     "(gtin, indication_code, text_id, code_source, "
-                    " limitation_level, valid_from, valid_to) "
-                    "VALUES (?, ?, ?, ?, ?, ?, ?)",
-                    (sku["gtin"], code, text_id, source, level, eff_from, eff_to),
+                    " limitation_level, is_fallback, valid_from, valid_to) "
+                    "VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+                    (sku["gtin"], code, text_id, source, level, is_fb, eff_from, eff_to),
                 )
                 inserted += 1
             except sqlite3.IntegrityError:
@@ -879,6 +929,403 @@ def segment_texts(conn):
 
 
 # ============================================================
+# Phase 3c: Indication code ↔ name mapping
+# ============================================================
+
+# Brand canonical mappings (from extract_limitations.py)
+BRAND_CANONICAL = {
+    "LENALIDOMID SPIRIG HC": "LENALIDOMID", "LENALIDOMID SANDOZ": "LENALIDOMID",
+    "LENALIDOMID-TEVA": "LENALIDOMID", "LENALIDOMID ZENTIVA": "LENALIDOMID",
+    "LENALIDOMID VIATRIS": "LENALIDOMID", "LENALIDOMID DEVATIS": "LENALIDOMID",
+    "LENALIDOMID ACCORD": "LENALIDOMID", "LENALIDOMID BMS": "LENALIDOMID",
+    "LENALIDOMID Spirig": "LENALIDOMID", "LENALIDOMID Viatris": "LENALIDOMID",
+    "LÉNALIDOMIDE DEVATIS": "LENALIDOMID", "Lenalidomid Spirig": "LENALIDOMID",
+    "REVLIMID": "LENALIDOMID",
+    "POMALIDOMID SPIRIG HC": "POMALIDOMID", "POMALIDOMID SANDOZ": "POMALIDOMID",
+    "POMALIDOMID-TEVA": "POMALIDOMID", "POMALIDOMID ZENTIVA": "POMALIDOMID",
+    "POMALIDOMID ACCORD": "POMALIDOMID", "IMNOVID": "POMALIDOMID",
+    "AZACITIDIN SPIRIG HC": "AZACITIDIN", "AZACITIDIN ACCORD": "AZACITIDIN",
+    "AZACITIDIN MYLAN": "AZACITIDIN", "AZACITIDIN SANDOZ": "AZACITIDIN",
+    "AZACITIDIN STADA": "AZACITIDIN", "AZACITIDIN VIATRIS": "AZACITIDIN",
+    "AZACITIDIN IDEOGEN": "AZACITIDIN", "VIDAZA": "AZACITIDIN",
+    "DECITABIN ACCORD": "DECITABIN", "DECITABIN IDEOGEN": "DECITABIN",
+    "DECITABIN SANDOZ": "DECITABIN",
+    "OGIVRI": "TRASTUZUMAB", "TRAZIMERA": "TRASTUZUMAB", "KANJINTI": "TRASTUZUMAB",
+    "HERZUMA": "TRASTUZUMAB", "HERCEPTIN": "TRASTUZUMAB", "ZERCEPAC": "TRASTUZUMAB",
+    "OYAVAS": "BEVACIZUMAB", "ZIRABEV": "BEVACIZUMAB", "AVASTIN": "BEVACIZUMAB",
+    "TRUXIMA": "RITUXIMAB", "RIXATHON": "RITUXIMAB",
+    "DARZALEX SC": "DARZALEX", "Darzalex": "DARZALEX",
+    "Kyprolis": "KYPROLIS",
+    "Daratumumab": "DARZALEX", "Nivolumab": "OPDIVO", "Pembrolizumab": "KEYTRUDA",
+    "Trastuzumab": "HERCEPTIN", "Bevacizumab": "AVASTIN", "Rituximab": "MABTHERA",
+}
+_BRAND_SORTED = sorted(BRAND_CANONICAL.items(), key=lambda x: -len(x[0]))
+
+
+def _normalize_indication_name(name):
+    """Normalize an indication name for comparison."""
+    if not name:
+        return ""
+    return re.sub(r"\s+", " ", name.strip().rstrip(":").strip()).lower()
+
+
+def _normalize_brands(name):
+    """Replace brand-specific names with canonical generic form."""
+    result = name
+    for brand, canonical in _BRAND_SORTED:
+        result = result.replace(brand, canonical)
+    return result
+
+
+def _insert_mapping(conn, code, name_de, name_fr, name_it, dossier,
+                    source, confidence, text_id=None, seg_id=None):
+    """Insert a code-name mapping, ignoring duplicates."""
+    try:
+        conn.execute(
+            "INSERT OR IGNORE INTO indication_code_name "
+            "(indication_code, indication_name_de, indication_name_fr, indication_name_it, "
+            " bag_dossier_no, match_source, match_confidence, source_text_id, source_segment_id) "
+            "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+            (code, name_de, name_fr, name_it, dossier, source, confidence, text_id, seg_id),
+        )
+        return conn.execute("SELECT changes()").fetchone()[0]
+    except sqlite3.IntegrityError:
+        return 0
+
+
+def build_code_name_mapping(conn):
+    """Phase 3c: Build the indication_code ↔ name mapping table."""
+    log.info("Phase 3c: Building indication code ↔ name mapping...")
+    stats = defaultdict(int)
+
+    # ------------------------------------------------------------------
+    # Layer 0: Import reference map from swiss_pharma_limitations.db
+    # ------------------------------------------------------------------
+    ref_db = BASE_DIR / "swiss_pharma_limitations.db"
+    if ref_db.exists():
+        conn.execute("ATTACH DATABASE ? AS ref", (str(ref_db),))
+        cur = conn.execute("""
+            INSERT OR IGNORE INTO indication_code_name
+                (indication_code, indication_name_de, indication_name_fr, indication_name_it,
+                 bag_dossier_no, match_source, match_confidence)
+            SELECT code_value, indication_name_de, indication_name_fr, indication_name_it,
+                   bag_dossier_no, 'REF_MAP', 1.0
+            FROM ref.indication_name_code_map
+        """)
+        stats["REF_MAP"] = cur.rowcount
+        conn.commit()
+        conn.execute("DETACH DATABASE ref")
+        log.info(f"  Layer 0 (REF_MAP): {stats['REF_MAP']} mappings imported")
+    else:
+        log.warning(f"  Layer 0: {ref_db.name} not found, skipping reference import")
+
+    # ------------------------------------------------------------------
+    # Layer 1: Direct 1:1 pairing (STRUCTURED_XML code + single segment)
+    # ------------------------------------------------------------------
+    rows = conn.execute("""
+        SELECT si.indication_code, ts.indication_name_de, ts.indication_name_fr,
+               ts.indication_name_it, ts.text_id, ts.segment_id
+        FROM sku_indication si
+        JOIN text_segment ts ON ts.text_id = si.text_id
+        WHERE si.code_source = 'STRUCTURED_XML'
+        AND si.text_id IN (
+            SELECT text_id FROM sku_indication
+            WHERE code_source = 'STRUCTURED_XML'
+            GROUP BY text_id HAVING COUNT(DISTINCT indication_code) = 1
+        )
+        AND si.text_id IN (
+            SELECT text_id FROM text_segment
+            GROUP BY text_id HAVING COUNT(*) = 1
+        )
+        GROUP BY si.indication_code
+    """).fetchall()
+    for code, name_de, name_fr, name_it, text_id, seg_id in rows:
+        dossier = code.split(".")[0] if "." in code else None
+        stats["DIRECT_STRUCT"] += _insert_mapping(
+            conn, code, name_de, name_fr, name_it, dossier,
+            "DIRECT_STRUCT", 1.0, text_id, seg_id)
+    conn.commit()
+    log.info(f"  Layer 1 (DIRECT_STRUCT): {stats['DIRECT_STRUCT']} new")
+
+    # ------------------------------------------------------------------
+    # Layer 2: Direct 1:1 pairing (TEXT_PARSED code + single segment)
+    # ------------------------------------------------------------------
+    rows = conn.execute("""
+        SELECT si.indication_code, ts.indication_name_de, ts.indication_name_fr,
+               ts.indication_name_it, ts.text_id, ts.segment_id
+        FROM sku_indication si
+        JOIN text_segment ts ON ts.text_id = si.text_id
+        WHERE si.code_source = 'TEXT_PARSED'
+        AND si.text_id IN (
+            SELECT text_id FROM sku_indication
+            WHERE code_source IN ('TEXT_PARSED', 'STRUCTURED_XML')
+            GROUP BY text_id HAVING COUNT(DISTINCT indication_code) = 1
+        )
+        AND si.text_id IN (
+            SELECT text_id FROM text_segment
+            GROUP BY text_id HAVING COUNT(*) = 1
+        )
+        GROUP BY si.indication_code
+    """).fetchall()
+    for code, name_de, name_fr, name_it, text_id, seg_id in rows:
+        dossier = code.split(".")[0] if "." in code else None
+        stats["DIRECT_TEXT"] += _insert_mapping(
+            conn, code, name_de, name_fr, name_it, dossier,
+            "DIRECT_TEXT", 0.95, text_id, seg_id)
+    conn.commit()
+    log.info(f"  Layer 2 (DIRECT_TEXT): {stats['DIRECT_TEXT']} new")
+
+    # ------------------------------------------------------------------
+    # Layer 3: Multi-code + single segment (biosimilar shared text)
+    # ------------------------------------------------------------------
+    rows = conn.execute("""
+        SELECT si.indication_code, ts.indication_name_de, ts.indication_name_fr,
+               ts.indication_name_it, ts.text_id, ts.segment_id
+        FROM sku_indication si
+        JOIN text_segment ts ON ts.text_id = si.text_id
+        WHERE si.code_source IN ('STRUCTURED_XML', 'TEXT_PARSED')
+        AND si.text_id IN (
+            SELECT text_id FROM text_segment
+            GROUP BY text_id HAVING COUNT(*) = 1
+        )
+        GROUP BY si.indication_code
+    """).fetchall()
+    for code, name_de, name_fr, name_it, text_id, seg_id in rows:
+        dossier = code.split(".")[0] if "." in code else None
+        stats["SHARED_TEXT"] += _insert_mapping(
+            conn, code, name_de, name_fr, name_it, dossier,
+            "SHARED_TEXT", 0.9, text_id, seg_id)
+    conn.commit()
+    log.info(f"  Layer 3 (SHARED_TEXT): {stats['SHARED_TEXT']} new")
+
+    # ------------------------------------------------------------------
+    # Layer 4: Positional matching (N codes = N segments, same dossier)
+    # ------------------------------------------------------------------
+    # Find text_ids where real code count == segment count
+    text_code_counts = conn.execute("""
+        SELECT si.text_id,
+               GROUP_CONCAT(DISTINCT si.indication_code) as codes,
+               COUNT(DISTINCT si.indication_code) as n_codes
+        FROM sku_indication si
+        WHERE si.code_source IN ('STRUCTURED_XML', 'TEXT_PARSED')
+        GROUP BY si.text_id
+        HAVING n_codes > 1
+    """).fetchall()
+    for text_id, codes_str, n_codes in text_code_counts:
+        seg_count = conn.execute(
+            "SELECT COUNT(*) FROM text_segment WHERE text_id = ?", (text_id,)
+        ).fetchone()[0]
+        if seg_count != n_codes:
+            continue
+
+        # Get codes sorted by their numeric suffix
+        codes = sorted(codes_str.split(","), key=lambda c: c.split(".")[-1] if "." in c else c)
+        # Check all codes are from the same dossier
+        dossiers = set(c.split(".")[0] for c in codes if "." in c)
+        if len(dossiers) != 1:
+            continue
+        dossier = dossiers.pop()
+
+        # Get segments sorted by order
+        segs = conn.execute(
+            "SELECT segment_id, indication_name_de, indication_name_fr, indication_name_it "
+            "FROM text_segment WHERE text_id = ? ORDER BY segment_order",
+            (text_id,),
+        ).fetchall()
+
+        for i, (seg_id, name_de, name_fr, name_it) in enumerate(segs):
+            if i < len(codes):
+                stats["ORDINAL_POSITION"] += _insert_mapping(
+                    conn, codes[i], name_de, name_fr, name_it, dossier,
+                    "ORDINAL_POSITION", 0.8, text_id, seg_id)
+    conn.commit()
+    log.info(f"  Layer 4 (ORDINAL_POSITION): {stats['ORDINAL_POSITION']} new")
+
+    # ------------------------------------------------------------------
+    # Layer 5: Normalized matching of unmatched segment names vs existing map
+    # ------------------------------------------------------------------
+    # Build lookup from existing mappings
+    existing_map = conn.execute(
+        "SELECT indication_code, indication_name_de, bag_dossier_no "
+        "FROM indication_code_name"
+    ).fetchall()
+    norm_lookup = {}  # normalized_name → [(code, dossier)]
+    brand_lookup = {}  # brand_normalized_name → [(code, dossier)]
+    for code, name_de, dossier in existing_map:
+        if not name_de:
+            continue
+        norm = _normalize_indication_name(name_de)
+        norm_lookup.setdefault(norm, []).append((code, dossier))
+        brand_norm = _normalize_brands(_normalize_indication_name(name_de))
+        brand_lookup.setdefault(brand_norm, []).append((code, dossier))
+
+    # Get unmatched segments that have a code on their text_id
+    unmatched = conn.execute("""
+        SELECT ts.segment_id, ts.text_id, ts.indication_name_de,
+               ts.indication_name_fr, ts.indication_name_it,
+               si.indication_code
+        FROM text_segment ts
+        JOIN sku_indication si ON si.text_id = ts.text_id
+        WHERE ts.indication_name_de IS NOT NULL
+        AND ts.indication_name_de NOT IN (
+            SELECT COALESCE(indication_name_de, '') FROM indication_code_name
+        )
+        GROUP BY ts.segment_id
+    """).fetchall()
+
+    for seg_id, text_id, name_de, name_fr, name_it, code in unmatched:
+        dossier = code.split(".")[0] if "." in code else None
+        norm_name = _normalize_indication_name(name_de)
+
+        # 5a: Exact normalized match, same dossier
+        if norm_name in norm_lookup:
+            matches = [c for c, d in norm_lookup[norm_name] if d == dossier]
+            if matches:
+                stats["NORM_SAME"] += _insert_mapping(
+                    conn, matches[0], name_de, name_fr, name_it, dossier,
+                    "NORM_SAME", 0.95, text_id, seg_id)
+                continue
+
+        # 5b: Exact normalized match, cross-dossier (take indication_part only)
+        if norm_name in norm_lookup:
+            ref_code, ref_dossier = norm_lookup[norm_name][0]
+            if "." in ref_code and dossier:
+                ind_part = ref_code.split(".")[1]
+                new_code = f"{dossier}.{ind_part}"
+                stats["NORM_CROSS"] += _insert_mapping(
+                    conn, new_code, name_de, name_fr, name_it, dossier,
+                    "NORM_CROSS", 0.9, text_id, seg_id)
+                continue
+
+        # 5c: Brand-normalized match
+        brand_norm = _normalize_brands(norm_name)
+        if brand_norm != norm_name and brand_norm in brand_lookup:
+            matches = [c for c, d in brand_lookup[brand_norm] if d == dossier]
+            if matches:
+                stats["BRAND_SAME"] += _insert_mapping(
+                    conn, matches[0], name_de, name_fr, name_it, dossier,
+                    "BRAND_SAME", 0.9, text_id, seg_id)
+                continue
+            # Cross-dossier brand
+            ref_code, ref_dossier = brand_lookup[brand_norm][0]
+            if "." in ref_code and dossier:
+                ind_part = ref_code.split(".")[1]
+                new_code = f"{dossier}.{ind_part}"
+                stats["BRAND_CROSS"] += _insert_mapping(
+                    conn, new_code, name_de, name_fr, name_it, dossier,
+                    "BRAND_CROSS", 0.85, text_id, seg_id)
+
+    conn.commit()
+    for src in ("NORM_SAME", "NORM_CROSS", "BRAND_SAME", "BRAND_CROSS"):
+        if stats[src]:
+            log.info(f"  Layer 5 ({src}): {stats[src]} new")
+
+    # ------------------------------------------------------------------
+    # Layer 6: LLM segment names for FALLBACK_XX codes
+    # ------------------------------------------------------------------
+    # Check if text_segment_llm table exists (created by llm_segment_texts.py)
+    has_llm = conn.execute(
+        "SELECT COUNT(*) FROM sqlite_master WHERE type='table' AND name='text_segment_llm'"
+    ).fetchone()[0]
+    if has_llm:
+        rows = conn.execute("""
+            SELECT si.indication_code, tsl.indication_name_fr,
+                   tsl.text_id, tsl.segment_id
+            FROM sku_indication si
+            JOIN text_segment_llm tsl ON tsl.text_id = si.text_id
+            WHERE si.code_source = 'FALLBACK_XX'
+            AND tsl.indication_name_fr IS NOT NULL
+            AND si.text_id IN (
+                SELECT text_id FROM sku_indication
+                WHERE code_source = 'FALLBACK_XX'
+                GROUP BY text_id HAVING COUNT(DISTINCT indication_code) = 1
+            )
+            AND si.text_id IN (
+                SELECT text_id FROM text_segment_llm
+                WHERE indication_name_fr IS NOT NULL
+                GROUP BY text_id HAVING COUNT(*) = 1
+            )
+            GROUP BY si.indication_code
+        """).fetchall()
+        for code, name_fr, text_id, seg_id in rows:
+            dossier = code.split(".")[0] if "." in code else None
+            stats["LLM_SEGMENT"] += _insert_mapping(
+                conn, code, None, name_fr, None, dossier,
+                "LLM_SEGMENT", 0.85, text_id, seg_id)
+        conn.commit()
+        log.info(f"  Layer 6 (LLM_SEGMENT): {stats['LLM_SEGMENT']} new")
+    else:
+        log.info("  Layer 6: text_segment_llm not found, skipping")
+
+    # ------------------------------------------------------------------
+    # Layer 7: Bold extraction / description fallback for remaining codes
+    # ------------------------------------------------------------------
+    unmapped_codes = conn.execute("""
+        SELECT DISTINCT si.indication_code, si.text_id
+        FROM sku_indication si
+        WHERE si.indication_code NOT IN (SELECT indication_code FROM indication_code_name)
+        AND si.code_source IN ('STRUCTURED_XML', 'TEXT_PARSED')
+    """).fetchall()
+
+    for code, text_id in unmapped_codes:
+        dossier = code.split(".")[0] if "." in code else None
+        desc_de = conn.execute(
+            "SELECT description_de FROM limitation_text WHERE text_id = ?", (text_id,)
+        ).fetchone()
+        if not desc_de or not desc_de[0]:
+            continue
+        text = html.unescape(desc_de[0])
+
+        # Try first bold name
+        bold_match = RE_BOLD.search(text)
+        if bold_match:
+            bold_name = bold_match.group(1)
+            if not _is_structural_name(bold_name):
+                # Also get FR
+                desc_fr = conn.execute(
+                    "SELECT description_fr FROM limitation_text WHERE text_id = ?", (text_id,)
+                ).fetchone()
+                name_fr = None
+                if desc_fr and desc_fr[0]:
+                    fr_bold = RE_BOLD.search(html.unescape(desc_fr[0]))
+                    if fr_bold:
+                        name_fr = fr_bold.group(1)
+                stats["BOLD_EXTRACT"] += _insert_mapping(
+                    conn, code, bold_name, name_fr, None, dossier,
+                    "BOLD_EXTRACT", 0.7, text_id)
+                continue
+
+        # Fallback: first sentence of cleaned text
+        cleaned = clean_html(text)
+        # Take first sentence (up to first period, or 120 chars)
+        end = cleaned.find(".")
+        if end > 0 and end < 120:
+            truncated = cleaned[:end + 1].strip()
+        else:
+            truncated = cleaned[:120].strip()
+            if len(cleaned) > 120:
+                truncated += "..."
+        if truncated:
+            stats["DESC_TRUNCATED"] += _insert_mapping(
+                conn, code, truncated, None, None, dossier,
+                "DESC_TRUNCATED", 0.5, text_id)
+
+    conn.commit()
+    log.info(f"  Layer 7 (BOLD_EXTRACT): {stats['BOLD_EXTRACT']} new")
+    log.info(f"  Layer 7 (DESC_TRUNCATED): {stats['DESC_TRUNCATED']} new")
+
+    # Summary
+    total = conn.execute("SELECT COUNT(*) FROM indication_code_name").fetchone()[0]
+    distinct_codes = conn.execute(
+        "SELECT COUNT(DISTINCT indication_code) FROM indication_code_name"
+    ).fetchone()[0]
+    all_codes = conn.execute(
+        "SELECT COUNT(DISTINCT indication_code) FROM sku_indication"
+    ).fetchone()[0]
+    log.info(f"  => Total mappings: {total}, distinct codes: {distinct_codes}/{all_codes}")
+
+
+# ============================================================
 # Phase 4: Statistics and Export
 # ============================================================
 
@@ -942,6 +1389,13 @@ def print_stats(conn):
     for src, cnt in rows:
         log.info(f"  {src}: {cnt}")
 
+    # Fallback vs real .XX vs real codes breakdown
+    log.info("")
+    log.info("Code type breakdown (is_fallback + .XX detection):")
+    rows = conn.execute("SELECT code_type, n_links, n_distinct_codes, n_skus FROM v_codes_summary").fetchall()
+    for code_type, n_links, n_codes, n_skus in rows:
+        log.info(f"  {code_type}: {n_codes} distinct codes, {n_links} links, {n_skus} SKUs")
+
     # Limitation level distribution
     log.info("")
     log.info("sku_indication limitation_level distribution:")
@@ -951,6 +1405,39 @@ def print_stats(conn):
     ).fetchall()
     for lvl, cnt in rows:
         log.info(f"  {lvl}: {cnt}")
+
+    # Code-name mapping stats
+    log.info("")
+    log.info("indication_code_name mapping:")
+    total_map = conn.execute("SELECT COUNT(*) FROM indication_code_name").fetchone()[0]
+    distinct_mapped = conn.execute(
+        "SELECT COUNT(DISTINCT indication_code) FROM indication_code_name"
+    ).fetchone()[0]
+    all_codes = conn.execute(
+        "SELECT COUNT(DISTINCT indication_code) FROM sku_indication"
+    ).fetchone()[0]
+    log.info(f"  Total mappings: {total_map}")
+    log.info(f"  Distinct codes mapped: {distinct_mapped}/{all_codes} "
+             f"({100*distinct_mapped/all_codes:.1f}%)" if all_codes else "")
+
+    log.info("  By match_source:")
+    rows = conn.execute(
+        "SELECT match_source, COUNT(*), COUNT(DISTINCT indication_code) "
+        "FROM indication_code_name GROUP BY match_source ORDER BY COUNT(*) DESC"
+    ).fetchall()
+    for src, cnt, ucodes in rows:
+        log.info(f"    {src}: {cnt} mappings ({ucodes} codes)")
+
+    codes_no_name = conn.execute("SELECT COUNT(*) FROM v_codes_without_names").fetchone()[0]
+    names_no_code = conn.execute("SELECT COUNT(*) FROM v_names_without_codes").fetchone()[0]
+    log.info(f"  Codes WITHOUT names: {codes_no_name}")
+    # Breakdown by code_type
+    rows = conn.execute(
+        "SELECT code_type, COUNT(*) FROM v_codes_without_names GROUP BY code_type"
+    ).fetchall()
+    for ct, cnt in rows:
+        log.info(f"    {ct}: {cnt}")
+    log.info(f"  Names WITHOUT codes: {names_no_code}")
 
 
 def export_csv(conn):
@@ -964,7 +1451,11 @@ def export_csv(conn):
             s.form_type, s.total_units, s.substance_name,
             s.public_price, s.exfactory_price,
             s.valid_from AS sku_valid_from, s.valid_to AS sku_valid_to,
-            si.indication_code, si.code_source, si.limitation_level,
+            si.indication_code, si.code_source, si.is_fallback,
+            CASE WHEN si.is_fallback = 1 THEN 'FALLBACK'
+                 WHEN si.indication_code LIKE '%.XX' THEN 'CROSS_INDICATION'
+                 ELSE 'REAL_CODE' END AS code_type,
+            si.limitation_level,
             si.valid_from AS link_valid_from, si.valid_to AS link_valid_to,
             lt.limitation_code, lt.limitation_type,
             lt.is_cashback, lt.cashback_company,
@@ -1012,6 +1503,9 @@ def main():
 
     # Phase 3b: Text segmentation
     segment_texts(conn)
+
+    # Phase 3c: Code ↔ name mapping
+    build_code_name_mapping(conn)
 
     # Phase 4: Stats + Export
     print_stats(conn)

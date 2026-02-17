@@ -49,13 +49,18 @@ FALSE_POSITIVE_PATTERNS = [
 ]
 
 # 1.2 Patterns de détection cashback (le FABRICANT rembourse)
+# Legal suffixes for company names (case-insensitive matching via (?i:...))
+_COMPANY_SUFFIX = r'(?:SA|AG|S[àa]rl|SARL|GmbH|Ltd|s\.r\.o\.|Suisse|Switzerland|Schweiz)'
+
 COMPANY_REMBOURSE_PATTERN = r'''
     (?:la\s+)?
     (?:société|entreprise|firme)?\s*
     ([A-Z][A-Za-zÀ-ÿ\-]+
-    (?:\s+[A-Za-zÀ-ÿ\-\(\)&]+)*
-    \s+(?:SA|AG|Sàrl|GmbH|Ltd|Suisse|Switzerland|Schweiz)
+    (?:\s+[A-Za-zÀ-ÿ\-\(\)&.]+)*
+    \s+''' + _COMPANY_SUFFIX + r'''
     (?:\s+[A-Za-zÀ-ÿ\-\(\)]+)?)
+    (?:\s+sise\s+[^,]+,?\s*)?      # skip "sise à 6300 Zoug"
+    (?:\s+lui\s+)?                  # skip "lui"
     \s+rembourse(?:ra)?
 '''
 
@@ -64,8 +69,8 @@ REMBOURSE_PAR_COMPANY_PATTERN = r'''
     (?:la\s+)?
     (?:société|entreprise|firme)?\s*
     ([A-Z][A-Za-zÀ-ÿ\-]+
-    (?:\s+[A-Za-zÀ-ÿ\-\(\)&]+)*
-    (?:\s+(?:SA|AG|Sàrl|GmbH|Ltd|Suisse|Switzerland|Schweiz))
+    (?:\s+[A-Za-zÀ-ÿ\-\(\)&.]+)*
+    (?:\s+''' + _COMPANY_SUFFIX + r''')
     (?:\s+[A-Za-zÀ-ÿ\-\(\)]+)?)
 '''
 
@@ -75,24 +80,42 @@ ASSUREUR_FACTURE_PATTERN = r'''
     (?:société|entreprise|firme)?\s*
     (
         [A-Z][A-Za-zÀ-ÿ\-]+
-        (?:\s+[A-Za-zÀ-ÿ\-\(\)&]+)*
-        \s+(?:SA|AG|Sàrl|GmbH|Ltd|Suisse|Switzerland|Schweiz)
+        (?:\s+[A-Za-zÀ-ÿ\-\(\)&.]+)*
+        \s+''' + _COMPANY_SUFFIX + r'''
     )
     (?=\s+le\s|\s+un|\s+la\s|\s+les\s|\s*$|\s*\.)
 '''
 
 TITULAIRE_REMBOURSE_PATTERN = r'''
     (?:le\s+)?titulaire\s+
-    (?:de\s+l['\u2019\s]autorisation[\s,]+)?
-    (?:de\s+[A-Z][A-Za-z0-9\-]+\s+)?
-    (?:[^,\n]{1,50},\s+)?
+    (?:de\s+l['\u2019\s]autorisation
+        (?:\s+de\s+mise\s+sur\s+le\s+march[ée]\s*(?:\(AMM\))?)?  # "de mise sur le marché (AMM)"
+    [\s,]+)?
+    (?:de\s+[A-Z][A-Za-z0-9\-]+[\s,]+)?
+    (?:[^,\n]{0,80},\s+)?           # anything up to a comma (company name etc.)
+    (?:lui\s+)?                      # optional "lui"
     (?:rembourse(?:ra)?|restitue)
+'''
+
+# "titulaire ... doit déduire" pattern (e.g. VEKLURY)
+TITULAIRE_DEDUIRE_PATTERN = r'''
+    (?:le\s+)?titulaire\s+
+    (?:de\s+l['\u2019\s]autorisation[\s,]+)?
+    (?:doit\s+)?
+    (?:déduire|déduit)
 '''
 
 REMBOURSE_ASSURANCE_MALADIE_PATTERN = r'''
     rembourse(?:nt|ra|ront)?\s+
     (?:à\s+)?
     l['\u2019]assur(?:ance|eur)[\s\-]?maladie
+'''
+
+# "remise confidentielle" pattern (e.g. HEMGENIX)
+REMISE_CONFIDENTIELLE_PATTERN = r'''
+    remise[s]?\s+confidentielle[s]?\s+
+    (?:de\s+la\s+part\s+)?
+    (?:du\s+titulaire|de\s+la\s+société|unique)?
 '''
 
 # 1.3 Nombres en lettres (français) pour extraction de seuils
@@ -428,15 +451,27 @@ class ReferenceDataLoader:
         """
         tables = self._get_tables()
 
+        # Charger sociétés depuis la table company (new schema)
+        if 'company' in tables:
+            self._load_companies_from_company_table()
+
         # Charger sociétés depuis cashback existant (si table existe)
         if 'cashback' in tables:
             self._load_companies_from_cashback()
+
+        # Charger depuis limitation_text cashback_company
+        if 'limitation_text' in tables:
+            self._load_companies_from_limitation_text()
 
         # Charger préparations (notre table = 'preparation')
         if 'preparation' in tables:
             self._load_preparations_from_preparation()
         elif 'preparations' in tables:
             self._load_preparations()
+
+        # Charger préparations depuis sku (new schema)
+        if 'sku' in tables:
+            self._load_preparations_from_sku()
 
         if 'partners' in tables:
             self._load_partners()
@@ -452,6 +487,43 @@ class ReferenceDataLoader:
             "SELECT name FROM sqlite_master WHERE type='table'"
         )
         return [row[0] for row in cursor.fetchall()]
+
+    def _load_companies_from_company_table(self):
+        """Charge les sociétés depuis la table company (new schema)."""
+        try:
+            cursor = self.conn.execute('''
+                SELECT DISTINCT company_name
+                FROM company
+                WHERE company_name IS NOT NULL AND LENGTH(company_name) > 2
+            ''')
+            for row in cursor:
+                name = row[0]
+                if name and not self._is_invalid_company(name):
+                    self.companies.add(name)
+                    base = self._extract_base_name(name)
+                    if base:
+                        self.company_bases.add(base)
+        except sqlite3.OperationalError:
+            pass
+
+    def _load_companies_from_limitation_text(self):
+        """Charge les sociétés déjà détectées dans limitation_text."""
+        try:
+            cursor = self.conn.execute('''
+                SELECT DISTINCT cashback_company
+                FROM limitation_text
+                WHERE cashback_company IS NOT NULL AND LENGTH(cashback_company) > 2
+                  AND LENGTH(cashback_company) < 60
+            ''')
+            for row in cursor:
+                name = row[0]
+                if name and not self._is_invalid_company(name):
+                    self.companies.add(name)
+                    base = self._extract_base_name(name)
+                    if base:
+                        self.company_bases.add(base)
+        except sqlite3.OperationalError:
+            pass
 
     def _load_companies_from_cashback(self):
         """Charge les sociétés depuis la table cashback."""
@@ -510,6 +582,24 @@ class ReferenceDataLoader:
                 SELECT DISTINCT name_fr
                 FROM preparations
                 WHERE name_fr IS NOT NULL AND name_fr != ''
+            ''')
+            for row in cursor:
+                name = row[0]
+                if name:
+                    self.preparations.add(name)
+                    base = self._extract_drug_base(name)
+                    if base:
+                        self.preparation_bases.add(base)
+        except sqlite3.OperationalError:
+            pass
+
+    def _load_preparations_from_sku(self):
+        """Charge les noms de préparations depuis la table sku (new schema)."""
+        try:
+            cursor = self.conn.execute('''
+                SELECT DISTINCT product_name
+                FROM sku
+                WHERE product_name IS NOT NULL AND product_name != ''
             ''')
             for row in cursor:
                 name = row[0]
@@ -612,18 +702,38 @@ def find_company_in_text(text: str, ref_data: ReferenceDataLoader) -> Optional[s
     Trouve un nom de société dans le texte par fuzzy matching.
     """
     text_lower = text.lower()
+    # Version normalisée sans traits d'union pour matching souple
+    text_norm = re.sub(r'[-\u2010\u2011\u2012\u2013\u2014]', ' ', text_lower)
+    text_norm = re.sub(r'\s+', ' ', text_norm)
 
-    # 1. Chercher les noms de sociétés exacts connus
+    # 1. Chercher les noms de sociétés exacts connus (avec normalisation tirets)
     for company in ref_data.companies:
-        if company.lower() in text_lower:
+        comp_lower = company.lower()
+        if comp_lower in text_lower:
+            return company
+        # Aussi tester sans tirets
+        comp_norm = re.sub(r'[-\u2010\u2011\u2012\u2013\u2014]', ' ', comp_lower)
+        if comp_norm in text_norm:
             return company
 
-    # 2. Chercher par nom de base (sans suffixes)
+    # 2. Chercher par nom de base (sans suffixes) — multi-mots
+    for base in ref_data.company_bases:
+        base_norm = re.sub(r'[-\u2010\u2011\u2012\u2013\u2014]', ' ', base.lower())
+        base_norm = re.sub(r'\s+', ' ', base_norm).strip()
+        if len(base_norm) >= 4 and base_norm in text_norm:
+            # Retrouver le nom complet de la société
+            for company in ref_data.companies:
+                if base in company.upper():
+                    return company
+            for partner in ref_data.partners:
+                if base in partner.upper():
+                    return partner
+
+    # 3. Fuzzy matching mot par mot (seuil élevé)
     words = re.findall(r'[A-ZÀÂÄÉÈÊËÏÎÔÖÙÛÜŸÇ][a-zA-ZÀ-ÿ\-]{3,}', text)
     for word in words:
         match = fuzzy_match(word, ref_data.company_bases, threshold=0.90)
         if match:
-            # Retrouver le nom complet de la société
             for company in ref_data.companies:
                 if match in company.upper():
                     return company
@@ -816,11 +926,20 @@ def detect_cashback(text: str, ref_data: Optional[ReferenceDataLoader] = None) -
         result['patterns_matched'].append('rembourse_assurance')
         return result
 
-    # Patterns supplémentaires
-    if re.search(r'rembourse.*\d+[.,]?\d*\s*%\s*(?:du|de|des)', text, re.IGNORECASE):
+    # Pattern 6: titulaire doit déduire (e.g. VEKLURY)
+    if re.search(TITULAIRE_DEDUIRE_PATTERN, text, re.IGNORECASE | re.VERBOSE):
         result['is_cashback'] = True
-        result['patterns_matched'].append('percentage')
-    elif re.search(r"rembourse(?:ra)?\s+(?:à\s+l'assureur)?.*?(?:CHF|Fr\.)\s*[\d']+", text, re.IGNORECASE):
+        result['patterns_matched'].append('titulaire_deduire')
+        return result
+
+    # Pattern 7: remise confidentielle (e.g. HEMGENIX)
+    if re.search(REMISE_CONFIDENTIELLE_PATTERN, text, re.IGNORECASE | re.VERBOSE):
+        result['is_cashback'] = True
+        result['patterns_matched'].append('remise_confidentielle')
+        return result
+
+    # Patterns supplémentaires
+    if re.search(r"rembourse(?:ra)?\s+(?:à\s+l'assureur)?.*?(?:CHF|Fr\.)\s*[\d']+", text, re.IGNORECASE):
         result['is_cashback'] = True
         result['patterns_matched'].append('amount')
     elif re.search(r'rembourse.*partie\s*fixe.*prix', text, re.IGNORECASE):
@@ -838,16 +957,42 @@ def detect_cashback(text: str, ref_data: Optional[ReferenceDataLoader] = None) -
             # Vérifier si le contexte suggère un cashback
             company_lower = company.lower()
             text_lower = text.lower()
-            company_pos = text_lower.find(company_lower[:min(10, len(company_lower))])
+            # Normaliser tirets pour trouver la position (Bristol-Myers vs Bristol Myers)
+            text_norm = re.sub(r'[-\u2010-\u2014]', ' ', text_lower)
+            comp_norm = re.sub(r'[-\u2010-\u2014]', ' ', company_lower)
+            company_pos = text_norm.find(comp_norm[:min(15, len(comp_norm))])
+            if company_pos < 0:
+                # Essayer avec le nom de base (sans suffixes)
+                base = re.split(r'\s+(?:SA|AG|GmbH|Ltd|Sàrl|SARL)\b', company_lower, flags=re.IGNORECASE)[0].strip()
+                base_norm = re.sub(r'[-\u2010-\u2014]', ' ', base)
+                company_pos = text_norm.find(base_norm)
             if company_pos >= 0:
-                # Extraire le contexte autour du nom de société
-                context_start = max(0, company_pos - 50)
-                context_end = min(len(text), company_pos + len(company) + 100)
-                context = text_lower[context_start:context_end]
+                # Déterminer la longueur réelle du match dans le texte
+                # Utiliser le nom de base (sans suffixe SA/AG) car le texte peut omettre le suffixe
+                base_only = re.split(r'\s+(?:SA|AG|GmbH|Ltd|Sàrl|SARL)\b', comp_norm, flags=re.IGNORECASE)[0].strip()
+                # Chercher la fin réelle: si le suffixe suit dans le texte, l'inclure
+                match_end = company_pos + len(base_only)
+                remainder = text_norm[match_end:match_end + 10]
+                suffix_m = re.match(r'\s+(?:sa|ag|gmbh|ltd|sàrl|sarl)\b', remainder)
+                if suffix_m:
+                    match_end += suffix_m.end()
 
-                # Vérifier présence de verbes de remboursement
-                cashback_verbs = ['rembourse', 'restitue', 'verse', 'paie', 'prend en charge']
-                if any(verb in context for verb in cashback_verbs):
+                # Vérifier que la société est le SUJET d'un verbe de remboursement
+                # (pas juste mentionnée dans "remboursement de Produit CompanyName")
+                after_company = text_norm[match_end:match_end + 80]
+                before_company = text_norm[max(0, company_pos - 80):company_pos]
+
+                # Pattern 1: "Company rembourse" (société = sujet)
+                cashback_verbs_after = [r'\s+rembourse', r'\s+restitue', r'\s+verse',
+                                        r'\s+paie', r'\s+prend\s+en\s+charge',
+                                        r'\s+s\s*.\s*engage\s+[àa]\s+rembourser']
+                # Pattern 2: "transmises par Company" (paiements transmis par)
+                context_verbs_before = [r'transmises?\s+par\s*$', r'pay[ée]e?s?\s+par\s*$',
+                                        r'vers[ée]e?s?\s+par\s*$']
+                is_subject = any(re.match(v, after_company) for v in cashback_verbs_after)
+                is_agent = any(re.search(v, before_company) for v in context_verbs_before)
+
+                if is_subject or is_agent:
                     result['is_cashback'] = True
                     result['company'] = company
                     result['patterns_matched'].append('fuzzy_company')

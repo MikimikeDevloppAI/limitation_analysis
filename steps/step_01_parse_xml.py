@@ -7,7 +7,7 @@ Creates sku_indication.db with all raw XML data:
 - limitation_text: unique limitation texts (deduplicated by content hash)
 - limitation: limitation_code + text version + contiguous period
 - indication: master indication table (1 row per unique code, with bag_dossier_no)
-- limitation_indication: links limitation -> indication (STRUCTURED_XML only)
+- limitation_text_segment: text segments (1 per indication, populated by step_02+)
 - sku_limitation: links SKU -> limitation with temporal validity
 - company, preparation_company: partner info
 """
@@ -121,20 +121,24 @@ CREATE TABLE indication (
 CREATE INDEX idx_ind_code ON indication(indication_code);
 CREATE INDEX idx_ind_dossier ON indication(bag_dossier_no);
 
--- Links limitations to indications (via indication_id FK)
-CREATE TABLE limitation_indication (
-    li_id               INTEGER PRIMARY KEY AUTOINCREMENT,
-    limitation_id       INTEGER NOT NULL REFERENCES limitation(limitation_id),
-    indication_id       INTEGER NOT NULL REFERENCES indication(indication_id),
-    code_source         TEXT NOT NULL DEFAULT 'STRUCTURED_XML',
-    valid_from          TEXT,
-    valid_to            TEXT,
-    text_id             INTEGER,
-    UNIQUE(limitation_id, indication_id)
+-- Segments of limitation texts: 1 row per indication in the text.
+-- For simple texts: 1 segment (index=0) = full text.
+-- For MULTI_BOLD: N segments, each = one indication section.
+-- Replaces the old limitation_indication table.
+CREATE TABLE limitation_text_segment (
+    segment_id      INTEGER PRIMARY KEY AUTOINCREMENT,
+    text_id         INTEGER NOT NULL REFERENCES limitation_text(text_id),
+    segment_index   INTEGER NOT NULL,
+    description_de  TEXT,
+    description_fr  TEXT,
+    description_it  TEXT,
+    indication_id   INTEGER REFERENCES indication(indication_id),
+    code_source     TEXT,
+    UNIQUE(text_id, segment_index)
 );
 
-CREATE INDEX idx_li_lim ON limitation_indication(limitation_id);
-CREATE INDEX idx_li_ind ON limitation_indication(indication_id);
+CREATE INDEX idx_seg_text ON limitation_text_segment(text_id);
+CREATE INDEX idx_seg_ind ON limitation_text_segment(indication_id);
 
 -- SKU <-> Limitation links (with temporal validity)
 CREATE TABLE sku_limitation (
@@ -159,19 +163,21 @@ SELECT
     s.description_de AS pack_description,
     s.public_price, s.exfactory_price,
     lim.limitation_code, lim.limitation_type, lim.limitation_niveau,
+    seg.code_source,
     ind.indication_code, ind.bag_dossier_no AS indication_dossier,
     ind.indication_name_de, ind.indication_name_fr,
-    li.code_source,
-    lt.description_de AS limitation_text_de,
-    lt.description_fr AS limitation_text_fr,
+    seg.description_fr AS segment_text_fr,
+    seg.description_de AS segment_text_de,
+    lt.description_de AS full_text_de,
+    lt.description_fr AS full_text_fr,
     sl.limitation_level,
     sl.valid_from, sl.valid_to
 FROM sku_limitation sl
 JOIN sku s ON s.gtin = sl.gtin
 JOIN limitation lim ON lim.limitation_id = sl.limitation_id
 JOIN limitation_text lt ON lt.text_id = lim.text_id
-LEFT JOIN limitation_indication li ON li.limitation_id = lim.limitation_id
-LEFT JOIN indication ind ON ind.indication_id = li.indication_id;
+LEFT JOIN limitation_text_segment seg ON seg.text_id = lt.text_id
+LEFT JOIN indication ind ON ind.indication_id = seg.indication_id;
 
 -- Companies (from XML Partner elements)
 CREATE TABLE company (
@@ -193,6 +199,14 @@ CREATE TABLE preparation_company (
     first_seen_extract INTEGER NOT NULL,
     last_seen_extract  INTEGER NOT NULL,
     UNIQUE(preparation_id, company_id)
+);
+
+-- Temporary table: text_id -> indication mapping from XML codes (used by step_02)
+CREATE TABLE _text_indication_xml (
+    text_id         INTEGER NOT NULL,
+    indication_id   INTEGER NOT NULL,
+    indication_code TEXT NOT NULL,
+    UNIQUE(text_id, indication_id)
 );
 
 -- Temporary table for preparation-level links (dropped after fan-out)
@@ -425,6 +439,32 @@ def upsert_prep_lim_link(conn, extract_id, preparation_id,
         )
 
 
+def upsert_pack_sku_link(conn, extract_id, gtin, limitation_id):
+    """Insert/update a PACK-level limitation link directly into sku_limitation.
+
+    PACK-level limitations are specific to a single GTIN and must NOT be
+    fanned out to all GTINs in the preparation (unlike PREPARATION-level).
+    """
+    row = conn.execute(
+        "SELECT link_id FROM sku_limitation "
+        "WHERE gtin = ? AND limitation_id = ?",
+        (gtin, limitation_id),
+    ).fetchone()
+    if row:
+        conn.execute(
+            "UPDATE sku_limitation SET last_seen_extract = ? WHERE link_id = ?",
+            (extract_id, row[0]),
+        )
+    else:
+        conn.execute(
+            "INSERT INTO sku_limitation "
+            "(gtin, limitation_id, limitation_level, "
+            " first_seen_extract, last_seen_extract) "
+            "VALUES (?, ?, 'PACK', ?, ?)",
+            (gtin, limitation_id, extract_id, extract_id),
+        )
+
+
 def _get_dossier_from_code(code):
     """Extract bag_dossier_no from indication code: '20461.07' -> '20461'."""
     if code and "." in code:
@@ -434,9 +474,9 @@ def _get_dossier_from_code(code):
 
 def process_limitation(conn, extract_id, preparation_id, lim_elem,
                        level, bag_dossier_no):
-    """Process one <Limitation> element."""
+    """Process one <Limitation> element. Returns limitation_id or None."""
     if level == "ITCODE":
-        return
+        return None
 
     lim_code = get_text(lim_elem, "LimitationCode")
     lim_type = get_text(lim_elem, "LimitationType")
@@ -452,7 +492,8 @@ def process_limitation(conn, extract_id, preparation_id, lim_elem,
         conn, extract_id, lim_code, lim_type, lim_niveau, text_id,
     )
 
-    # Structured XML codes (post-Feb 2023)
+    # Structured XML codes (post-Feb 2023) — create indication rows
+    # and record text_id -> indication mapping for step_02.
     for code in extract_codes_structured(lim_elem):
         dossier = _get_dossier_from_code(code)
         conn.execute(
@@ -465,12 +506,18 @@ def process_limitation(conn, extract_id, preparation_id, lim_elem,
             (code,),
         ).fetchone()
         conn.execute(
-            "INSERT OR IGNORE INTO limitation_indication "
-            "(limitation_id, indication_id, code_source) VALUES (?, ?, 'STRUCTURED_XML')",
-            (limitation_id, ind_row[0]),
+            "INSERT OR IGNORE INTO _text_indication_xml "
+            "(text_id, indication_id, indication_code) VALUES (?, ?, ?)",
+            (text_id, ind_row[0], code),
         )
 
-    upsert_prep_lim_link(conn, extract_id, preparation_id, limitation_id, level)
+    # Only PREPARATION-level goes to _prep_lim_link for fan-out.
+    # PACK-level is inserted directly into sku_limitation by the caller.
+    if level == "PREPARATION":
+        upsert_prep_lim_link(conn, extract_id, preparation_id,
+                             limitation_id, level)
+
+    return limitation_id
 
 
 def process_preparation(conn, extract_id, prep_elem):
@@ -507,14 +554,16 @@ def process_preparation(conn, extract_id, prep_elem):
             pub_price, exf_price,
         )
 
-        # Pack-level limitations
+        # Pack-level limitations → insert directly into sku_limitation
         lims = pack_elem.find("Limitations")
         if lims is not None:
             for lim_elem in lims.findall("Limitation"):
-                process_limitation(
+                lim_id = process_limitation(
                     conn, extract_id, preparation_id, lim_elem,
                     "PACK", bag_dossier_no,
                 )
+                if lim_id is not None:
+                    upsert_pack_sku_link(conn, extract_id, gtin, lim_id)
 
         # Partners (company names)
         pack_partners = pack_elem.find("Partners")
@@ -646,17 +695,6 @@ def resolve_dates(conn, extract_map):
             )
     conn.commit()
 
-    # Also fill valid_from/to on limitation_indication
-    conn.execute("""
-        UPDATE limitation_indication
-        SET valid_from = (SELECT l.valid_from FROM limitation l
-                          WHERE l.limitation_id = limitation_indication.limitation_id),
-            valid_to = (SELECT l.valid_to FROM limitation l
-                        WHERE l.limitation_id = limitation_indication.limitation_id),
-            text_id = (SELECT l.text_id FROM limitation l
-                       WHERE l.limitation_id = limitation_indication.limitation_id)
-        WHERE valid_from IS NULL
-    """)
     conn.commit()
 
 
@@ -709,11 +747,9 @@ def run(db_path, extracted_dir):
     text_count = conn.execute("SELECT COUNT(*) FROM limitation_text").fetchone()[0]
     lim_count = conn.execute("SELECT COUNT(*) FROM limitation").fetchone()[0]
     ind_count = conn.execute("SELECT COUNT(*) FROM indication").fetchone()[0]
-    li_count = conn.execute("SELECT COUNT(*) FROM limitation_indication").fetchone()[0]
     link_count = conn.execute("SELECT COUNT(*) FROM _prep_lim_link").fetchone()[0]
     log.info(f"    {sku_count} SKUs, {text_count} texts, {lim_count} limitations, "
-             f"{ind_count} indications, {li_count} indication links, "
-             f"{link_count} prep-level links")
+             f"{ind_count} indications, {link_count} prep-level links")
 
     # Fan-out + resolve dates
     fanout_to_sku(conn, extract_map)
@@ -721,7 +757,7 @@ def run(db_path, extracted_dir):
 
     # Summary
     for table in ("extract_info", "sku", "limitation_text", "limitation",
-                  "indication", "limitation_indication", "sku_limitation",
+                  "indication", "limitation_text_segment", "sku_limitation",
                   "company", "preparation_company"):
         cnt = conn.execute(f"SELECT COUNT(*) FROM {table}").fetchone()[0]
         log.info(f"    {table}: {cnt}")

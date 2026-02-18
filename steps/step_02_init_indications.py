@@ -1,10 +1,11 @@
 """
-Step 02: Initialize indications for limitations without XML codes.
+Step 02: Initialize segments and indications.
 
 - Creates 1 NOCODE indication (code=NULL, name=NULL)
-- Inserts limitation_indication rows pointing to NOCODE for all limitations
-  that have no XML indication codes (pre-2023 texts)
-- Sets text_complexity on limitation_text for texts with XML codes
+- Creates 1 default segment (index=0, full text) per limitation_text
+- For texts with XML codes: segments linked to XML indications (via _text_indication_xml)
+- For texts without XML codes: segments linked to NOCODE
+- Sets text_complexity = 'XML_MULTI_CODE' for texts with >1 XML code
 """
 
 import logging
@@ -14,12 +15,12 @@ log = logging.getLogger(__name__)
 
 
 def run(db_path):
-    """Run step 02: NOCODE indication + link pre-2023 limitations."""
-    log.info("Step 02: Initialize indications for pre-2023 limitations")
+    """Run step 02: create segments and link indications."""
+    log.info("Step 02: Initialize segments and indications")
 
     conn = sqlite3.connect(str(db_path))
 
-    # Create a single NOCODE indication (no code, no name)
+    # ---- Create NOCODE indication ----
     nocode_row = conn.execute(
         "SELECT indication_id FROM indication WHERE indication_code IS NULL "
         "AND indication_name_de IS NULL AND indication_name_fr IS NULL"
@@ -33,65 +34,79 @@ def run(db_path):
         nocode_id = cur.lastrowid
     log.info(f"  NOCODE indication_id: {nocode_id}")
 
-    # Insert NOCODE rows for all limitations without any indication link
-    lims_without = conn.execute("""
-        SELECT l.limitation_id, l.valid_from, l.valid_to, l.text_id
-        FROM limitation l
-        WHERE l.limitation_id NOT IN (
-            SELECT limitation_id FROM limitation_indication
-        )
-    """).fetchall()
+    # ---- Build XML code map: text_id -> [(indication_id, code)] ----
+    xml_text_codes = {}
+    rows = conn.execute(
+        "SELECT text_id, indication_id, indication_code "
+        "FROM _text_indication_xml"
+    ).fetchall()
+    for text_id, ind_id, code in rows:
+        xml_text_codes.setdefault(text_id, []).append((ind_id, code))
+    log.info(f"  XML text-indication mappings: {len(rows)} "
+             f"({len(xml_text_codes)} texts)")
 
-    inserted = 0
-    for lim_id, vf, vt, tid in lims_without:
-        conn.execute(
-            "INSERT OR IGNORE INTO limitation_indication "
-            "(limitation_id, indication_id, code_source, valid_from, valid_to, text_id) "
-            "VALUES (?, ?, 'NOCODE', ?, ?, ?)",
-            (lim_id, nocode_id, vf, vt, tid),
-        )
-        inserted += 1
+    # ---- Create segments ----
+    texts = conn.execute(
+        "SELECT text_id, description_de, description_fr, description_it "
+        "FROM limitation_text"
+    ).fetchall()
 
-    conn.commit()
-
-    # Mark XML texts complexity
-    # Texts with exactly 1 XML code -> will be handled in step_03
-    # Texts with >1 XML code -> XML_MULTI_CODE
-    text_to_codes = {}
-    rows = conn.execute("""
-        SELECT l.text_id, COUNT(DISTINCT li.indication_id) as n_codes
-        FROM limitation_indication li
-        JOIN limitation l ON l.limitation_id = li.limitation_id
-        WHERE li.code_source = 'STRUCTURED_XML'
-        GROUP BY l.text_id
-    """).fetchall()
-    for text_id, n_codes in rows:
-        text_to_codes[text_id] = n_codes
-
+    xml_single = 0
     xml_multi = 0
-    for text_id, n_codes in text_to_codes.items():
-        if n_codes > 1:
+    nocode_seg = 0
+
+    for text_id, desc_de, desc_fr, desc_it in texts:
+        xml_codes = xml_text_codes.get(text_id)
+
+        if xml_codes and len(xml_codes) == 1:
+            # Single XML code: 1 segment linked to that indication
+            ind_id, _ = xml_codes[0]
+            conn.execute(
+                "INSERT INTO limitation_text_segment "
+                "(text_id, segment_index, description_de, description_fr, "
+                " description_it, indication_id, code_source) "
+                "VALUES (?, 0, ?, ?, ?, ?, 'STRUCTURED_XML')",
+                (text_id, desc_de, desc_fr, desc_it, ind_id),
+            )
+            xml_single += 1
+
+        elif xml_codes and len(xml_codes) > 1:
+            # Multiple XML codes: 1 segment per code (full text for now)
+            for i, (ind_id, _) in enumerate(xml_codes):
+                conn.execute(
+                    "INSERT INTO limitation_text_segment "
+                    "(text_id, segment_index, description_de, description_fr, "
+                    " description_it, indication_id, code_source) "
+                    "VALUES (?, ?, ?, ?, ?, ?, 'STRUCTURED_XML')",
+                    (text_id, i, desc_de, desc_fr, desc_it, ind_id),
+                )
             conn.execute(
                 "UPDATE limitation_text SET text_complexity = 'XML_MULTI_CODE' "
                 "WHERE text_id = ?", (text_id,),
             )
             xml_multi += 1
 
+        else:
+            # No XML codes: 1 segment with NOCODE
+            conn.execute(
+                "INSERT INTO limitation_text_segment "
+                "(text_id, segment_index, description_de, description_fr, "
+                " description_it, indication_id, code_source) "
+                "VALUES (?, 0, ?, ?, ?, ?, 'NOCODE')",
+                (text_id, desc_de, desc_fr, desc_it, nocode_id),
+            )
+            nocode_seg += 1
+
     conn.commit()
 
-    total = conn.execute("SELECT COUNT(*) FROM limitation_indication").fetchone()[0]
-    log.info(f"  NOCODE rows inserted: {inserted}")
-    log.info(f"  XML multi-code texts flagged: {xml_multi}")
-    log.info(f"  Total limitation_indication: {total}")
+    total_segs = conn.execute(
+        "SELECT COUNT(*) FROM limitation_text_segment"
+    ).fetchone()[0]
 
-    # Verify no limitation is uncovered
-    uncovered = conn.execute("""
-        SELECT COUNT(*) FROM limitation l
-        WHERE l.limitation_id NOT IN (
-            SELECT limitation_id FROM limitation_indication
-        )
-    """).fetchone()[0]
-    log.info(f"  Uncovered limitations: {uncovered} (should be 0)")
+    log.info(f"  Segments created: {total_segs}")
+    log.info(f"    XML single-code: {xml_single}")
+    log.info(f"    XML multi-code:  {xml_multi} texts ({xml_multi} flagged)")
+    log.info(f"    NOCODE:          {nocode_seg}")
 
     conn.close()
     log.info("  Step 02 done.")

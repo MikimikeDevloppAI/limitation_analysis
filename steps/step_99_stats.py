@@ -20,7 +20,7 @@ def run(db_path):
     log.info("TABLE COUNTS")
     log.info("=" * 60)
     for table in ("extract_info", "sku", "limitation_text", "limitation",
-                  "indication", "limitation_indication", "sku_limitation",
+                  "indication", "limitation_text_segment", "sku_limitation",
                   "company", "preparation_company"):
         cnt = conn.execute(f"SELECT COUNT(*) FROM {table}").fetchone()[0]
         log.info(f"  {table}: {cnt}")
@@ -65,17 +65,29 @@ def run(db_path):
     log.info(f"  name only:   {ind_stats[2]}")
     log.info(f"  neither:     {ind_stats[3]} (NOCODE)")
 
-    # ---- limitation_indication by code_source ----
+    # ---- Segments by code_source ----
     log.info("")
-    log.info("limitation_indication by code_source:")
+    log.info("Segments by code_source:")
     rows = conn.execute(
-        "SELECT li.code_source, COUNT(*), COUNT(DISTINCT li.indication_id), "
-        "COUNT(DISTINCT li.limitation_id) "
-        "FROM limitation_indication li "
-        "GROUP BY li.code_source ORDER BY COUNT(*) DESC"
+        "SELECT code_source, COUNT(*), COUNT(DISTINCT indication_id), "
+        "COUNT(DISTINCT text_id) "
+        "FROM limitation_text_segment "
+        "GROUP BY code_source ORDER BY COUNT(*) DESC"
     ).fetchall()
-    for src, cnt, n_inds, n_lims in rows:
-        log.info(f"  {src}: {cnt} rows ({n_inds} indications, {n_lims} limitations)")
+    for src, cnt, n_inds, n_texts in rows:
+        log.info(f"  {src}: {cnt} segments ({n_inds} indications, {n_texts} texts)")
+
+    # ---- Segments distribution per text ----
+    log.info("")
+    log.info("Segments per text:")
+    rows = conn.execute(
+        "SELECT n_seg, COUNT(*) FROM ("
+        "  SELECT text_id, COUNT(*) as n_seg "
+        "  FROM limitation_text_segment GROUP BY text_id"
+        ") GROUP BY n_seg ORDER BY n_seg"
+    ).fetchall()
+    for n_seg, cnt in rows:
+        log.info(f"  {n_seg} segment(s): {cnt} texts")
 
     # ---- text_complexity distribution ----
     log.info("")
@@ -99,22 +111,18 @@ def run(db_path):
     cb_with_code = conn.execute("""
         SELECT COUNT(DISTINCT lt.text_id)
         FROM limitation_text lt
-        JOIN limitation l ON l.text_id = lt.text_id
-        JOIN limitation_indication li ON li.limitation_id = l.limitation_id
-        JOIN indication ind ON ind.indication_id = li.indication_id
+        JOIN limitation_text_segment seg ON seg.text_id = lt.text_id
+        JOIN indication ind ON ind.indication_id = seg.indication_id
         WHERE lt.is_cashback = 1 AND ind.indication_code IS NOT NULL
     """).fetchone()[0]
     log.info(f"  Cashback texts with specific code: {cb_with_code}/{cb_texts}")
 
-    # ---- Uncovered limitations ----
-    uncovered = conn.execute("""
-        SELECT COUNT(*) FROM limitation l
-        WHERE l.limitation_id NOT IN (
-            SELECT limitation_id FROM limitation_indication
-        )
-    """).fetchone()[0]
+    # ---- Segments without indication ----
+    no_ind = conn.execute(
+        "SELECT COUNT(*) FROM limitation_text_segment WHERE indication_id IS NULL"
+    ).fetchone()[0]
     log.info("")
-    log.info(f"Uncovered limitations: {uncovered} (should be 0)")
+    log.info(f"Segments without indication: {no_ind} (should be 0)")
 
     # ---- Multi-period limitation codes ----
     multi = conn.execute(

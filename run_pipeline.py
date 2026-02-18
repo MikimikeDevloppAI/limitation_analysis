@@ -28,6 +28,8 @@ STEPS = [
     (1,  "steps.step_01_parse_xml",        "Parse XML files and create DB"),
     (2,  "steps.step_02_init_indications",  "Initialize NOCODE indications"),
     (3,  "steps.step_03_extract_bolds",     "Extract bold names and codes"),
+    (35, "steps.step_03b_split_multi_bold", "Split MULTI_BOLD into segments"),
+    (36, "steps.step_03c_propagate_codes",  "Propagate indication codes"),
     (4,  "steps.step_04_cashback",          "Detect cashback"),
     (99, "steps.step_99_stats",             "Statistics"),
 ]

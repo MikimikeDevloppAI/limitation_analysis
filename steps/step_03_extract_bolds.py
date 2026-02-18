@@ -60,10 +60,11 @@ STRUCTURAL_BOLD_NAMES = {
 }
 
 STRUCTURAL_PREFIXES = (
-    "Vor Therapiebeginn",
+    # DE
+    "Vor Therapiebeginn", "Vor Beginn", "Vor der Behandlung",
     "Therapiefortführung", "Therapiefortsetzung",
-    "Therapieabbruch",
-    "nach AJCC",
+    "Therapieabbruch", "Behandlungsabbruch",
+    "nach AJCC", "Nach AJCC", "Gemäss AJCC",
     "Fr. ", "CHF ",
     "Maximal ",
     "Dosierungsschema",
@@ -71,14 +72,26 @@ STRUCTURAL_PREFIXES = (
     "Rückerstattungen",
     "Erwachsene",
     "Kriterien für die Vergütung",
-    # Generic headers (FR/DE)
-    "Pour les",
-    "Valable pour",
+    "Für die", "Gültig für",
+    "Weiterführung der Therapie",
+    "Limitation gültig",
+    "Austausch Referenzpräparat",
+    "Indikationsübergreifend",
+    # FR
+    "Pour les", "Valable pour",
     "Les conditions",
     "Poursuite du traitement",
-    "Für die",
-    "Gültig für",
-    "Weiterführung der Therapie",
+    "Selon l'AJCC", "Selon la classification",
+    "Avant le début", "Avant de commencer",
+    "Arrêt du traitement",
+    "Limitation valide",
+    "Substitution préparation",
+    # IT
+    "Secondo l'AJCC", "Secondo la classificazione",
+    "Prima dell'inizio", "Prima di iniziare",
+    "Interruzione del trattamento",
+    "Limitazione valida",
+    "Sostituzione preparato",
 )
 
 # Patterns to extract indication codes from free text (DE/FR/IT)
@@ -249,14 +262,12 @@ def run(db_path):
 
     # ---- Build lookup structures ----
 
-    # text_ids that have XML codes
+    # text_ids that have XML codes (from limitation_text_segment)
     xml_text_ids = set()
-    rows = conn.execute("""
-        SELECT DISTINCT l.text_id
-        FROM limitation_indication li
-        JOIN limitation l ON l.limitation_id = li.limitation_id
-        WHERE li.code_source = 'STRUCTURED_XML'
-    """).fetchall()
+    rows = conn.execute(
+        "SELECT DISTINCT text_id FROM limitation_text_segment "
+        "WHERE code_source = 'STRUCTURED_XML'"
+    ).fetchall()
     for r in rows:
         xml_text_ids.add(r[0])
 
@@ -264,25 +275,16 @@ def run(db_path):
     xml_single_code = {}   # text_id -> indication_id
     xml_multi_code = set()
     text_ind_map = {}
-    for text_id, ind_id in conn.execute("""
-        SELECT l.text_id, li.indication_id
-        FROM limitation_indication li
-        JOIN limitation l ON l.limitation_id = li.limitation_id
-        WHERE li.code_source = 'STRUCTURED_XML'
-    """).fetchall():
+    for text_id, ind_id in conn.execute(
+        "SELECT text_id, indication_id FROM limitation_text_segment "
+        "WHERE code_source = 'STRUCTURED_XML'"
+    ).fetchall():
         text_ind_map.setdefault(text_id, set()).add(ind_id)
     for text_id, ind_ids in text_ind_map.items():
         if len(ind_ids) == 1:
             xml_single_code[text_id] = next(iter(ind_ids))
         else:
             xml_multi_code.add(text_id)
-
-    # text_id -> limitation_ids
-    text_to_lim_ids = {}
-    for lim_id, tid in conn.execute(
-        "SELECT limitation_id, text_id FROM limitation"
-    ).fetchall():
-        text_to_lim_ids.setdefault(tid, []).append(lim_id)
 
     # text_id -> bag_dossier_no (via limitation -> sku_limitation -> sku)
     text_to_dossier = {}
@@ -296,13 +298,6 @@ def run(db_path):
     for text_id, dossier in rows:
         if text_id not in text_to_dossier:
             text_to_dossier[text_id] = dossier
-
-    # NOCODE indication_id
-    nocode_row = conn.execute(
-        "SELECT indication_id FROM indication WHERE indication_code IS NULL "
-        "AND indication_name_de IS NULL AND indication_name_fr IS NULL"
-    ).fetchone()
-    nocode_id = nocode_row[0] if nocode_row else None
 
     # Fusion cache: (bag_dossier_no, normalized_name_fr) -> indication_id
     fusion_cache = {}
@@ -454,10 +449,7 @@ def run(db_path):
             ind_id = _get_or_create_indication_with_code(
                 conn, code, dossier, name_de, name_fr, name_it, fusion_cache, counters
             )
-            _link_indication_to_text(
-                conn, text_id, ind_id, "TEXT_EMBEDDED",
-                text_to_lim_ids, nocode_id,
-            )
+            _link_indication_to_text(conn, text_id, ind_id, "TEXT_EMBEDDED")
             conn.execute(
                 "UPDATE limitation_text SET text_complexity = 'SIMPLE' "
                 "WHERE text_id = ?", (text_id,),
@@ -474,10 +466,7 @@ def run(db_path):
             ind_id = _get_or_create_indication_by_name(
                 conn, dossier, name_de, name_fr, name_it, fusion_cache, counters
             )
-            _link_indication_to_text(
-                conn, text_id, ind_id, "BOLD_HEADER",
-                text_to_lim_ids, nocode_id,
-            )
+            _link_indication_to_text(conn, text_id, ind_id, "BOLD_HEADER")
             conn.execute(
                 "UPDATE limitation_text SET text_complexity = 'SIMPLE' "
                 "WHERE text_id = ?", (text_id,),
@@ -503,10 +492,7 @@ def run(db_path):
             ind_id = _get_or_create_indication_with_code(
                 conn, code, dossier, name_de, name_fr, name_it, fusion_cache, counters
             )
-            _link_indication_to_text(
-                conn, text_id, ind_id, "TEXT_EMBEDDED",
-                text_to_lim_ids, nocode_id,
-            )
+            _link_indication_to_text(conn, text_id, ind_id, "TEXT_EMBEDDED")
             conn.execute(
                 "UPDATE limitation_text SET text_complexity = 'SIMPLE' "
                 "WHERE text_id = ?", (text_id,),
@@ -531,10 +517,7 @@ def run(db_path):
             ind_id = _get_or_create_indication_by_name(
                 conn, dossier, name_de, name_fr, name_it, fusion_cache, counters
             )
-            _link_indication_to_text(
-                conn, text_id, ind_id, "BOLD_HEADER",
-                text_to_lim_ids, nocode_id,
-            )
+            _link_indication_to_text(conn, text_id, ind_id, "BOLD_HEADER")
             conn.execute(
                 "UPDATE limitation_text SET text_complexity = 'SIMPLE' "
                 "WHERE text_id = ?", (text_id,),
@@ -549,10 +532,7 @@ def run(db_path):
             ind_id = _get_or_create_indication_with_code(
                 conn, code, dossier, None, None, None, fusion_cache, counters
             )
-            _link_indication_to_text(
-                conn, text_id, ind_id, "TEXT_EMBEDDED",
-                text_to_lim_ids, nocode_id,
-            )
+            _link_indication_to_text(conn, text_id, ind_id, "TEXT_EMBEDDED")
             conn.execute(
                 "UPDATE limitation_text SET text_complexity = 'SIMPLE' "
                 "WHERE text_id = ?", (text_id,),
@@ -707,31 +687,11 @@ def _get_or_create_indication_by_name(conn, dossier, name_de, name_fr, name_it,
     return ind_id
 
 
-def _link_indication_to_text(conn, text_id, indication_id, code_source,
-                              text_to_lim_ids, nocode_id):
-    """Link an indication to all limitations that use this text_id.
-    Replaces existing NOCODE links.
-    """
-    lim_ids = text_to_lim_ids.get(text_id, [])
-    for lim_id in lim_ids:
-        # Remove NOCODE link for this limitation
-        if nocode_id is not None:
-            conn.execute(
-                "DELETE FROM limitation_indication "
-                "WHERE limitation_id = ? AND indication_id = ? AND code_source = 'NOCODE'",
-                (lim_id, nocode_id),
-            )
-        # Insert the new link
-        vf_vt = conn.execute(
-            "SELECT valid_from, valid_to FROM limitation WHERE limitation_id = ?",
-            (lim_id,),
-        ).fetchone()
-        conn.execute(
-            "INSERT OR IGNORE INTO limitation_indication "
-            "(limitation_id, indication_id, code_source, valid_from, valid_to, text_id) "
-            "VALUES (?, ?, ?, ?, ?, ?)",
-            (lim_id, indication_id, code_source,
-             vf_vt[0] if vf_vt else None,
-             vf_vt[1] if vf_vt else None,
-             text_id),
-        )
+def _link_indication_to_text(conn, text_id, indication_id, code_source):
+    """Update the default segment (index=0) for this text_id to point to the indication."""
+    conn.execute(
+        "UPDATE limitation_text_segment "
+        "SET indication_id = ?, code_source = ? "
+        "WHERE text_id = ? AND segment_index = 0 AND code_source = 'NOCODE'",
+        (indication_id, code_source, text_id),
+    )

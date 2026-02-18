@@ -25,14 +25,14 @@ log = logging.getLogger(__name__)
 # Regex patterns & constants
 # ============================================================
 
-RE_NUMERIC = re.compile(r"(\d{5}\.\d{2})\.?\b")
+RE_NUMERIC = re.compile(r"(\d{5}\.\d{1,2})\.?\b")
 RE_BOLD = re.compile(r"<b>(.+?)</b>")
 RE_HEADER_BOLD = re.compile(
     r"(?:^|<br\s*/?>[\s\n]*(?:<br\s*/?>[\s\n]*)*)"
     r"(<b>.+?</b>)",
     re.MULTILINE,
 )
-RE_TRAILING_CODE = re.compile(r"\s*\d{5}\.\d{2}\s*$")
+RE_TRAILING_CODE = re.compile(r"[:\s]+\d{5}\.\d{1,2}\s*$")
 
 # Inline qualifier patterns per language (mid-line, not caught by RE_HEADER_BOLD)
 # FR: "En <b>monothérapie</b>", "En <b>association avec...</b>"
@@ -97,15 +97,15 @@ STRUCTURAL_PREFIXES = (
 # Patterns to extract indication codes from free text (DE/FR/IT)
 TEXT_PATTERNS = [
     # German
-    re.compile(r"Indikationscode[^:]{0,60}:\s*(\d{5}\.\d{2})", re.IGNORECASE),
-    re.compile(r"Code[^:]{0,40}Krankenversicherer[^:]{0,40}:\s*(\d{5}\.\d{2})", re.IGNORECASE),
-    re.compile(r"Code[^:]{0,60}bermitteln[^:]{0,20}:\s*(\d{5}\.\d{2})", re.IGNORECASE),
+    re.compile(r"Indikationscode[^:]{0,60}:\s*(\d{5}\.\d{1,2})", re.IGNORECASE),
+    re.compile(r"Code[^:]{0,40}Krankenversicherer[^:]{0,40}:\s*(\d{5}\.\d{1,2})", re.IGNORECASE),
+    re.compile(r"Code[^:]{0,60}bermitteln[^:]{0,20}:\s*(\d{5}\.\d{1,2})", re.IGNORECASE),
     # French
-    re.compile(r"code\s+(?:d.indication\s+)?suivant[^:]{0,60}:\s*(\d{5}\.\d{2})", re.IGNORECASE),
-    re.compile(r"code\s+correspondant[^:]{0,60}:\s*(\d{5}\.\d{2})", re.IGNORECASE),
+    re.compile(r"code\s+(?:d.indication\s+)?suivant[^:]{0,60}:\s*(\d{5}\.\d{1,2})", re.IGNORECASE),
+    re.compile(r"code\s+correspondant[^:]{0,60}:\s*(\d{5}\.\d{1,2})", re.IGNORECASE),
     # Italian
-    re.compile(r"codice[^:]{0,60}:\s*(\d{5}\.\d{2})", re.IGNORECASE),
-    re.compile(r"All.assicuratore[^:]{0,60}:\s*(\d{5}\.\d{2})", re.IGNORECASE),
+    re.compile(r"codice[^:]{0,60}:\s*(\d{5}\.\d{1,2})", re.IGNORECASE),
+    re.compile(r"All.assicuratore[^:]{0,60}:\s*(\d{5}\.\d{1,2})", re.IGNORECASE),
 ]
 
 
@@ -134,11 +134,32 @@ def _is_structural_name(name):
     return False
 
 
+RE_EXTRACT_TRAILING_CODE = re.compile(r"[:\s]+(\d{5})\.(\d{1,2})\s*$")
+
+
+def _extract_trailing_code(name):
+    """Extract and normalize a trailing indication code from a name.
+
+    Returns (clean_name, code) where code is 'XXXXX.XX' or None.
+    E.g. 'Renale Anämie: 17807.1' -> ('Renale Anämie', '17807.01')
+    """
+    if not name:
+        return name, None
+    m = RE_EXTRACT_TRAILING_CODE.search(name)
+    if m:
+        dossier = m.group(1)
+        suffix = m.group(2).zfill(2)  # '1' -> '01'
+        code = f"{dossier}.{suffix}"
+        clean = name[:m.start()].strip()
+        return clean, code
+    return name, None
+
+
 def _clean_indication_name(name):
     """Clean an indication name: strip trailing code, HTML tags, extra whitespace."""
     if not name:
         return name
-    cleaned = RE_TRAILING_CODE.sub("", name)
+    cleaned, _ = _extract_trailing_code(name)
     cleaned = re.sub(r"<[^>]+>", "", cleaned)
     return cleaned.strip()
 
@@ -153,21 +174,31 @@ def _normalize_name(name):
     return n
 
 
-def _extract_bold_names(text):
-    """Extract non-structural bold header names from a text.
-    Returns list of cleaned names.
+def _extract_bold_names_with_codes(text):
+    """Extract non-structural bold header names and any trailing codes.
+    Returns list of (cleaned_name, trailing_code_or_None).
+    E.g. '<b>Renale Anämie: 17807.1</b>' -> [('Renale Anämie', '17807.01')]
     """
     if not text:
         return []
     headers = RE_HEADER_BOLD.findall(text)
-    names = []
+    results = []
     for h in headers:
         m = RE_BOLD.search(h)
         if m:
             raw_name = m.group(1)
             if not _is_structural_name(raw_name):
-                names.append(_clean_indication_name(raw_name))
-    return names
+                clean, code = _extract_trailing_code(raw_name)
+                clean = re.sub(r"<[^>]+>", "", clean).strip()
+                results.append((clean, code))
+    return results
+
+
+def _extract_bold_names(text):
+    """Extract non-structural bold header names from a text.
+    Returns list of cleaned names (strings).
+    """
+    return [name for name, _code in _extract_bold_names_with_codes(text)]
 
 
 def _compose_name(bold_list, n=2):
@@ -220,6 +251,17 @@ def _build_name(bolds, qualifier):
     return None
 
 
+def _normalize_code(raw):
+    """Normalize an indication code to XXXXX.XX format.
+    E.g. '17807.1' -> '17807.01', '17807.01' -> '17807.01'
+    """
+    raw = raw.rstrip(".")
+    if "." in raw:
+        dossier, suffix = raw.split(".", 1)
+        return f"{dossier}.{suffix.zfill(2)}"
+    return raw
+
+
 def _extract_codes_from_text(desc_de, desc_fr, desc_it):
     """Extract indication codes (XXXXX.XX) from free text via regex patterns."""
     codes = set()
@@ -231,7 +273,7 @@ def _extract_codes_from_text(desc_de, desc_fr, desc_it):
             for match in pattern.finditer(decoded):
                 raw = match.group(1).rstrip(".")
                 if RE_NUMERIC.match(raw):
-                    codes.add(raw)
+                    codes.add(_normalize_code(raw))
     return list(codes)
 
 

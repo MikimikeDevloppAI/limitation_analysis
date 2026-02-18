@@ -1,0 +1,1004 @@
+{
+  "20481.01": {
+    "de": "KYPROLIS in Kombination mit Lenalidomid und Dexamethason (KRd) oder Dexamethason (Kd)",
+    "fr": "KYPROLIS en association avec le lénalidomide et la dexaméthasone (KRd) ou la dexaméthasone (Kd)",
+    "it": "KYPROLIS in combinazione con lenalidomide e desametasone (KRd) o desametasone (Kd)",
+    "dossier": "20481"
+  },
+  "20481.02": {
+    "de": "KYPROLIS in Kombination mit Daratumumab und Dexamethason (KDd), zweimal wöchentlich",
+    "fr": "KYPROLIS en association avec le daratumumab et la dexaméthasone (KDd), deux fois par semaine",
+    "it": "KYPROLIS in combinazione con daratumumab e desametasone (KDd), due volte alla settimana",
+    "dossier": "20481"
+  },
+  "20481.03": {
+    "de": "KYPROLIS in Kombination mit Daratumumab und Dexamethason (KDd), einmal wöchentlich",
+    "fr": "KYPROLIS en association avec le daratumumab et la dexaméthasone (KDd), une fois par semaine",
+    "it": "KYPROLIS in combinazione con daratumumab e desametasone (KDd), una volta alla settimana",
+    "dossier": "20481"
+  },
+  "20481.04": {
+    "de": "KYPROLIS in Kombination mit Dexamethason (Kd), zweimal wöchentlich",
+    "fr": "KYPROLIS en association avec la dexaméthasone (Kd), deux fois par semaine",
+    "it": "KYPROLIS in combinazione con desametasone (Kd), due volte alla settimana",
+    "dossier": "20481"
+  },
+  "20481.05": {
+    "de": "KYPROLIS in Kombination mit Dexamethason (Kd), einmal wöchentlich",
+    "fr": "KYPROLIS en association avec la dexaméthasone (Kd), une fois par semaine",
+    "it": "KYPROLIS in combinazione con desametasone (Kd), una volta alla settimana",
+    "dossier": "20481"
+  },
+  "17807.02": {
+    "de": "Symptomatische Anämie bei Tumorpatienten unter Chemotherapie",
+    "fr": "Anémie symptomatique chez les patients atteints de tumeur sous chimiothérapie",
+    "it": "Anemia sintomatica in pazienti oncologici sotto chemioterapia",
+    "dossier": "17807"
+  },
+  "17807.03": {
+    "de": "Myelodysplastisches Syndrom (Low/Intermediate-1 Risiko)",
+    "fr": "Syndrome myélodysplasique (risque faible/intermédiaire-1)",
+    "it": "Sindrome mielodisplastica (rischio basso/intermedio-1)",
+    "dossier": "17807"
+  },
+  "18225.04": {
+    "de": "Prävention kardiovaskulärer Ereignisse (Primär- und Sekundärprävention)",
+    "fr": "Prévention des événements cardiovasculaires (prévention primaire et secondaire)",
+    "it": "Prevenzione degli eventi cardiovascolari (prevenzione primaria e secondaria)",
+    "dossier": "18225"
+  },
+  "18384.02": {
+    "de": "VIDAZA Monotherapie (MDS, CMML, AML)",
+    "fr": "VIDAZA en monothérapie (SMD, LMMC, LAM)",
+    "it": "VIDAZA in monoterapia (SMD, LMMC, LMA)",
+    "dossier": "18384"
+  },
+  "18541.01": {
+    "de": "Statintherapie bei Erwachsenen 18-75 Jahre",
+    "fr": "Traitement par statines chez les adultes de 18 à 75 ans",
+    "it": "Terapia con statine negli adulti dai 18 ai 75 anni",
+    "dossier": "18541"
+  },
+  "18541.02": {
+    "de": "Fortführung Statintherapie nach 75 Jahren",
+    "fr": "Poursuite du traitement par statines après 75 ans",
+    "it": "Proseguimento terapia con statine dopo i 75 anni",
+    "dossier": "18541"
+  },
+  "18541.03": {
+    "de": "Neue Statintherapie bei Personen über 75 Jahre",
+    "fr": "Nouveau traitement par statines chez les personnes de plus de 75 ans",
+    "it": "Nuova terapia con statine in persone oltre i 75 anni",
+    "dossier": "18541"
+  },
+  "19225.03": {
+    "de": "Statintherapie 18-75 Jahre (Primär- und Sekundärprävention)",
+    "fr": "Traitement par statine 18-75 ans (prévention primaire et secondaire)",
+    "it": "Terapia con statine 18-75 anni (prevenzione primaria e secondaria)",
+    "dossier": "19225"
+  },
+  "19225.04": {
+    "de": "Statintherapie über 75 Jahre (Sekundärprävention und Hochrisiko)",
+    "fr": "Traitement par statine >75 ans (prévention secondaire et haut risque)",
+    "it": "Terapia con statine >75 anni (prevenzione secondaria e alto rischio)",
+    "dossier": "19225"
+  },
+  "19225.01": {
+    "de": "Erworbene schwere aplastische Anämie (SAA) - Erstlinie",
+    "fr": "Anémie aplasique sévère (SAA) acquise - première ligne",
+    "it": "Anemia aplastica grave (SAA) acquisita - prima linea",
+    "dossier": "19225"
+  },
+  "19225.02": {
+    "de": "Erworbene schwere aplastische Anämie (SAA) - refraktär/vorbehandelt",
+    "fr": "Anémie aplasique sévère (SAA) acquise - réfractaire/prétraité",
+    "it": "Anemia aplastica grave (SAA) acquisita - refrattaria/pretrattata",
+    "dossier": "19225"
+  },
+  "19350.01": {
+    "de": "Periphere neuropathische Schmerzen (Drittlinientherapie, nicht-diabetisch, nicht-HIV)",
+    "fr": "Douleurs neuropathiques périphériques (traitement de 3ème ligne, non-diabétique, non-VIH)",
+    "it": "Dolore neuropatico periferico (trattamento di terza linea, non-diabetico, non-HIV)",
+    "dossier": "19350"
+  },
+  "19436.01": {
+    "de": "Metastasiertes hormonrefraktäres Prostatakarzinom (nach Docetaxel-Versagen)",
+    "fr": "Cancer de la prostate métastatique hormonorésistant (après échec du docétaxel)",
+    "it": "Carcinoma prostatico metastatico ormonorefrattario (dopo fallimento del docetaxel)",
+    "dossier": "19436"
+  },
+  "19608.01": {
+    "de": "Metastasiertes kastrationsresistentes Prostatakarzinom (mCRPC)",
+    "fr": "Cancer de la prostate métastatique résistant à la castration (CPRCm)",
+    "it": "Carcinoma prostatico metastatico resistente alla castrazione (mCRPC)",
+    "dossier": "19608"
+  },
+  "19786.01": {
+    "de": "Erwachsene Patienten (bereits eingestellt auf Perindopril, Amlodipin, Atorvastatin)",
+    "fr": "Patients adultes (déjà équilibrés sous périndopril, amlodipine, atorvastatine)",
+    "it": "Pazienti adulti (già equilibrati con perindopril, amlodipina, atorvastatina)",
+    "dossier": "19786"
+  },
+  "19786.02": {
+    "de": "Erwachsene Patienten (bereits eingestellt auf Perindopril, Amlodipin, Atorvastatin)",
+    "fr": "Patients adultes (déjà équilibrés sous périndopril, amlodipine, atorvastatine)",
+    "it": "Pazienti adulti (già equilibrati con perindopril, amlodipina, atorvastatina)",
+    "dossier": "19786"
+  },
+  "19990.02": {
+    "de": "AML (nicht intensiv therapierbar)",
+    "fr": "LAM (sans chimiothérapie intensive possible)",
+    "it": "LMA (senza chemioterapia intensiva possibile)",
+    "dossier": "19990"
+  },
+  "20064.01": {
+    "de": "Depressive Episoden bei bipolarer Störung Typ 1",
+    "fr": "Épisodes dépressifs dans le trouble bipolaire de type 1",
+    "it": "Episodi depressivi nel disturbo bipolare di tipo 1",
+    "dossier": "20064"
+  },
+  "20070.01": {
+    "de": "Primäre Nebenniereninsuffizienz mit persistierenden Symptomen",
+    "fr": "Insuffisance surrénalienne primaire avec symptômes persistants",
+    "it": "Insufficienza surrenalica primaria con sintomi persistenti",
+    "dossier": "20070"
+  },
+  "20145.01": {
+    "de": "Zystische Fibrose mit Gating-Mutationen (Klasse III) im CFTR-Gen",
+    "fr": "Fibrose kystique avec mutations de type gating (classe III) du gène CFTR",
+    "it": "Fibrosi cistica con mutazioni gating (classe III) del gene CFTR",
+    "dossier": "20145"
+  },
+  "20221.02": {
+    "de": "IMNOVID in Kombination mit Dexamethason",
+    "fr": "IMNOVID en association avec la dexaméthasone",
+    "it": "IMNOVID in combinazione con desametasone",
+    "dossier": "20221"
+  },
+  "20308.01": {
+    "de": "Chronische Hepatitis C (CHC) Genotyp 1",
+    "fr": "Hépatite C chronique (HCC) génotype 1",
+    "it": "Epatite C cronica (HCC) genotipo 1",
+    "dossier": "20308"
+  },
+  "20403.01": {
+    "de": "Adenokarzinom des Magens oder gastroösophagealen Übergangs",
+    "fr": "Adénocarcinome de l'estomac ou de la jonction gastro-œsophagienne",
+    "it": "Adenocarcinoma dello stomaco o della giunzione gastroesofagea",
+    "dossier": "20403"
+  },
+  "20403.02": {
+    "de": "Metastasiertes kolorektales Karzinom (mKRK) in Kombination mit FOLFIRI",
+    "fr": "Carcinome colorectal métastatique (CCRm) en association avec FOLFIRI",
+    "it": "Carcinoma del colon-retto metastatico (mCRC) in combinazione con FOLFIRI",
+    "dossier": "20403"
+  },
+  "20417.01": {
+    "de": "Nicht resezierbares oder metastasiertes Melanom mit BRAF-V600-Mutation (in Kombination mit Zelboraf)",
+    "fr": "Mélanome non résécable ou métastatique avec mutation BRAF-V600 (en combinaison avec Zelboraf)",
+    "it": "Melanoma non resecabile o metastatico con mutazione BRAF-V600 (in combinazione con Zelboraf)",
+    "dossier": "20417"
+  },
+  "20427.01": {
+    "de": "Schwere Hypercholesterinämie (primäre und sekundäre Prävention)",
+    "fr": "Hypercholestérolémie sévère (prévention primaire et secondaire)",
+    "it": "Ipercolesterolemia grave (prevenzione primaria e secondaria)",
+    "dossier": "20427"
+  },
+  "20456.01": {
+    "de": "ADPKD mit rascher Progression (CKD Stadium 1-3)",
+    "fr": "PKRAD avec progression rapide (IRC stade 1-3)",
+    "it": "ADPKD con progressione rapida (IRC stadio 1-3)",
+    "dossier": "20456"
+  },
+  "20487.01": {
+    "de": "Schwere Hypercholesterinämie (Primär- und Sekundärprävention)",
+    "fr": "Hypercholestérolémie sévère (prévention primaire et secondaire)",
+    "it": "Ipercolesterolemia grave (prevenzione primaria e secondaria)",
+    "dossier": "20487"
+  },
+  "20504.01": {
+    "de": "Chronische Hepatitis C (CHC) Genotyp 1 und 4",
+    "fr": "Hépatite C chronique (HCC) génotype 1 et 4",
+    "it": "Epatite C cronica (ECC) genotipo 1 e 4",
+    "dossier": "20504"
+  },
+  "20532.01": {
+    "de": "Schwere Plaque-Psoriasis",
+    "fr": "Psoriasis en plaques sévère",
+    "it": "Psoriasi a placche grave",
+    "dossier": "20532"
+  },
+  "20532.02": {
+    "de": "Psoriasis-Arthritis",
+    "fr": "Arthrite psoriasique",
+    "it": "Artrite psoriasica",
+    "dossier": "20532"
+  },
+  "20543.01": {
+    "de": "Zystische Fibrose (F508del homozygot, ab 2 Jahren) - alte Limitation",
+    "fr": "Fibrose kystique (F508del homozygote, dès 2 ans) - ancienne limitation",
+    "it": "Fibrosi cistica (F508del omozigote, da 2 anni) - vecchia limitazione",
+    "dossier": "20543"
+  },
+  "20543.02": {
+    "de": "Zystische Fibrose (F508del homozygot, ab 4 Monaten) - aktuelle Limitation",
+    "fr": "Fibrose kystique (F508del homozygote, dès 4 mois) - limitation actuelle",
+    "it": "Fibrosi cistica (F508del omozigote, da 4 mesi) - limitazione attuale",
+    "dossier": "20543"
+  },
+  "20588.01": {
+    "de": "HR+/HER2- Brustkrebs, 1L in Kombination mit Aromatasehemmer",
+    "fr": "Cancer du sein HR+/HER2-, 1L en combinaison avec inhibiteur d'aromatase",
+    "it": "Carcinoma mammario HR+/HER2-, 1L in combinazione con inibitore dell'aromatasi",
+    "dossier": "20588"
+  },
+  "20588.02": {
+    "de": "HR+/HER2- Brustkrebs, 1L in Kombination mit Fulvestrant (Rezidiv)",
+    "fr": "Cancer du sein HR+/HER2-, 1L en combinaison avec fulvestrant (rechute)",
+    "it": "Carcinoma mammario HR+/HER2-, 1L in combinazione con fulvestrant (recidiva)",
+    "dossier": "20588"
+  },
+  "20588.03": {
+    "de": "HR+/HER2- Brustkrebs, 2L in Kombination mit Fulvestrant",
+    "fr": "Cancer du sein HR+/HER2-, 2L en combinaison avec fulvestrant",
+    "it": "Carcinoma mammario HR+/HER2-, 2L in combinazione con fulvestrant",
+    "dossier": "20588"
+  },
+  "20593.01": {
+    "de": "Rezidiviertes Multiples Myelom (in Kombination mit Lenalidomid und Dexamethason)",
+    "fr": "Myélome multiple en rechute (en combinaison avec lénalidomide et dexaméthasone)",
+    "it": "Mieloma multiplo recidivante (in combinazione con lenalidomide e desametasone)",
+    "dossier": "20593"
+  },
+  "20624.01": {
+    "de": "Schubförmige MS und primär progrediente MS (PPMS)",
+    "fr": "SEP récurrente et SEP primaire progressive (SEPPP)",
+    "it": "SM recidivante e SM primaria progressiva (SMPP)",
+    "dossier": "20624"
+  },
+  "20662.01": {
+    "de": "Rezidivierende oder refraktäre Ph- B-Vorläufer-ALL",
+    "fr": "LLA B à précurseurs Ph- en rechute ou réfractaire",
+    "it": "LLA B a precursori Ph- recidivante o refrattaria",
+    "dossier": "20662"
+  },
+  "20662.02": {
+    "de": "Ph- B-Vorläufer-ALL in kompletter Remission mit MRD ≥0.1%",
+    "fr": "LLA B à précurseurs Ph- en rémission complète avec MRD ≥0.1%",
+    "it": "LLA B a precursori Ph- in remissione completa con MRD ≥0.1%",
+    "dossier": "20662"
+  },
+  "20662.03": {
+    "de": "Rezidivierende oder refraktäre Ph+ B-Vorläufer-ALL mit TKI-Resistenz/Intoleranz",
+    "fr": "LLA B à précurseurs Ph+ en rechute ou réfractaire avec résistance/intolérance aux ITK",
+    "it": "LLA B a precursori Ph+ recidivante o refrattaria con resistenza/intolleranza agli ITK",
+    "dossier": "20662"
+  },
+  "20663.01": {
+    "de": "ADHS (Zweitlinientherapie nach Stimulanzien)",
+    "fr": "TDAH (traitement de deuxième ligne après stimulants)",
+    "it": "ADHD (terapia di seconda linea dopo stimolanti)",
+    "dossier": "20663"
+  },
+  "20682.01": {
+    "de": "HR+/HER2- Brustkrebs: 1L mit Aromatase-Inhibitor oder Fulvestrant, 2L mit Fulvestrant",
+    "fr": "Cancer du sein HR+/HER2- : 1L avec inhibiteur d'aromatase ou fulvestrant, 2L avec fulvestrant",
+    "it": "Carcinoma mammario HR+/HER2- : 1L con inibitore dell'aromatasi o fulvestrant, 2L con fulvestrant",
+    "dossier": "20682"
+  },
+  "20682.02": {
+    "de": "HR+/HER2- Brustkrebs (Frauen und Männer): 1L mit Fulvestrant, krankheitsfreies Intervall >12 Monate",
+    "fr": "Cancer du sein HR+/HER2- (femmes et hommes) : 1L avec fulvestrant, intervalle sans maladie >12 mois",
+    "it": "Carcinoma mammario HR+/HER2- (donne e uomini) : 1L con fulvestrant, intervallo libero da malattia >12 mesi",
+    "dossier": "20682"
+  },
+  "20682.03": {
+    "de": "HR+/HER2- Brustkrebs (Frauen und Männer): 1L mit Fulvestrant bei Rezidiv während/nach adjuvanter Therapie",
+    "fr": "Cancer du sein HR+/HER2- (femmes et hommes) : 1L avec fulvestrant en cas de récidive pendant/après traitement adjuvant",
+    "it": "Carcinoma mammario HR+/HER2- (donne e uomini) : 1L con fulvestrant in caso di recidiva durante/dopo terapia adiuvante",
+    "dossier": "20682"
+  },
+  "20682.04": {
+    "de": "HR+/HER2- Brustkrebs (Frauen und Männer): 2L mit Fulvestrant nach endokriner 1L-Therapie",
+    "fr": "Cancer du sein HR+/HER2- (femmes et hommes) : 2L avec fulvestrant après traitement endocrinien de 1L",
+    "it": "Carcinoma mammario HR+/HER2- (donne e uomini) : 2L con fulvestrant dopo terapia endocrina di 1L",
+    "dossier": "20682"
+  },
+  "20696.01": {
+    "de": "Rezidivierende oder refraktäre CD22-positive B-Vorläuferzellen-ALL",
+    "fr": "LAL à précurseurs B CD22-positive récidivante ou réfractaire",
+    "it": "LLA a cellule B precursori CD22-positiva recidivante o refrattaria",
+    "dossier": "20696"
+  },
+  "20698.01": {
+    "de": "Chronische Hepatitis C (CHC) Genotyp 1-6",
+    "fr": "Hépatite C chronique (HCC) génotype 1-6",
+    "it": "Epatite C cronica (HCC) genotipo 1-6",
+    "dossier": "20698"
+  },
+  "20709.01": {
+    "de": "Chronisch rekurrierende Hyperkaliämie bei CKD III-IV unter RAAS-Inhibitor",
+    "fr": "Hyperkaliémie chronique récurrente dans l'IRC stade III-IV sous inhibiteur du SRAA",
+    "it": "Iperkaliemia cronica ricorrente nell'IRC stadio III-IV sotto inibitore del SRAA",
+    "dossier": "20709"
+  },
+  "20733.01": {
+    "de": "Primäre biliäre Cholangitis (PBC)",
+    "fr": "Cholangite biliaire primitive (CBP)",
+    "it": "Colangite biliare primitiva (CBP)",
+    "dossier": "20733"
+  },
+  "20775.02": {
+    "de": "1L Erhaltungstherapie fortgeschrittenes Ovarialkarzinom (BRCA/HRD+)",
+    "fr": "1L Traitement d'entretien cancer ovarien avancé (BRCA/HRD+)",
+    "it": "1L Terapia di mantenimento carcinoma ovarico avanzato (BRCA/HRD+)",
+    "dossier": "20775"
+  },
+  "20775.01": {
+    "de": "Rezidivierendes platinsensitives Ovarialkarzinom (Erhaltungstherapie)",
+    "fr": "Cancer ovarien récidivant sensible au platine (traitement d'entretien)",
+    "it": "Carcinoma ovarico ricorrente sensibile al platino (terapia di mantenimento)",
+    "dossier": "20775"
+  },
+  "20839.01": {
+    "de": "1L in Kombination mit Aromatasehemmer",
+    "fr": "1L en combinaison avec inhibiteur de l'aromatase",
+    "it": "1L in combinazione con inibitore dell'aromatasi",
+    "dossier": "20839"
+  },
+  "20839.02": {
+    "de": "1L in Kombination mit Fulvestrant (Rezidiv während/nach adjuvanter Therapie)",
+    "fr": "1L en combinaison avec fulvestrant (récidive pendant/après traitement adjuvant)",
+    "it": "1L in combinazione con fulvestrant (recidiva durante/dopo terapia adiuvante)",
+    "dossier": "20839"
+  },
+  "20839.03": {
+    "de": "2L in Kombination mit Fulvestrant",
+    "fr": "2L en combinaison avec fulvestrant",
+    "it": "2L in combinazione con fulvestrant",
+    "dossier": "20839"
+  },
+  "20874.01": {
+    "de": "Nicht-resezierbares oder metastasiertes Melanom mit BRAF-V600-Mutation (in Kombination mit Binimetinib)",
+    "fr": "Mélanome non résécable ou métastatique avec mutation BRAF-V600 (en combinaison avec binimétinib)",
+    "it": "Melanoma non resecabile o metastatico con mutazione BRAF-V600 (in combinazione con binimetinib)",
+    "dossier": "20874"
+  },
+  "20875.01": {
+    "de": "Nicht-resezierbares oder metastasiertes Melanom mit BRAF-V600-Mutation",
+    "fr": "Mélanome non résécable ou métastatique avec mutation BRAF-V600",
+    "it": "Melanoma non resecabile o metastatico con mutazione BRAF-V600",
+    "dossier": "20875"
+  },
+  "20876.02": {
+    "de": "Monotherapie (MDS, CMML, AML)",
+    "fr": "Monothérapie (SMD, LMMC, LAM)",
+    "it": "Monoterapia (SMD, LMMC, LMA)",
+    "dossier": "20876"
+  },
+  "20880.01": {
+    "de": "Chronische oder episodische Migräne",
+    "fr": "Migraine chronique ou épisodique",
+    "it": "Emicrania cronica o episodica",
+    "dossier": "20880"
+  },
+  "20914.01": {
+    "de": "Zystische Fibrose mit F508del-Mutation (homozygot oder heterozygot mit spezifischer CFTR-Mutation)",
+    "fr": "Fibrose kystique avec mutation F508del (homozygote ou hétérozygote avec mutation CFTR spécifique)",
+    "it": "Fibrosi cistica con mutazione F508del (omozigote o eterozigote con mutazione CFTR specifica)",
+    "dossier": "20914"
+  },
+  "20923.01": {
+    "de": "Hereditäres Angioödem (HAE) Typ I oder II",
+    "fr": "Angio-œdème héréditaire (AOH) de type I ou II",
+    "it": "Angioedema ereditario (HAE) di tipo I o II",
+    "dossier": "20923"
+  },
+  "20924.01": {
+    "de": "Komplizierte Infektionen (cIAI, cUTI, HAP/VAP) bei resistenten Bakterien",
+    "fr": "Infections compliquées (cIAI, cUTI, HAP/VAP) causées par des bactéries résistantes",
+    "it": "Infezioni complicate (cIAI, cUTI, HAP/VAP) causate da batteri resistenti",
+    "dossier": "20924"
+  },
+  "20952.01": {
+    "de": "ALK-positives metastasiertes NSCLC (Erstlinie)",
+    "fr": "CBNPC métastatique ALK-positif (première ligne)",
+    "it": "NSCLC metastatico ALK-positivo (prima linea)",
+    "dossier": "20952"
+  },
+  "20952.02": {
+    "de": "ALK-positives metastasiertes NSCLC (nach ≥2 ALK-TKI)",
+    "fr": "CBNPC métastatique ALK-positif (après ≥2 ITK ALK)",
+    "it": "NSCLC metastatico ALK-positivo (dopo ≥2 TKI ALK)",
+    "dossier": "20952"
+  },
+  "20955.01": {
+    "de": "Erworbene thrombotisch-thrombozytopenische Purpura (aTTP)",
+    "fr": "Purpura thrombotique thrombocytopénique acquis (aTTP)",
+    "it": "Porpora trombotica trombocitopenica acquisita (aTTP)",
+    "dossier": "20955"
+  },
+  "20959.01": {
+    "de": "hATTR-Amyloidose mit Polyneuropathie (Stadien 1 und 2)",
+    "fr": "Amylose hATTR avec polyneuropathie (stades 1 et 2)",
+    "it": "Amiloidosi hATTR con polineuropatia (stadi 1 e 2)",
+    "dossier": "20959"
+  },
+  "20978.01": {
+    "de": "HER2-negatives Mammakarzinom mit BRCA-Mutation (Monotherapie)",
+    "fr": "Cancer du sein HER2-négatif avec mutation BRCA (monothérapie)",
+    "it": "Carcinoma mammario HER2-negativo con mutazione BRCA (monoterapia)",
+    "dossier": "20978"
+  },
+  "21000.02": {
+    "de": "Hypercholesterinämie (hohes/sehr hohes Risiko, Statin-Intoleranz)",
+    "fr": "Hypercholestérolémie (risque élevé/très élevé, intolérance aux statines)",
+    "it": "Ipercolesterolemia (rischio elevato/molto elevato, intolleranza alle statine)",
+    "dossier": "21000"
+  },
+  "21000.01": {
+    "de": "Hypercholesterinämie und homozygote Sitosterinämie",
+    "fr": "Hypercholestérolémie et sitostérolémie homozygote",
+    "it": "Ipercolesterolemia e sitosterolemia omozigote",
+    "dossier": "21000"
+  },
+  "21000.03": {
+    "de": "Metastasiertes hormonsensitives Prostatakarzinom (mHSPC)",
+    "fr": "Cancer de la prostate métastatique hormono-sensible (CPRCm)",
+    "it": "Carcinoma prostatico metastatico ormono-sensibile (mHSPC)",
+    "dossier": "21000"
+  },
+  "21043.01": {
+    "de": "Solide Tumoren mit NTRK-Genfusion",
+    "fr": "Tumeurs solides avec fusion génique NTRK",
+    "it": "Tumori solidi con fusione genica NTRK",
+    "dossier": "21043"
+  },
+  "21053.01": {
+    "de": "Schweres eosinophiles Asthma",
+    "fr": "Asthme sévère à éosinophiles",
+    "it": "Asma eosinofilo severo",
+    "dossier": "21053"
+  },
+  "21053.02": {
+    "de": "Chronische Rhinosinusitis mit Nasenpolypen (CRSwNP)",
+    "fr": "Rhinosinusite chronique avec polypes nasaux (RSCaPN)",
+    "it": "Rinosinusite cronica con polipi nasali (CRSwNP)",
+    "dossier": "21053"
+  },
+  "21057.01": {
+    "de": "ATTR-CM NYHA I-II",
+    "fr": "ATTR-CM NYHA I-II",
+    "it": "ATTR-CM NYHA I-II",
+    "dossier": "21057"
+  },
+  "21065.01": {
+    "de": "Schubförmig remittierende multiple Sklerose",
+    "fr": "Sclérose en plaques rémittente-récurrente",
+    "it": "Sclerosi multipla recidivante-remittente",
+    "dossier": "21065"
+  },
+  "21065.02": {
+    "de": "Mittelschwere bis schwere aktive Colitis ulcerosa",
+    "fr": "Colite ulcéreuse active modérée à sévère",
+    "it": "Colite ulcerosa attiva da moderata a grave",
+    "dossier": "21065"
+  },
+  "21067.01": {
+    "de": "HR+/HER2- fortgeschrittenes Mammakarzinom mit PIK3CA-Mutation (in Kombination mit Fulvestrant)",
+    "fr": "Cancer du sein avancé HR+/HER2- avec mutation PIK3CA (en combinaison avec fulvestrant)",
+    "it": "Carcinoma mammario avanzato HR+/HER2- con mutazione PIK3CA (in combinazione con fulvestrant)",
+    "dossier": "21067"
+  },
+  "21103.01": {
+    "de": "Rezidivierte oder refraktäre AML mit FLT3-Mutation",
+    "fr": "LAM récidivante ou réfractaire avec mutation FLT3",
+    "it": "LMA recidivante o refrattaria con mutazione FLT3",
+    "dossier": "21103"
+  },
+  "21107.01": {
+    "de": "Schwere Osteoporose bei postmenopausalen Frauen",
+    "fr": "Ostéoporose sévère chez les femmes ménopausées",
+    "it": "Osteoporosi severa nelle donne in postmenopausa",
+    "dossier": "21107"
+  },
+  "21108.01": {
+    "de": "Polycythaemia vera ohne symptomatische Splenomegalie",
+    "fr": "Polycythémie vraie sans splénomégalie symptomatique",
+    "it": "Policitemia vera senza splenomegalia sintomatica",
+    "dossier": "21108"
+  },
+  "21123.02": {
+    "de": "Azacitidin-Monotherapie bei MDS, CMML und AML",
+    "fr": "Monothérapie par azacitidine pour SMD, LMMC et LAM",
+    "it": "Monoterapia con azacitidina per SMD, LMMC e LMA",
+    "dossier": "21123"
+  },
+  "21130.01": {
+    "de": "Erhaltungstherapie bei platinsensitivem, rezidiviertem Ovarialkarzinom (≥2L)",
+    "fr": "Traitement d'entretien du cancer ovarien récidivant sensible au platine (≥2L)",
+    "it": "Terapia di mantenimento del carcinoma ovarico recidivante sensibile al platino (≥2L)",
+    "dossier": "21130"
+  },
+  "21144.01": {
+    "de": "Zystische Fibrose (CF) ab 6-11 Jahren mit F508del-Mutation",
+    "fr": "Fibrose kystique (FK) dès 6-11 ans avec mutation F508del",
+    "it": "Fibrosi cistica (FC) dai 6-11 anni con mutazione F508del",
+    "dossier": "21144"
+  },
+  "21144.02": {
+    "de": "Zystische Fibrose (CF) ab 12 Jahren mit F508del-Mutation",
+    "fr": "Fibrose kystique (FK) dès 12 ans avec mutation F508del",
+    "it": "Fibrosi cistica (FC) dai 12 anni con mutazione F508del",
+    "dossier": "21144"
+  },
+  "21174.01": {
+    "de": "Akute hepatische Porphyrie (AHP) mit rezidivierenden Attacken",
+    "fr": "Porphyrie hépatique aiguë (PHA) avec crises récurrentes",
+    "it": "Porfiria epatica acuta (PEA) con attacchi ricorrenti",
+    "dossier": "21174"
+  },
+  "21179.01": {
+    "de": "Erbliche Netzhautdystrophie aufgrund biallelischer RPE65-Mutationen",
+    "fr": "Dystrophie rétinienne héréditaire due à des mutations bialleliques de RPE65",
+    "it": "Distrofia retinica ereditaria dovuta a mutazioni bialleliche di RPE65",
+    "dossier": "21179"
+  },
+  "21205.01": {
+    "de": "1L ALK-positives NSCLC",
+    "fr": "1L CBNPC ALK-positif",
+    "it": "1L NSCLC ALK-positivo",
+    "dossier": "21205"
+  },
+  "21205.02": {
+    "de": "ALK-positives NSCLC nach Crizotinib",
+    "fr": "CBNPC ALK-positif après crizotinib",
+    "it": "NSCLC ALK-positivo dopo crizotinib",
+    "dossier": "21205"
+  },
+  "21210.01": {
+    "de": "Morbus Cushing und endogener Hypercortisolismus",
+    "fr": "Maladie de Cushing et hypercorticisme endogène",
+    "it": "Malattia di Cushing e ipercorticismo endogeno",
+    "dossier": "21210"
+  },
+  "21234.02": {
+    "de": "MDS, CMML und AML (Monotherapie bei Patienten ohne Transplantation)",
+    "fr": "SMD, LMMC et LAM (monothérapie chez patients sans transplantation)",
+    "it": "SMD, LMMC e LMA (monoterapia in pazienti senza trapianto)",
+    "dossier": "21234"
+  },
+  "21235.02": {
+    "de": "MDS, CMML oder AML (Monotherapie, nicht transplantierbar)",
+    "fr": "SMD, LMMC ou LAM (monothérapie, non transplantable)",
+    "it": "SMD, LMMC o LMA (monoterapia, non trapiantabile)",
+    "dossier": "21235"
+  },
+  "21242.01": {
+    "de": "Detrusorüberaktivität bei Rückenmarksverletzung oder Meningomyelozele",
+    "fr": "Hyperactivité du détrusor suite à lésion médullaire ou méningomyélocèle",
+    "it": "Iperattività del detrusore da lesione midollare o meningomielocele",
+    "dossier": "21242"
+  },
+  "21253.01": {
+    "de": "5q-assoziierte spinale Muskelatrophie (SMA)",
+    "fr": "Amyotrophie spinale (SMA) associée au chromosome 5q",
+    "it": "Atrofia muscolare spinale (SMA) associata al cromosoma 5q",
+    "dossier": "21253"
+  },
+  "21260.01": {
+    "de": "Myelofibrose nach Versagen oder Unverträglichkeit von Ruxolitinib",
+    "fr": "Myélofibrose après échec ou intolérance au ruxolitinib",
+    "it": "Mielofibrosi dopo fallimento o intolleranza al ruxolitinib",
+    "dossier": "21260"
+  },
+  "21282.01": {
+    "de": "Fortgeschrittenes oder metastasierendes NSCLC mit MET-Exon-14-Skipping-Mutation",
+    "fr": "CBNPC avancé ou métastatique avec mutation MET exon 14 skipping",
+    "it": "NSCLC avanzato o metastatico con mutazione MET exon 14 skipping",
+    "dossier": "21282"
+  },
+  "21285.01": {
+    "de": "NSCLC mit MET-Exon-14-Skipping-Mutation",
+    "fr": "CBNPC avec mutation de saut de l'exon 14 de MET",
+    "it": "NSCLC con mutazione di skipping dell'esone 14 di MET",
+    "dossier": "21285"
+  },
+  "21287.01": {
+    "de": "hATTR-Amyloidose mit Polyneuropathie (Stadien 1 und 2)",
+    "fr": "Amylose hATTR avec polyneuropathie (stades 1 et 2)",
+    "it": "Amiloidosi hATTR con polineuropatia (stadi 1 e 2)",
+    "dossier": "21287"
+  },
+  "21292.01": {
+    "de": "Hypercholesterinämie (Sekundärprävention und heterozygote familiäre)",
+    "fr": "Hypercholestérolémie (prévention secondaire et familiale hétérozygote)",
+    "it": "Ipercolesterolemia (prevenzione secondaria e familiare eterozigote)",
+    "dossier": "21292"
+  },
+  "21303.01": {
+    "de": "Lokal fortgeschrittenes oder metastasiertes Cholangiokarzinom mit FGFR2-Fusion/-Rearrangement (≥2L)",
+    "fr": "Cholangiocarcinome localement avancé ou métastatique avec fusion/réarrangement FGFR2 (≥2L)",
+    "it": "Colangiocarcinoma localmente avanzato o metastatico con fusione/riarrangiamento FGFR2 (≥2L)",
+    "dossier": "21303"
+  },
+  "21307.01": {
+    "de": "Chronische oder episodische Migräne (nach Versagen prophylaktischer Therapien)",
+    "fr": "Migraine chronique ou épisodique (après échec de traitements prophylactiques)",
+    "it": "Emicrania cronica o episodica (dopo fallimento di terapie profilattiche)",
+    "dossier": "21307"
+  },
+  "21327.03": {
+    "de": "Einleitung (Dermatologie oder Rheumatologie)",
+    "fr": "Initiation (dermatologie ou rhumatologie)",
+    "it": "Inizio (dermatologia o reumatologia)",
+    "dossier": "21327"
+  },
+  "21332.01": {
+    "de": "Metastasiertes hormonrefraktäres Prostatakarzinom (mHRPC) nach Docetaxel",
+    "fr": "Cancer de la prostate métastatique hormono-réfractaire (mHRPC) après docétaxel",
+    "it": "Carcinoma prostatico metastatico ormono-refrattario (mHRPC) dopo docetaxel",
+    "dossier": "21332"
+  },
+  "21341.01": {
+    "de": "Rezidivierte oder refraktäre Mycosis fungoides (MF) oder Sézary-Syndrom (SS)",
+    "fr": "Mycosis fongoïde (MF) ou syndrome de Sézary (SS) récidivant ou réfractaire",
+    "it": "Micosi fungoide (MF) o sindrome di Sézary (SS) recidivante o refrattaria",
+    "dossier": "21341"
+  },
+  "21373.01": {
+    "de": "Rezidivierendes oder fortgeschrittenes Endometriumkarzinom (dMMR/MSI-H)",
+    "fr": "Carcinome de l'endomètre récidivant ou avancé (dMMR/MSI-H)",
+    "it": "Carcinoma dell'endometrio recidivante o avanzato (dMMR/MSI-H)",
+    "dossier": "21373"
+  },
+  "21402.01": {
+    "de": "Neurofibromatose Typ 1 (NF1) mit symptomatischen, inoperablen plexiformen Neurofibromen",
+    "fr": "Neurofibromatose de type 1 (NF1) avec neurofibromes plexiformes symptomatiques et inopérables",
+    "it": "Neurofibromatosi di tipo 1 (NF1) con neurofibromi plessiformi sintomatici e inoperabili",
+    "dossier": "21402"
+  },
+  "21413.01": {
+    "de": "Rezidiviertes refraktäres multiples Myelom (≥4 Vortherapien)",
+    "fr": "Myélome multiple en rechute réfractaire (≥4 lignes antérieures)",
+    "it": "Mieloma multiplo recidivante refrattario (≥4 terapie precedenti)",
+    "dossier": "21413"
+  },
+  "21414.02": {
+    "de": "Myelodysplastisches Syndrom, CMML und AML (nicht transplantabel)",
+    "fr": "Syndrome myélodysplasique, LMMC et LAM (non éligibles à transplantation)",
+    "it": "Sindrome mielodisplastica, LMMC e LMA (non trapiantabili)",
+    "dossier": "21414"
+  },
+  "21439.01": {
+    "de": "COVID-19 Infektion",
+    "fr": "Infection à COVID-19",
+    "it": "Infezione da COVID-19",
+    "dossier": "21439"
+  },
+  "21460.01": {
+    "de": "Metastasiertes kastrationsresistentes und hormonsensitives Prostatakarzinom",
+    "fr": "Cancer de la prostate métastatique résistant à la castration et hormono-sensible",
+    "it": "Carcinoma prostatico metastatico resistente alla castrazione e ormono-sensibile",
+    "dossier": "21460"
+  },
+  "21467.01": {
+    "de": "Mittelschwerer bis schwerer Pruritus bei chronischer Nierenerkrankung unter Hämodialyse",
+    "fr": "Prurit modéré à sévère associé à l'insuffisance rénale chronique sous hémodialyse",
+    "it": "Prurito da moderato a grave associato a insufficienza renale cronica in emodialisi",
+    "dossier": "21467"
+  },
+  "21470.01": {
+    "de": "NSCLC mit EGFR Exon 20-Insertionsmutation (nach platinbasierter Chemotherapie)",
+    "fr": "CBNPC avec mutation par insertion de l'exon 20 de l'EGFR (après chimiothérapie à base de platine)",
+    "it": "NSCLC con mutazione da inserzione nell'esone 20 dell'EGFR (dopo chemioterapia a base di platino)",
+    "dossier": "21470"
+  },
+  "21477.03": {
+    "de": "Ankylosierende Spondylitis (Röntgenologische axiale Spondyloarthritis, r-axSpA)",
+    "fr": "Spondylarthrite ankylosante (Spondylarthrite axiale radiologique, r-axSpA)",
+    "it": "Spondilite anchilosante (Spondilite assiale radiografica, r-axSpA)",
+    "dossier": "21477"
+  },
+  "21478.01": {
+    "de": "Lokal fortgeschrittenes oder metastasiertes Urothelkarzinom nach Platin und PD-(L)1-Inhibitor",
+    "fr": "Carcinome urothélial localement avancé ou métastatique après platine et inhibiteur de PD-(L)1",
+    "it": "Carcinoma uroteliale localmente avanzato o metastatico dopo platino e inibitore di PD-(L)1",
+    "dossier": "21478"
+  },
+  "21512.02": {
+    "de": "AML bei Patienten ungeeignet für intensive Chemotherapie",
+    "fr": "LAM chez les patients non éligibles à une chimiothérapie intensive",
+    "it": "LMA in pazienti non idonei a chemioterapia intensiva",
+    "dossier": "21512"
+  },
+  "21515.01": {
+    "de": "1L nicht resezierbares oder metastasiertes Melanom (PD-L1 < 1%)",
+    "fr": "1L mélanome non résécable ou métastatique (PD-L1 < 1%)",
+    "it": "1L melanoma non resecabile o metastatico (PD-L1 < 1%)",
+    "dossier": "21515"
+  },
+  "21518.01": {
+    "de": "Rezidiviertes/refraktäres Multiples Myelom (≥3 Vortherapien)",
+    "fr": "Myélome multiple en rechute/réfractaire (≥3 lignes antérieures)",
+    "it": "Mieloma multiplo recidivante/refrattario (≥3 linee precedenti)",
+    "dossier": "21518"
+  },
+  "21521.01": {
+    "de": "Fortgeschrittene GIST nach ≥3 Vortherapien (Imatinib, Sunitinib, Regorafenib)",
+    "fr": "GIST avancées après ≥3 lignes de traitement (imatinib, sunitinib, régorafénib)",
+    "it": "GIST avanzati dopo ≥3 linee di terapia (imatinib, sunitinib, regorafenib)",
+    "dossier": "21521"
+  },
+  "21545.01": {
+    "de": "NTRK-Genfusions-positive solide Tumoren",
+    "fr": "Tumeurs solides avec fusion du gène NTRK",
+    "it": "Tumori solidi con fusione del gene NTRK",
+    "dossier": "21545"
+  },
+  "21561.03": {
+    "de": "2L+ chronisch lymphatische Leukämie (CLL, Monotherapie)",
+    "fr": "2L+ leucémie lymphoïde chronique (LLC, monothérapie)",
+    "it": "2L+ leucemia linfatica cronica (LLC, monoterapia)",
+    "dossier": "21561"
+  },
+  "21561.01": {
+    "de": "Zystische Fibrose (homozygot für F508del-Mutation)",
+    "fr": "Fibrose kystique (homozygote pour la mutation F508del)",
+    "it": "Fibrosi cistica (omozigote per la mutazione F508del)",
+    "dossier": "21561"
+  },
+  "21563.01": {
+    "de": "Zystische Fibrose mit R117H- oder Gating-Mutationen (Granulat, Monotherapie)",
+    "fr": "Fibrose kystique avec mutations R117H ou mutations de canal (granulés, monothérapie)",
+    "it": "Fibrosi cistica con mutazioni R117H o mutazioni gating (granulato, monoterapia)",
+    "dossier": "21563"
+  },
+  "21571.01": {
+    "de": "mCRPC nach Docetaxel (bei Progress oder Non-Response)",
+    "fr": "CPRCm après docétaxel (en cas de progression ou non-réponse)",
+    "it": "mCRPC dopo docetaxel (in caso di progressione o non-risposta)",
+    "dossier": "21571"
+  },
+  "21579.01": {
+    "de": "Blastische plasmazytoide dendritische Zellneoplasie (BPDCN), Erstlinie",
+    "fr": "Néoplasme à cellules dendritiques plasmacytoïdes blastique (BPDCN), 1ère ligne",
+    "it": "Neoplasia a cellule dendritiche plasmacitoidi blastica (BPDCN), prima linea",
+    "dossier": "21579"
+  },
+  "21595.01": {
+    "de": "Metastasiertes kleinzelliges Lungenkarzinom (SCLC) nach platinhaltiger Therapie",
+    "fr": "Cancer bronchique à petites cellules (CBPC) métastatique après traitement à base de platine",
+    "it": "Carcinoma polmonare a piccole cellule (SCLC) metastatico dopo terapia a base di platino",
+    "dossier": "21595"
+  },
+  "21618.01": {
+    "de": "Refraktäre CMV-Infektion nach HSCT oder SOT",
+    "fr": "Infection à CMV réfractaire après GCSH ou TOS",
+    "it": "Infezione da CMV refrattaria dopo TCSE o trapianto d'organo solido",
+    "dossier": "21618"
+  },
+  "21628.01": {
+    "de": "Metastasiertes kastrationsresistentes Prostatakarzinom (mCRPC) nach Docetaxel",
+    "fr": "Cancer de la prostate métastatique résistant à la castration (CPRCm) après docétaxel",
+    "it": "Carcinoma prostatico metastatico resistente alla castrazione (mCRPC) dopo docetaxel",
+    "dossier": "21628"
+  },
+  "21635.01": {
+    "de": "hATTR-Amyloidose mit Polyneuropathie (PND Score I-IIIb)",
+    "fr": "Amyloïdose hATTR avec polyneuropathie (PND Score I-IIIb)",
+    "it": "Amiloidosi hATTR con polineuropatia (PND Score I-IIIb)",
+    "dossier": "21635"
+  },
+  "21640.01": {
+    "de": "Inoperables oder metastasiertes uveales Melanom (HLA-A*02:01-positiv)",
+    "fr": "Mélanome uvéal inopérable ou métastatique (HLA-A*02:01-positif)",
+    "it": "Melanoma uveale inoperabile o metastatico (HLA-A*02:01-positivo)",
+    "dossier": "21640"
+  },
+  "21641.01": {
+    "de": "mCRPC nach Docetaxel (Refraktärität oder Progression innerhalb 6 Monaten)",
+    "fr": "CPRCm après docétaxel (réfractaire ou progression dans les 6 mois)",
+    "it": "mCRPC dopo docetaxel (refrattario o progressione entro 6 mesi)",
+    "dossier": "21641"
+  },
+  "21647.01": {
+    "de": "Rezidiviertes/refraktäres multiples Myelom (≥3 Vortherapien inkl. IMiD, PI, Anti-CD38-Antikörper)",
+    "fr": "Myélome multiple récidivant/réfractaire (≥3 lignes antérieures dont IMiD, IP, anti-CD38)",
+    "it": "Mieloma multiplo recidivante/refrattario (≥3 linee precedenti incl. IMiD, IP, anti-CD38)",
+    "dossier": "21647"
+  },
+  "21651.03": {
+    "de": "2L+ chronisch lymphatische Leukämie (CLL, Monotherapie)",
+    "fr": "2ème ligne et plus leucémie lymphoïde chronique (LLC, monothérapie)",
+    "it": "2L+ Leucemia linfatica cronica (LLC, monoterapia)",
+    "dossier": "21651"
+  },
+  "21652.01": {
+    "de": "Schwere Plaque-Psoriasis",
+    "fr": "Psoriasis en plaques sévère",
+    "it": "Psoriasi a placche grave",
+    "dossier": "21652"
+  },
+  "21652.02": {
+    "de": "Aktive Psoriasis-Arthritis",
+    "fr": "Arthrite psoriasique active",
+    "it": "Artrite psoriasica attiva",
+    "dossier": "21652"
+  },
+  "21652.03": {
+    "de": "Schwere aktive ankylosierende Spondylitis",
+    "fr": "Spondylarthrite ankylosante sévère active",
+    "it": "Spondilite anchilosante grave attiva",
+    "dossier": "21652"
+  },
+  "21672.01": {
+    "de": "Metastasiertes kastrationsresistentes Prostatakarzinom (mCRPC) nach Docetaxel",
+    "fr": "Cancer de la prostate métastatique résistant à la castration (CPRCm) après docétaxel",
+    "it": "Carcinoma prostatico metastatico resistente alla castrazione (mCRPC) dopo docetaxel",
+    "dossier": "21672"
+  },
+  "21690.01": {
+    "de": "Rezidiviertes oder refraktäres Multiples Myelom (≥3 Vortherapien)",
+    "fr": "Myélome multiple en rechute ou réfractaire (≥3 lignes antérieures)",
+    "it": "Mieloma multiplo recidivante o refrattario (≥3 linee precedenti)",
+    "dossier": "21690"
+  },
+  "21700.01": {
+    "de": "mCRPC nach Docetaxel (Progress oder Non-Response)",
+    "fr": "CPRCm après docétaxel (progression ou non-réponse)",
+    "it": "mCRPC dopo docetaxel (progressione o non-risposta)",
+    "dossier": "21700"
+  },
+  "21716.01": {
+    "de": "1L mCRPC mit BRCA-Mutation (ohne viszerale Metastasen, Kombination mit ADT)",
+    "fr": "1L CPRCm avec mutation BRCA (sans métastases viscérales, en association avec ADT)",
+    "it": "1L mCRPC con mutazione BRCA (senza metastasi viscerali, in associazione con ADT)",
+    "dossier": "21716"
+  },
+  "21727.01": {
+    "de": "HR+/HER2- Brustkrebs mit PIK3CA/AKT1/PTEN-Alterationen (in Kombination mit Fulvestrant)",
+    "fr": "Cancer du sein HR+/HER2- avec altérations PIK3CA/AKT1/PTEN (en combinaison avec fulvestrant)",
+    "it": "Carcinoma mammario HR+/HER2- con alterazioni PIK3CA/AKT1/PTEN (in combinazione con fulvestrant)",
+    "dossier": "21727"
+  },
+  "21731.01": {
+    "de": "1L in Kombination mit Aromatase-Inhibitor",
+    "fr": "1L en combinaison avec un inhibiteur de l'aromatase",
+    "it": "1L in combinazione con inibitore dell'aromatasi",
+    "dossier": "21731"
+  },
+  "21731.02": {
+    "de": "1L in Kombination mit Fulvestrant (Rezidiv während/nach adjuvanter Therapie)",
+    "fr": "1L en combinaison avec fulvestrant (récidive pendant/après thérapie adjuvante)",
+    "it": "1L in combinazione con fulvestrant (recidiva durante/dopo terapia adiuvante)",
+    "dossier": "21731"
+  },
+  "21731.03": {
+    "de": "2L in Kombination mit Fulvestrant",
+    "fr": "2L en combinaison avec fulvestrant",
+    "it": "2L in combinazione con fulvestrant",
+    "dossier": "21731"
+  },
+  "21733.01": {
+    "de": "Generalisierte pustulöse Psoriasis (GPP) - Behandlung von Krankheitsschüben",
+    "fr": "Psoriasis pustuleuse généralisée (PPG) - Traitement des poussées",
+    "it": "Psoriasi pustolosa generalizzata (PPG) - Trattamento delle riacutizzazioni",
+    "dossier": "21733"
+  },
+  "21740.01": {
+    "de": "Rezidiviertes/refraktäres diffuses grosszelliges B-Zell-Lymphom (DLBCL) nach ≥2 Therapielinien",
+    "fr": "Lymphome B diffus à grandes cellules (DLBCL) récidivant/réfractaire après ≥2 lignes de traitement",
+    "it": "Linfoma diffuso a grandi cellule B (DLBCL) recidivante/refrattario dopo ≥2 linee di trattamento",
+    "dossier": "21740"
+  },
+  "21741.01": {
+    "de": "Rezidivierendes oder refraktäres diffuses grosszelliges B-Zell-Lymphom (DLBCL), 3L+",
+    "fr": "Lymphome diffus à grandes cellules B (LDGCB) récidivant ou réfractaire, 3L+",
+    "it": "Linfoma diffuso a grandi cellule B (DLBCL) recidivante o refrattario, 3L+",
+    "dossier": "21741"
+  },
+  "21763.01": {
+    "de": "ER+/HER2- fortgeschrittener Brustkrebs mit ESR1-Mutation nach CDK4/6-Inhibitor",
+    "fr": "Cancer du sein avancé ER+/HER2- avec mutation ESR1 après inhibiteur CDK4/6",
+    "it": "Carcinoma mammario avanzato ER+/HER2- con mutazione ESR1 dopo inibitore CDK4/6",
+    "dossier": "21763"
+  },
+  "21777.01": {
+    "de": "Zystische Fibrose mit mindestens einer F508del-Mutation (ab 2 Jahren)",
+    "fr": "Fibrose kystique avec au moins une mutation F508del (dès 2 ans)",
+    "it": "Fibrosi cistica con almeno una mutazione F508del (dai 2 anni)",
+    "dossier": "21777"
+  },
+  "21783.01": {
+    "de": "Pulmonale arterielle Hypertonie (PAH) WHO-Funktionsklassen II-III",
+    "fr": "Hypertension artérielle pulmonaire (HTAP) classes fonctionnelles OMS II-III",
+    "it": "Ipertensione arteriosa polmonare (PAH) classi funzionali OMS II-III",
+    "dossier": "21783"
+  },
+  "21851.01": {
+    "de": "Lokal fortgeschrittenes oder metastasiertes Cholangiokarzinom mit FGFR2-Fusion/-Rearrangement (≥2L)",
+    "fr": "Cholangiocarcinome localement avancé ou métastatique avec fusion/réarrangement FGFR2 (≥2L)",
+    "it": "Colangiocarcinoma localmente avanzato o metastatico con fusione/riarrangiamento FGFR2 (≥2L)",
+    "dossier": "21851"
+  },
+  "21854.01": {
+    "de": "Nicht resezierbares oder metastasiertes Urothelkarzinom mit FGFR3-Alteration nach PD-(L)1-Inhibitor und Platin-Chemotherapie",
+    "fr": "Carcinome urothélial non résécable ou métastatique avec altération FGFR3 après inhibiteur PD-(L)1 et chimiothérapie à base de platine",
+    "it": "Carcinoma uroteliale non resecabile o metastatico con alterazione FGFR3 dopo inibitore PD-(L)1 e chemioterapia a base di platino",
+    "dossier": "21854"
+  },
+  "21874.01": {
+    "de": "Hereditäre Transthyretin-Amyloidose mit Polyneuropathie (hATTR-PN)",
+    "fr": "Amylose héréditaire à transthyrétine avec polyneuropathie (hATTR-PN)",
+    "it": "Amiloidosi ereditaria da transtiretina con polineuropatia (hATTR-PN)",
+    "dossier": "21874"
+  },
+  "21898.01": {
+    "de": "Multiple Sklerose (schubförmig und primär progredient)",
+    "fr": "Sclérose en plaques (forme rémittente et forme primaire progressive)",
+    "it": "Sclerosi multipla (forma recidivante e forma primaria progressiva)",
+    "dossier": "21898"
+  },
+  "21912.03": {
+    "de": "Prurigo nodularis – Körpergewicht ≥ 90 kg",
+    "fr": "Prurigo nodulaire – Poids corporel ≥ 90 kg",
+    "it": "Prurigo nodulare – Peso corporeo ≥ 90 kg",
+    "dossier": "21912"
+  },
+  "21918.01": {
+    "de": "Platinresistentes FRα-positives high-grade seröses Ovarialkarzinom",
+    "fr": "Carcinome ovarien séreux de haut grade FRα-positif résistant au platine",
+    "it": "Carcinoma ovarico sieroso di alto grado FRα-positivo resistente al platino",
+    "dossier": "21918"
+  },
+  "22012.03": {
+    "de": "Chronische ITP bei Erwachsenen (≥6 Monate, refraktär)",
+    "fr": "PTI chronique chez l'adulte (≥6 mois, réfractaire)",
+    "it": "ITP cronica nell'adulto (≥6 mesi, refrattaria)",
+    "dossier": "22012"
+  },
+  "22012.04": {
+    "de": "Chronische ITP bei Kindern (≥6 Jahre, ≥6 Monate, refraktär)",
+    "fr": "PTI chronique chez l'enfant (≥6 ans, ≥6 mois, réfractaire)",
+    "it": "ITP cronica nel bambino (≥6 anni, ≥6 mesi, refrattaria)",
+    "dossier": "22012"
+  },
+  "22030.03": {
+    "de": "Chronische ITP bei Erwachsenen (≥6 Monate, nach Therapieversagen)",
+    "fr": "PTI chronique chez l'adulte (≥6 mois, après échec thérapeutique)",
+    "it": "ITP cronica nell'adulto (≥6 mesi, dopo fallimento terapeutico)",
+    "dossier": "22030"
+  },
+  "22030.04": {
+    "de": "Chronische ITP bei Kindern (≥6 Jahre, nach Therapieversagen)",
+    "fr": "PTI chronique chez l'enfant (≥6 ans, après échec thérapeutique)",
+    "it": "ITP cronica nel bambino (≥6 anni, dopo fallimento terapeutico)",
+    "dossier": "22030"
+  },
+  "22043.03": {
+    "de": "ITP bei Erwachsenen (≥6 Monate, therapierefraktär)",
+    "fr": "PTI chez l'adulte (≥6 mois, réfractaire)",
+    "it": "ITP negli adulti (≥6 mesi, refrattaria)",
+    "dossier": "22043"
+  },
+  "22043.04": {
+    "de": "ITP bei Kindern (≥6 Jahre, therapierefraktär)",
+    "fr": "PTI chez l'enfant (≥6 ans, réfractaire)",
+    "it": "ITP nei bambini (≥6 anni, refrattaria)",
+    "dossier": "22043"
+  },
+  "22046.03": {
+    "de": "Erwachsene mit chronischer ITP (≥6 Monate) nach Therapieversagen",
+    "fr": "Adultes avec PTI chronique (≥6 mois) après échec thérapeutique",
+    "it": "Adulti con ITP cronica (≥6 mesi) dopo fallimento terapeutico",
+    "dossier": "22046"
+  },
+  "22046.04": {
+    "de": "Pädiatrische Patienten (≥6 Jahre) mit chronischer ITP nach Therapieversagen",
+    "fr": "Patients pédiatriques (≥6 ans) avec PTI chronique après échec thérapeutique",
+    "it": "Pazienti pediatrici (≥6 anni) con ITP cronica dopo fallimento terapeutico",
+    "dossier": "22046"
+  }
+}

@@ -755,6 +755,25 @@ def run(db_path, extracted_dir):
     fanout_to_sku(conn, extract_map)
     resolve_dates(conn, extract_map)
 
+    # Remove orphan limitations (no SKU link after fan-out)
+    orphan_lim = conn.execute(
+        "SELECT COUNT(*) FROM limitation l "
+        "WHERE NOT EXISTS "
+        "(SELECT 1 FROM sku_limitation sl WHERE sl.limitation_id = l.limitation_id)"
+    ).fetchone()[0]
+    if orphan_lim:
+        conn.execute(
+            "DELETE FROM limitation WHERE limitation_id NOT IN "
+            "(SELECT DISTINCT limitation_id FROM sku_limitation)"
+        )
+        # Remove limitation_text rows no longer referenced by any limitation
+        conn.execute(
+            "DELETE FROM limitation_text WHERE text_id NOT IN "
+            "(SELECT DISTINCT text_id FROM limitation)"
+        )
+        conn.commit()
+        log.info(f"  Removed {orphan_lim} orphan limitations (no SKU link)")
+
     # Summary
     for table in ("extract_info", "sku", "limitation_text", "limitation",
                   "indication", "limitation_text_segment", "sku_limitation",
